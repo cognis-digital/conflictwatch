@@ -1,3 +1,6 @@
 
 # never commit the raw personal bookmark dump or intermediate source files
 _bm_candidates.json
+
+__pycache__/
+*.pyc
