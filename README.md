@@ -1,0 +1,112 @@
+<a name="top"></a>
+# conflictwatch
+
+**Open-source conflict monitoring & situational awareness.** Ingest the standard open
+conflict datasets (**ACLED / GDELT / UCDP**) and OSINT feeds into one normalized event
+model, analyze **hotspots, timelines, actor activity and escalation trends**, and consult a
+sourced **"what's working" lessons** knowledge base for awareness and force protection.
+
+Built for the analyst and the modern soldier who needs a fast, private, recognized picture
+from open sources — runs entirely on your own hardware, pure standard library.
+
+```mermaid
+flowchart LR
+  subgraph in["open sources"]
+    A[ACLED / UCDP CSV]; G[GDELT 2.0]; R[OSINT RSS/Atom feeds]
+  end
+  in --> N[[ConflictEvent<br/>normalize + dedup]]
+  N --> AN[analyze<br/>hotspots · timeline · actors · trend]
+  N --> EM[emit → STIX/MISP/Slack<br/>via cognis-connect]
+  L[(lessons KB<br/>what's working)] --> RP[report]
+  AN --> RP
+  classDef c fill:#6b46c1,color:#fff; class N c;
+```
+
+## Scope & ethics
+
+conflictwatch is for **open-source intelligence, situational awareness, and force
+protection** — descriptive monitoring of *reported* events and *defensive*
+lessons-learned. It is **not** a targeting, fire-control, or weapon system, it does not
+plan operations against people, and it is not for surveilling individuals. It reads public
+datasets and public feeds only. Use it to understand a situation and protect people.
+
+## Install
+
+```bash
+pip install "git+https://github.com/cognis-digital/conflictwatch.git"
+```
+
+## Use it
+
+```bash
+# 1) Ingest an open dataset (ACLED export shown; also gdelt / ucdp / json)
+conflictwatch ingest --source acled --from-file acled_export.csv --out events.json
+
+# 1b) Or pull the latest fully-open GDELT events export (no key)
+conflictwatch fetch-gdelt --out events.json
+
+# 1c) Or collect OSINT situational feeds (ISW / ACLED / ReliefWeb / Bellingcat …)
+conflictwatch scrape --out osint.json
+
+# 2) Situational summary — hotspots, actors, escalation trend
+conflictwatch analyze events.json --window 7
+
+# 3) Full report (summary + awareness lessons keyed to what's happening)
+conflictwatch report events.json
+
+# 4) "What's working" lessons KB (awareness / force protection)
+conflictwatch lessons --category counter-uas
+conflictwatch lessons --keyword jamming
+```
+
+Example `report` output:
+
+```
+CONFLICTWATCH situational summary  (2026-06-10 .. 2026-06-14)
+  events: 8   fatalities: 28
+  severity: {'high': 2, 'medium': 4, 'info': 2}
+  trend (UP): recent 8 vs prior 0 (+100.0%)
+  hotspots:
+    Borderland   East Province   events=4  fatalities=17
+  top actors:
+    Forces of A                  events=6  fatalities=27
+Relevant lessons (awareness):
+  - [counter-uas] Small Drone Threats: low-cost drones used for surveillance and attack — integrate detection + layered defense
+```
+
+## From Python
+
+```python
+from conflictwatch import sources, analyze, lessons
+events = sources.parse("acled", open("acled_export.csv", encoding="utf-8").read())
+print(analyze.summary(events)["hotspots"])
+print(lessons.query(category="ew-spectrum"))
+```
+
+## The "what's working" lessons KB
+
+A sourced, descriptive knowledge base of how modern conflict is actually being fought,
+across **counter-UAS, EW/spectrum, comms/C2, survivability, casualty-care, logistics,
+ISR/OSINT, mobility, info-ops** — each entry is an observed trend with OSINT **indicators**
+and **defensive countermeasures**. Drafted with a local model and human-reviewed; entirely
+awareness/protection oriented (`conflictwatch/data/lessons.json`).
+
+## Data sources
+
+See [SOURCES.md](SOURCES.md) — the real open datasets and feeds behind this tool
+(ACLED, GDELT, UCDP, ISW, ReliefWeb, Bellingcat) and their access terms.
+
+## Integrations & interop
+
+Forward events to STIX/MISP/Sigma/Splunk/Elastic/Slack/webhooks via
+[`cognis-connect`](https://github.com/cognis-digital/cognis-connect) —
+`conflictwatch ... | python -m conflictwatch.connect --to stix`. See
+[INTEGRATIONS.md](INTEGRATIONS.md) and [INTEROP.md](INTEROP.md). Pairs with
+[`maritimeint`](https://github.com/cognis-digital/maritimeint),
+[`uaslog`](https://github.com/cognis-digital/uaslog), and the drone-OSINT repos.
+
+## License
+
+[COCL 1.0](LICENSE) — © 2026 Cognis Digital LLC.
+
+<div align="right"><a href="#top">↑ back to top</a></div>

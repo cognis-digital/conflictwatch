@@ -1,0 +1,9 @@
+event_date,event_type,sub_event_type,actor1,actor2,country,admin1,location,latitude,longitude,fatalities,source,notes
+2026-06-10,Battles,Armed clash,Forces of A,Forces of B,Borderland,North Province,Ridgetown,49.21,36.10,7,Local media,Armed clash along the northern line near Ridgetown
+2026-06-11,Explosions/Remote violence,Shelling/artillery,Forces of A,Civilians,Borderland,North Province,Ridgetown,49.22,36.12,3,Monitor,Artillery shelling of Ridgetown outskirts
+2026-06-12,Explosions/Remote violence,Drone strike,Forces of B,Forces of A,Borderland,East Province,Vale,48.90,37.40,2,OSINT,FPV drone strike on a vehicle near Vale
+2026-06-12,Strategic developments,Disrupted weapons use,Forces of A,Forces of B,Borderland,East Province,Vale,48.91,37.41,0,Monitor,Electronic jamming disrupted drone operations near Vale
+2026-06-13,Battles,Armed clash,Forces of A,Forces of B,Borderland,East Province,Vale,48.92,37.39,11,Local media,Heavy fighting around Vale; multiple casualties reported
+2026-06-13,Violence against civilians,Attack,Forces of B,Civilians,Borderland,South Province,Harbor City,47.10,35.50,1,Monitor,Civilian harmed in a strike on Harbor City
+2026-06-14,Protests,Peaceful protest,Protesters,,Capital Region,Central,Capital,48.00,35.00,0,Local media,Peaceful demonstration in the capital
+2026-06-14,Explosions/Remote violence,Drone strike,Forces of A,Forces of B,Borderland,East Province,Vale,48.93,37.38,4,OSINT,Loitering munition struck a logistics node near Vale

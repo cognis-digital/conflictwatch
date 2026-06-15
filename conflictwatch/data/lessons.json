@@ -1,0 +1,365 @@
+{
+  "_note": "Descriptive, open-source lessons for awareness and force protection. Not targeting or weapon instructions. Drafted with the local fleet, human-reviewed.",
+  "lessons": [
+    {
+      "category": "counter-uas",
+      "title": "Small Drone Threats",
+      "insight": "Small drones are increasingly used for surveillance and attacks due to their low cost and mobility. Units must integrate awareness and layered defense to counter these threats effectively.",
+      "indicators": [
+        "Unidentified aerial objects hovering near key locations",
+        "Sudden power outages or communication disruptions in sensitive areas",
+        "Reports of small, fast-moving objects seen by local populations"
+      ],
+      "countermeasures": [
+        "Deployment of drone detection systems and visual observers",
+        "Establishment of no-fly zones with physical barriers",
+        "Training personnel to identify and report suspicious aerial activity"
+      ],
+      "confidence": "high",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "counter-uas-01"
+    },
+    {
+      "category": "counter-uas",
+      "title": "FPV and Loitering Munitions",
+      "insight": "First-person view (FPV) drones and loitering munitions are used for precision strikes, requiring real-time detection and rapid response to prevent casualties.",
+      "indicators": [
+        "Unmanned aerial vehicles flying at low altitudes with erratic flight patterns",
+        "Explosions or impacts in open areas without clear origin",
+        "Witness accounts of drones flying close to troops before an attack"
+      ],
+      "countermeasures": [
+        "Use of radar and thermal sensors for early warning",
+        "Deployment of counter-drone nets and acoustic deterrents",
+        "Conducting regular drills for rapid response to aerial threats"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "counter-uas-02"
+    },
+    {
+      "category": "ew-spectrum",
+      "title": "Electronic Warfare Awareness",
+      "insight": "In current conflicts, electronic warfare has become a critical tool for disrupting enemy communications and command structures, often used in conjunction with cyber operations.",
+      "indicators": [
+        "Unexplained communication outages in specific regions",
+        "Sudden changes in radio frequency usage patterns",
+        "Increased use of encrypted or alternative communication channels"
+      ],
+      "countermeasures": [
+        "Regularly updating and testing communication equipment",
+        "Implementing redundant communication systems",
+        "Training personnel on EW detection and response procedures"
+      ],
+      "confidence": "high",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "ew-spectrum-01"
+    },
+    {
+      "category": "ew-spectrum",
+      "title": "GPS Denial and Spoofing",
+      "insight": "GPS denial and spoofing have been effectively used to disrupt navigation, targeting, and coordination, especially in urban or contested environments.",
+      "indicators": [
+        "Inconsistent GPS coordinates across units",
+        "Navigation systems showing erratic or incorrect positioning",
+        "Increased reliance on visual or manual navigation methods"
+      ],
+      "countermeasures": [
+        "Using alternative navigation systems like inertial navigation or terrain matching",
+        "Conducting regular position checks using multiple sources",
+        "Training for GPS spoofing awareness and response"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "ew-spectrum-02"
+    },
+    {
+      "category": "comms-c2",
+      "title": "Resilient Communications Under Jamming",
+      "insight": "In current conflicts, resilient communications rely on decentralized networks and frequency-hopping techniques to maintain connectivity despite jamming.",
+      "indicators": [
+        "Unusual spikes in radio traffic at non-standard frequencies",
+        "Use of encrypted messaging apps with low signal strength",
+        "Presence of multiple communication nodes in a single area"
+      ],
+      "countermeasures": [
+        "Deployment of mesh networks with redundant pathways",
+        "Training for operators to switch frequencies rapidly",
+        "Use of low-probability-of-intercept (LPI) transmission methods"
+      ],
+      "confidence": "high",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "comms-c2-01"
+    },
+    {
+      "category": "comms-c2",
+      "title": "Command-and-Control Under Surveillance",
+      "insight": "Effective command-and-control under surveillance involves using time-sensitive, non-continuous communication and leveraging terrain for cover.",
+      "indicators": [
+        "Sudden changes in command post locations without prior notice",
+        "Use of prearranged signals or codes for coordination",
+        "Increased use of visual or acoustic signals during high-surveillance periods"
+      ],
+      "countermeasures": [
+        "Implementing staggered communication schedules",
+        "Utilizing natural terrain features for concealment",
+        "Training personnel in non-verbal command procedures"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "comms-c2-02"
+    },
+    {
+      "category": "survivability",
+      "title": "Field Fortification",
+      "insight": "Effective field fortification in current conflicts involves using available materials to create layered defenses that enhance survivability and reduce vulnerability to indirect fires.",
+      "indicators": [
+        "Presence of sandbags, trenches, or berms near tactical positions",
+        "Use of natural terrain features for cover and concealment",
+        "Reinforced barriers around key locations"
+      ],
+      "countermeasures": [
+        "Constructing layered field fortifications using local materials",
+        "Integrating fortifications with existing terrain features",
+        "Regularly inspecting and maintaining defensive structures"
+      ],
+      "confidence": "high",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "survivability-01"
+    },
+    {
+      "category": "survivability",
+      "title": "Dispersion",
+      "insight": "Dispersal of personnel and equipment reduces the risk of mass casualties from coordinated attacks or indirect fires, enhancing overall force protection.",
+      "indicators": [
+        "Multiple small groups operating in different locations",
+        "Absence of large concentrations of troops or vehicles",
+        "Use of communication methods that avoid centralized nodes"
+      ],
+      "countermeasures": [
+        "Implementing dispersed operations with clear communication protocols",
+        "Maintaining situational awareness to detect and respond to threats",
+        "Training units in decentralized command and control procedures"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "survivability-02"
+    },
+    {
+      "category": "casualty-care",
+      "title": "TCCC in Urban Environments",
+      "insight": "Open tactical-casualty-care (TCCC) techniques applied in urban settings significantly improve survival rates by enabling immediate life-saving interventions at the point of injury.",
+      "indicators": [
+        "Presence of improvised medical kits near casualties",
+        "Use of tourniquets and hemostatic agents in combat zones",
+        "Increased number of survivors with delayed medical care"
+      ],
+      "countermeasures": [
+        "Training soldiers in basic TCCC procedures",
+        "Carrying and maintaining tourniquets and hemostatic agents",
+        "Establishing casualty collection points near engagement areas"
+      ],
+      "confidence": "high",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "casualty-care-01"
+    },
+    {
+      "category": "casualty-care",
+      "title": "Early Intervention Saves Lives",
+      "insight": "Prompt application of TCCC principles, such as controlling bleeding and airway management, reduces mortality by stabilizing casualties before evacuation.",
+      "indicators": [
+        "Casualties showing signs of shock with early intervention",
+        "Use of field dressing and splints in combat scenarios",
+        "Reduced time between injury and medical treatment"
+      ],
+      "countermeasures": [
+        "Regular TCCC drills during unit training",
+        "Ensuring all soldiers are trained in basic first aid",
+        "Maintaining visibility of casualties to enable rapid response"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "casualty-care-02"
+    },
+    {
+      "category": "logistics",
+      "title": "Sustainment under Fire",
+      "insight": "In current conflicts, maintaining sustainment under contested conditions requires decentralized logistics and rapid resupply to avoid bottlenecks.",
+      "indicators": [
+        "Increased use of pre-positioned supplies in forward areas",
+        "Frequent movement of supply convoys during low-intensity engagements",
+        "Use of drones for real-time resupply coordination"
+      ],
+      "countermeasures": [
+        "Establishing decentralized logistics hubs near operational areas",
+        "Implementing secure, multi-route resupply strategies",
+        "Training personnel in rapid sustainment procedures under fire"
+      ],
+      "confidence": "high",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "logistics-01"
+    },
+    {
+      "category": "logistics",
+      "title": "Fuel and Ammo Management",
+      "insight": "Effective fuel and ammunition management under contested conditions relies on predictive modeling and real-time tracking to prevent shortages.",
+      "indicators": [
+        "Unusual spikes in fuel consumption during non-combat periods",
+        "Frequent resupply requests from forward units",
+        "Use of digital tracking systems for munitions"
+      ],
+      "countermeasures": [
+        "Implementing predictive logistics models based on operational tempo",
+        "Using encrypted communication for real-time inventory updates",
+        "Conducting regular audits of fuel and ammo stocks at all levels"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "logistics-02"
+    },
+    {
+      "category": "isr-osint",
+      "title": "Open-Source ISR Integration",
+      "insight": "Units effectively integrate open-source intelligence to enhance situational awareness and identify threats in real-time.",
+      "indicators": [
+        "Increased social media activity around military locations",
+        "Unusual traffic patterns near known installations",
+        "Local news reports of unexplained incidents"
+      ],
+      "countermeasures": [
+        "Establishing dedicated OSINT analysis teams",
+        "Implementing real-time monitoring of local media and social platforms",
+        "Training personnel to recognize and report suspicious activities"
+      ],
+      "confidence": "high",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "isr-osint-01"
+    },
+    {
+      "category": "isr-osint",
+      "title": "Community Engagement for Awareness",
+      "insight": "Engaging with local communities provides critical early warning signs and improves unit awareness of potential threats.",
+      "indicators": [
+        "Changes in local communication patterns",
+        "Increased civilian movement near military areas",
+        "Spontaneous reports from civilians about unusual activity"
+      ],
+      "countermeasures": [
+        "Developing relationships with local leaders and informants",
+        "Conducting regular community briefings and information sessions",
+        "Encouraging and facilitating civilian reporting channels"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "isr-osint-02"
+    },
+    {
+      "category": "mobility",
+      "title": "Movement and Route Selection",
+      "insight": "In current conflicts, deliberate route selection and controlled movement patterns significantly reduce the risk of IED and mine detonation.",
+      "indicators": [
+        "Unusual vehicle formations or deviations from established routes",
+        "Increased use of night movement or cover during transit",
+        "Presence of local guides or civilian escorts on high-risk routes"
+      ],
+      "countermeasures": [
+        "Use of pre-planned, redundant routes with multiple checkpoints",
+        "Implementation of movement control procedures including speed and spacing",
+        "Training for soldiers in route reconnaissance and terrain analysis"
+      ],
+      "confidence": "high",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "mobility-01"
+    },
+    {
+      "category": "mobility",
+      "title": "Counter-Mine/IED Awareness",
+      "insight": "Soldiers who maintain constant situational awareness and recognize IED indicators are more likely to avoid threats during movement.",
+      "indicators": [
+        "Unexploded ordnance found in cleared areas",
+        "Reports of suspicious objects or devices along roadsides",
+        "Use of metal detectors or other detection equipment by patrols"
+      ],
+      "countermeasures": [
+        "Regular training on IED indicators and minefield recognition",
+        "Establishment of mine-clearing teams with local knowledge",
+        "Encouragement of soldier reporting of suspicious objects"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "mobility-02"
+    },
+    {
+      "category": "info-ops",
+      "title": "Information Environment Awareness",
+      "insight": "Soldiers must actively monitor and understand the information environment to detect disinformation and maintain situational awareness.",
+      "indicators": [
+        "Spread of unverified social media content in local languages",
+        "Sudden increase in rumors about enemy movements or supply lines",
+        "Unusual patterns of communication within units"
+      ],
+      "countermeasures": [
+        "Regular training on identifying disinformation sources",
+        "Establishing internal reporting channels for suspicious information",
+        "Encouraging cross-verification of information through peer networks"
+      ],
+      "confidence": "high",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "info-ops-01"
+    },
+    {
+      "category": "info-ops",
+      "title": "Morale and OPSEC Protection",
+      "insight": "Maintaining morale and operational security is critical in reducing vulnerability to psychological operations and insider threats.",
+      "indicators": [
+        "Unexplained changes in unit behavior or communication patterns",
+        "Increased absenteeism or low engagement during briefings",
+        "Leakage of sensitive information through informal channels"
+      ],
+      "countermeasures": [
+        "Implementing regular morale checks and feedback loops",
+        "Training on secure communication practices and OPSEC protocols",
+        "Promoting a culture of accountability for information sharing"
+      ],
+      "confidence": "medium",
+      "sources": [
+        "open-source reporting / think-tank assessments"
+      ],
+      "id": "info-ops-02"
+    }
+  ]
+}
