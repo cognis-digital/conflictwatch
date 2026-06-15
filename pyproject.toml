@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "conflictwatch"
-version = "0.2.0"
+version = "0.3.0"
 description = "Open-source conflict monitoring & situational awareness — ingest ACLED/GDELT/UCDP + OSINT feeds, analyze hotspots/trends, and a sourced 'what's working' lessons KB"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -15,7 +15,7 @@ keywords = ["osint", "conflict", "acled", "gdelt", "ucdp", "situational-awarenes
             "electronic-warfare", "geoint", "sigint", "imint", "isr", "scraping", "rss",
             "satellite", "adsb", "ais", "sdr", "early-warning", "humanitarian", "displacement",
             "ukraine", "mena", "sahel", "indo-pacific", "think-tank", "stix", "threat-intel",
-            "security", "intelligence", "tccc", "pnt", "gps-jamming"]
+            "security", "intelligence", "tccc", "pnt", "gps-jamming", "counter-uas", "c-uas", "anti-drone", "fiber-optic-drone", "acoustic-detection", "shahed", "interceptor-drone"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Information Technology",

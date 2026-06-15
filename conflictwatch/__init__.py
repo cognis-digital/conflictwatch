@@ -9,10 +9,10 @@ lessons - not targeting, not weapon guidance. See README "Scope & ethics".
 """
 
 TOOL_NAME = "conflictwatch"
-TOOL_VERSION = "0.2.0"
+TOOL_VERSION = "0.3.0"
 
 from conflictwatch.events import ConflictEvent, dedupe, normalize  # noqa: E402
-from conflictwatch import analyze, catalog, lessons, scrape, sources  # noqa: E402
+from conflictwatch import analyze, catalog, cuas, lessons, scrape, sources  # noqa: E402
 
-__all__ = ["ConflictEvent", "normalize", "dedupe", "analyze", "catalog", "lessons",
+__all__ = ["ConflictEvent", "normalize", "dedupe", "analyze", "catalog", "cuas", "lessons",
            "scrape", "sources", "TOOL_NAME", "TOOL_VERSION"]

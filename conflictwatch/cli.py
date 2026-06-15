@@ -15,7 +15,7 @@ import json
 import sys
 
 from conflictwatch import (TOOL_NAME, TOOL_VERSION, analyze, catalog,
-                           lessons as lessons_kb, scrape, sources)
+                           cuas as cuas_kb, lessons as lessons_kb, scrape, sources)
 from conflictwatch.events import dedupe
 
 
@@ -65,6 +65,14 @@ def main(argv=None) -> int:
     rp.add_argument("input")
     rp.add_argument("--window", type=int, default=7)
 
+    cu = sub.add_parser("cuas", help="query the counter-UAS / anti-drone knowledge base (2024-2026)")
+    cu.add_argument("--topic", default=None, choices=list(cuas_kb.TOPICS))
+    cu.add_argument("--keyword", default=None)
+    cu.add_argument("--confidence", default=None, choices=["high", "medium", "low"])
+    cu.add_argument("--systems", action="store_true", help="list every named system/program")
+    cu.add_argument("--stats", action="store_true")
+    cu.add_argument("--format", choices=["table", "json"], default="table")
+
     so = sub.add_parser("sources", help="query the 290+ open conflict/OSINT source catalog")
     so.add_argument("--category", default=None)
     so.add_argument("--type", default=None)
@@ -99,6 +107,22 @@ def main(argv=None) -> int:
                 print(json.dumps(items, indent=2))
             else:
                 _print_lessons(items)
+        elif args.cmd == "cuas":
+            if args.stats:
+                print(json.dumps(cuas_kb.stats(), indent=2)); return 0
+            if args.systems:
+                print("\n".join(cuas_kb.systems())); return 0
+            items = cuas_kb.query(topic=args.topic, keyword=args.keyword, confidence=args.confidence)
+            if args.format == "json":
+                print(json.dumps(items, indent=2))
+            else:
+                print(f"{len(items)} counter-UAS entr(ies):")
+                for e in items:
+                    print(f"\n[{e['topic']}] {e['title']}  ({e.get('date','')}, {e.get('confidence','')})")
+                    if e.get("summary"):
+                        print(f"  {e['summary'][:200]}")
+                    if e.get("countermeasures"):
+                        print("  defense: " + "; ".join(e["countermeasures"][:2])[:200])
         elif args.cmd == "sources":
             if args.stats:
                 print(json.dumps(catalog.stats(), indent=2)); return 0

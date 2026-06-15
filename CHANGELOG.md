@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.3.0] — 2026-06-15
+
+The "counter-UAS" release — a large, sourced anti-drone knowledge base.
+
+### Added
+- **Counter-UAS / anti-drone knowledge base** (`conflictwatch/data/counter_uas.json` +
+  `cuas.py` + [COUNTER_UAS.md](COUNTER_UAS.md)): **111 entries across 10 topics** —
+  fiber-optic FPV drones, acoustic detection (Sky Fortress/Zvook), RF & radar, electronic
+  warfare/jamming, interceptor drones, counter-Shahed, layered C-UAS doctrine, optical/IR &
+  AI autonomy, Western/NATO systems, and economics/adaptation. Each entry has key facts,
+  named systems, **defensive** countermeasures, a date, a confidence rating, and sources
+  (**335 unique sources** from RUSI/CSIS/ISW/The War Zone/Forbes/Defense News/Atlantic
+  Council/Militarnyi/…). Gathered via large parallel OSINT research on the Russia-Ukraine
+  war, 2024-2026.
+- **`conflictwatch cuas`** CLI — filter by `--topic`/`--keyword`/`--confidence`, list every
+  named `--systems`, or print `--stats`.
+- Tests (8) incl. a **scope guard** asserting the KB is detection/defense awareness only —
+  no build/guidance/targeting content (31 total).
+
 ## [0.2.0] — 2026-06-15
 
 The "source catalog" release — a big, curated, queryable source base and a glossary.

@@ -1,0 +1,2139 @@
+# Counter-UAS knowledge base (2024-2026)
+
+**111 sourced entries** on counter-drone / anti-drone — detection, defeat, doctrine, and the threat trends driving them — distilled from open reporting on the Russia-Ukraine war. Gathered via parallel OSINT research; every entry carries sources, a date, and a confidence rating.
+
+> **Scope:** descriptive open-source intelligence and **force-protection awareness** — how drones are detected and defeated, and how the threat is evolving. It is **not** a weapon-build, drone-guidance, or targeting guide. Corroborate before acting.
+
+## Contents
+
+- [Fiber-optic FPV drones (jam-immune) & countermeasures](#fiber-optic-drones) (11)
+- [Acoustic detection networks](#acoustic-detection) (11)
+- [RF & radar detection](#rf-radar-detection) (11)
+- [Electronic warfare / jamming](#ew-jamming) (11)
+- [Interceptor drones (drone-on-drone)](#interceptor-drones) (10)
+- [Counter-Shahed / one-way-attack defense](#counter-shahed) (12)
+- [Layered C-UAS architecture & doctrine](#layered-cuas) (11)
+- [Optical/IR detection & AI autonomy](#optical-ai) (11)
+- [Western / NATO C-UAS systems](#western-cuas) (11)
+- [Economics & the adaptation cycle](#economics-adaptation) (12)
+
+
+<a name="fiber-optic-drones"></a>
+## Fiber-optic FPV drones (jam-immune) & countermeasures
+
+### What fiber-optic FPV drones are and why they matter  ·  _2025_ · confidence: high
+
+Fiber-optic FPV drones replace the radio control link of a conventional first-person-view drone with a hair-thin glass fiber that unspools from a reel as the drone flies. Because no radio signal is broadcast, the drone is effectively immune to electronic-warfare jamming and is invisible to RF direction-finding, and it can transmit clean high-resolution video even inside trenches, forests, tunnels and urban canyons where radio fails. This has reshaped the Russia-Ukraine front since late 2024 by reopening 'jam-safe' approach routes that EW had previously protected.
+
+**Key facts**
+- The control link is a single thin optical fiber that pays out from a spool on the drone; there is no radio emission, so RF jammers and detectors cannot affect or locate it (Wikipedia 'Fiber optic drone'; Atlantic Council, 2025).
+- Fiber gives clear, lag-resistant high-definition video even in forests, trenches, tunnels and dense urban cover where radio links degrade or fail (Atlantic Council; GIS Reports, 2025).
+- Key tradeoffs versus RF FPVs: added weight of the spool and electro-optical module, range capped by spool length, and limited maneuverability because the fiber must not be over-bent or snapped (ResearchGate review; dronelife.com, 2025).
+- By 2025 a fiber pilot reported it 'feels as if the Russians reduced analogue comms by ~60% and almost completely switched to fibre optics' on parts of the front (Ukrainska Pravda, Jan 2026).
+
+**Systems / programs:** Generic fiber-optic FPV (quadcopter + payout spool + electro-optical converter); Spool lengths commonly 5-10 km in 2024, scaling to 20+ km in 2025
+
+**Defensive countermeasures**
+- Recognize that EW/jamming is ineffective against fiber drones; defenses must shift to physical detection and kinetic/obstacle defeat.
+- Visual and acoustic detection rather than RF direction-finding, since the drone has no emissions to triangulate.
+
+**Sources:** Atlantic Council (ukrainealert) · GIS Reports Online · Wikipedia: Fiber optic drone · Ukrainska Pravda · dronelife.com · ResearchGate: Fiber-Optic Drone Technologies review
+
+### Knyaz Vandal Novgorodsky and the Russian fiber breakthrough  ·  _2024_ · confidence: high
+
+Russia's most-cited early fiber-optic FPV is the Knyaz Vandal Novgorodsky ('Prince Vandal of Novgorod'), developed by the Ushkuynik Scientific and Production Center in Veliky Novgorod. First seen in combat in the Kursk direction in mid-to-late 2024, it demonstrated reliable jam-proof strikes and pushed both sides into rapid fiber adoption. By 2025 Russia had moved the design into mass production across multiple regions.
+
+**Key facts**
+- The Knyaz Vandal Novgorodsky was developed by the Ushkuynik center in Veliky Novgorod and deployed in Russia's Kursk region around August 2024 to counter Ukraine's incursion (Kyiv Post; Bulgarian Military, 2025).
+- Russia announced mass production of the Knyaz Vandal across three regions starting around 26 April 2025 (Bulgarian Military, Apr 2025).
+- Early Russian elite fiber units reportedly carried spools up to ~10.8 km and claimed effective ranges of 20-30 km with high hit rates around 20 km (industry/press reporting aggregated 2025).
+- The Vandal helped trigger a front-wide shift to fiber, with Ukraine racing to field its own equivalents through 2025 (Kyiv Independent, 2025).
+
+**Systems / programs:** Knyaz Vandal Novgorodsky / 'Prince Vandal of Novgorod' (Ushkuynik NPC); Molniya strike drones retrofitted with fiber cable; KVS-series fiber strike drone
+
+**Defensive countermeasures**
+- Treat fiber drones as RF-silent: physical obstacles (nets/tunnels), optical/acoustic detection, and kinetic interception are the relevant defenses.
+- Strike the originating drone operator/launch teams and spool logistics rather than trying to jam the link.
+
+**Sources:** Kyiv Post · Bulgarian Military · Kyiv Independent · Interesting Engineering
+
+### Rubicon: Russia's elite fiber-optic drone unit  ·  _2025_ · confidence: high
+
+The Center for Advanced Unmanned Technologies 'Rubicon' was formed in August 2024 on orders of Defence Minister Andrei Belousov and became Russia's flagship fiber-optic drone formation. Rubicon specializes in hunting Ukrainian logistics and counter-drone targets deep behind the contact line, first proving itself by helping sever Ukrainian supply routes in Kursk. It is widely credited with the 'kill zone' that strangled Ukrainian movement around Pokrovsk in 2025.
+
+**Key facts**
+- Rubicon was created in August 2024 by order of Defence Minister Belousov and grew to roughly 5,000 personnel (Wikipedia; RFE/RL, 2025).
+- Analyses of its 2025 strike statistics show Rubicon prioritizes suppressing Ukrainian drones and frontline logistics over hitting infantry/artillery; by November 2025 it had reportedly conducted 10,000+ strikes (Jamestown; RFE/RL; CNN, 2025).
+- Rubicon detachments were tasked with engaging targets more than 10 km beyond the front line, and Russian forces created a 15-20 km 'kill zone' around Pokrovsk/Myrnohrad that crippled Ukrainian resupply (Euromaidan Press; Militarnyi, 2025).
+- Ukraine struck a Rubicon base near Pokrovsk in November 2025, but reporting said it came too late to relieve the city (Euromaidan Press, Nov 2025).
+
+**Systems / programs:** Center for Advanced Unmanned Technologies 'Rubicon'; Mixed fiber-optic and RF FPVs plus surveillance drones for hunt-kill logistics interdiction
+
+**Defensive countermeasures**
+- Disperse logistics: night moves, smaller packets, alternate/forest routes, ground robotic (UGV) resupply to reduce exposure in the kill zone.
+- Locate and strike drone-operator nests and relay points, since the threat is operator-and-spool-bound rather than RF-emitting.
+- Layered road protection (nets/tunnels) along the most-targeted supply arteries.
+
+**Sources:** Jamestown Foundation · RFE/RL · CNN · Euromaidan Press · Militarnyi · Wikipedia: Center for Advanced Unmanned Technologies Rubicon
+
+### Ukraine's fiber-optic drone production and named systems  ·  _2025_ · confidence: high
+
+After initially trailing Russia, Ukraine scaled fiber-optic FPV production rapidly through 2025 via the Brave1 defense-tech cluster and dozens of private manufacturers. Domestic teams pushed spool lengths and ranges upward while overall FPV output exploded into the millions. Several Ukrainian Brave1 drones and interceptors were named after artists killed under Soviet repression.
+
+**Key facts**
+- By early 2025 Ukraine had around 15 companies making fiber-optic drones under Brave1, with capacity described as thousands of units per month; later reporting cited 25+ engineering teams on the technology (TS2; Brave1, 2025).
+- Monthly FPV production rose from ~20,000 (2024) to ~200,000 (2025); Ukraine produced ~2.2 million UAVs in 2024 (1.5M+ FPVs) and projected 4.5M+ in 2025 (Army Recognition; official estimates, 2025).
+- Ukraine tested fiber drones with ranges up to ~40 km; BeeTA showed a 10-inch frame with a 20 km reel (Yahoo/Ukrainska Pravda; Taifun, 2025).
+- Spool cost fell from ~$2,500 to ~$500 as Chinese factories scaled output supplying both sides (TS2; press, 2025).
+- By March 2026 Ukrainian fiber FPVs were being built to switch to radio control automatically if the cable snaps (DroneXL, Mar 2026).
+
+**Systems / programs:** Brave1 defense-tech cluster; Vyriy Drone, BattleBorn, Dronarium, WARMAKS, Smart Electronics Group, 3DTech; BeeTA (20 km reel, 10-inch frame); Brave1 drones/interceptors named for repressed Ukrainian artists
+
+**Defensive countermeasures**
+- Note: this entry is about production; the defensive relevance is that symmetric fiber proliferation means both sides need physical and detection-based defenses, not EW.
+- Auto-failover-to-radio designs mean defenders cannot assume a fiber drone is permanently RF-silent.
+
+**Sources:** Brave1 (brave1.gov.ua) · Army Recognition · TS2.tech · Taifun.army · Ukrainska Pravda / Yahoo News · DroneXL
+
+### Inherent weaknesses of fiber-tethered drones  ·  _2025_ · confidence: high
+
+The fiber tether that makes these drones jam-proof also imposes hard physical limits that defenders can exploit. The cable constrains maneuver, caps range, adds weight, and can snag or self-entangle, and a discarded fiber strand leaves a visible trail. Understanding these limits is the basis for most non-EW countermeasures.
+
+**Key facts**
+- Maneuver is limited by the fiber's bend radius and tension; tight turns, aerobatics, and flight through heavy foliage can snap the fiber (dronelife; M2 Optics, 2025).
+- The cable can snag on vegetation, power lines, or rubble, and a drone's own propellers can strike its trailing cable (self-entanglement) (ResearchGate review, 2025).
+- Range is physically bounded by spool capacity; reliable performance degrades beyond ~20 km as cables break under stress, even though 40-50 km reels exist (National Interest; CEPA, 2025-2026).
+- The drone must carry the spool (up to several kilograms for long ranges) plus an electro-optical conversion module, cutting payload/endurance (ResearchGate; dronelife, 2025).
+- Spent fiber litters the battlefield, creating a visible signature and a navigation/snag hazard (AOL/Business Insider; press, 2025).
+
+**Systems / programs:** Generic fiber FPV airframe + payout spool + EO converter
+
+**Defensive countermeasures**
+- Use terrain and clutter offensively against the link: power lines, dense canopy, urban edges and narrow gaps where the fiber is likely to snag or break.
+- Force the drone into tight maneuvers (cover, sharp angles, fast direction changes) that stress the fiber to its breaking point.
+- Spot and follow the trailing fiber/light strand visually to locate inbound drones and back-track toward the operator.
+
+**Sources:** ResearchGate: Fiber-Optic Drone Technologies review · dronelife.com · M2 Optics · National Interest · CEPA · Business Insider / AOL
+
+### Anti-drone nets and netted road tunnels  ·  _2025_ · confidence: high
+
+Because fiber drones cannot be jammed, the most widespread defensive response in 2025 has been purely physical: nets. Both sides drape mesh over vehicles and string netted 'tunnels' over kilometers of frequently targeted roads so that a diving FPV catches its propellers in the mesh before reaching the target. These are imperfect but have measurably protected logistics arteries.
+
+**Key facts**
+- Ukraine and Russia both cover heavily used routes with anti-drone netting; the mesh snags the drone and its small propellers as it homes in (Euromaidan Press; United24, 2025).
+- Zaporizhzhia built netted road tunnels to shield civilians and supply routes, with an initial test segment ~6.4 km and reported as effective (Euromaidan Press, Sep 2025).
+- A ~2 km net tunnel was reported near Chasiv Yar (Donetsk) in February 2025 (press, 2025).
+- Russia erected a mesh-net 'tunnel' more than a mile long to counter Ukrainian FPVs (The War Zone, 2025).
+- Netting is effective but gaps remain: pilots find unprotected stretches and ambush vehicles where coverage is incomplete (AOL/Business Insider, 2025).
+
+**Systems / programs:** Overhead-and-side road net 'tunnels' (Zaporizhzhia ~6.4 km; Chasiv Yar ~2 km; Russian >1-mile mesh tunnel); Vehicle-mounted cope/net cages and slat armor
+
+**Defensive countermeasures**
+- String overhead and side netting to form anti-drone tunnels over the most-targeted supply roads and chokepoints.
+- Fit vehicles with net cages / cope cages so a diving FPV fouls its props before striking the hull.
+- Continuously close coverage gaps and combine netting with route variation, since determined pilots probe for openings.
+
+**Sources:** The War Zone (TWZ) · Euromaidan Press · United24 Media · Business Insider / AOL · European Security & Defence
+
+### Net guns and physical close-in defeat  ·  _2025_ · confidence: high
+
+For drones that get close, soldiers in Ukraine increasingly carry handheld net guns that fire an expanding net to entangle an incoming FPV's rotors. Alongside last-resort shotguns, these address the fact that jammers do nothing against a fiber link. They are explicitly described as last-resort tools for when a drone is already near.
+
+**Key facts**
+- Ukrainian troops use net guns that launch nets expanding to roughly 3.5-4 meters to entangle incoming FPV drones (United24 Media, 2025).
+- Net guns are described as a 'last-resort' weapon for when a drone is already very close (United24 Media, 2025).
+- Shotguns and physical barriers remain a baseline close-in defense because EW is useless against the fiber link (RFE/RL; United24, 2025).
+- An autonomous net-launching turret for intercepting FPVs was also reported in development in Ukraine (NextGen Defense, 2025).
+
+**Systems / programs:** Handheld net guns (3.5-4 m net spread); Autonomous net-turret prototype (Ukraine); Combat shotguns with anti-drone shot
+
+**Defensive countermeasures**
+- Issue handheld net guns to frontline and logistics crews as a last-ditch entanglement defense.
+- Pair shotguns/anti-drone shot with spotters for terminal-phase defeat.
+- Develop fixed/autonomous net launchers to cover static high-value points.
+
+**Sources:** United24 Media · RFE/RL · NextGen Defense
+
+### Acoustic and optical detection without RF  ·  _2025_ · confidence: high
+
+Since fiber drones emit no radio signal, detection must rely on what they cannot hide: the sound of their motors and their visual/thermal signature. Ukraine fields large low-cost acoustic sensor networks and AI optical systems that build an air picture and cue interception. These sensor nets are the front end of the non-EW kill chain against unjammable drones.
+
+**Key facts**
+- Ukraine operates low-cost acoustic detection networks - Sky Fortress, Zvook, and FENEK - using thousands of microphones fused into a national air picture (US Army; United24, 2025).
+- Sky Fortress alone reportedly detects on the order of ~20% of aerial targets by acoustics, integrated into the wider picture (United24, 2025).
+- Bullfrog and similar systems add AI optical/visual tracking to complement acoustic cues (Warrior Maven, 2025).
+- Because fiber drones are RF-silent, acoustic + optical detection (not RF direction-finding) is the primary way to find them (US Army; press, 2025).
+
+**Systems / programs:** Sky Fortress (acoustic sensor network); Zvook (acoustic detection); FENEK (acoustic detection); Bullfrog (AI optical/visual)
+
+**Defensive countermeasures**
+- Deploy dense, cheap acoustic sensor grids to hear motor signatures of RF-silent drones and cue defenses.
+- Add AI electro-optical/IR cameras to detect and track the visual/thermal signature, then hand off to interceptors or gunners.
+- Fuse acoustic + optical feeds into a shared air picture to compensate for the absence of any RF emission to triangulate.
+
+**Sources:** U.S. Army (army.mil) · United24 Media · Warrior Maven
+
+### Interceptor drones and AI gun turrets  ·  _2025_ · confidence: high
+
+Kinetic interception is the leading active defeat method against drones immune to jamming. Ukraine pairs early-warning radar/acoustic cues with fast interceptor drones and autonomous AI-aimed gun turrets that can engage at machine-speed. These approaches target the drone physically rather than its control link.
+
+**Key facts**
+- Ukraine's 'Magyar Birds' brigade fields mobile radars for early warning, then launches interceptor drones to bring down incoming FPVs (United24/RFE-RL, 2025).
+- Sky Sentinel, an autonomous AI-controlled air-defense turret with a heavy machine gun and 360-degree rotation (~$150,000/unit), reportedly downed six Shahed-136s in early testing (UAS Vision; National Interest, 2025).
+- Countering fiber-optic drones became the central theme of NATO's 2025 Innovation Challenge, with Ukrainian and US entrants on the podium (United24, 2025).
+- In the US 'Operation Clear Horizon' (2025) exercise, fiber-optic and LTE drones were flown against counter-drone defenses to study the threat, with pilots in Colorado striking targets in Florida (Warrior Maven, 2025).
+
+**Systems / programs:** Sky Sentinel (autonomous AI .50-cal/HMG turret); Interceptor drones cued by mobile radar ('Magyar Birds'); C2 'kill chain' stacks linking sensors to effectors
+
+**Defensive countermeasures**
+- Use radar/acoustic/optical early warning to cue fast interceptor drones for air-to-air physical kills.
+- Deploy AI-aimed autonomous gun turrets to engage RF-silent drones at machine speed at fixed sites.
+- Build a fused sensor-to-shooter C2 stack so detection of a non-emitting drone rapidly triggers a kinetic response.
+
+**Sources:** UAS Vision · National Interest · United24 Media · RFE/RL · Warrior Maven
+
+### Fiber supply chains as a strategic vulnerability  ·  _2026_ · confidence: medium
+
+Optical fiber and precision payout spools are a critical chokepoint for both sides, making the supply chain itself a defensive target. Ukrainian strikes knocked out Russia's only domestic fiber plant, and surging demand plus competition with civilian AI-data-center fiber consumption drove prices sharply higher into 2026. Disrupting fiber/spool supply directly throttles the unjammable-drone threat.
+
+**Key facts**
+- Russia's only optical-fiber plant, 'Optical Fiber Systems' in Saransk (~4 million km/year capacity), was reported out of operation from around May 2025 after Ukrainian drone strikes (United24, 2025-2026).
+- Russia's share of global optical-fiber consumption reportedly jumped to ~10.5% in 2025, up from ~1% before the surge (GIS Reports / press, 2025-2026).
+- Chinese suppliers raised optical-fiber prices roughly 2.5-4x amid demand from both warring sides (Interesting Engineering / press, 2026).
+- Ukrainian fiber spool prices were reported to jump more than eightfold as AI data-center demand squeezed the drone fiber supply (DroneXL, May 2026).
+
+**Systems / programs:** Optical Fiber Systems plant, Saransk (Russia); Imported Chinese optical fiber and payout spools; Western/Ukrainian spool makers (e.g., Ondas/Apeiro NDAA-compliant spools)
+
+**Defensive countermeasures**
+- Target fiber/spool production and import logistics to constrain the adversary's unjammable-drone output (deep-strike and interdiction).
+- Secure and diversify one's own fiber/spool supply against single-point dependencies and civilian-market price shocks.
+- Monitor fiber-price and supply signals as an indicator of likely fiber-drone tempo on the front.
+
+**Sources:** United24 Media · GIS Reports Online · DroneXL · Interesting Engineering · Ondas/Apeiro (Stock Titan)
+
+### 2026 trends: longer reach, hybrid links, deep kill zones  ·  _2026_ · confidence: medium
+
+Into 2026, fiber drones are extending reach toward 40-50 km, adopting hybrid fiber-plus-radio failover, and being used to project 15-30 km deep 'kill zones' over roads far behind the line. Defenders are responding with layered physical/detection defenses and a shift toward ground robotic logistics. The consensus is that fiber drones changed tactics and logistics significantly without by themselves being decisive.
+
+**Key facts**
+- Both sides are reportedly fielding fiber drones toward 50 km, though reliable performance still degrades past ~20 km as cables snap (National Interest; CEPA, 2026).
+- Ukrainian fiber FPVs began auto-switching to radio control when the cable snaps, a hybrid-link adaptation (DroneXL, Mar 2026).
+- Fiber-optic FPVs threatened roads 25-30 km behind the line and reached into cities far behind the front (The War Zone, 2025-2026).
+- In Russia's 'Drone Line' concept one echelon was allocated ~560 UAS/day including ~111 fiber-optic FPVs, illustrating fiber's institutionalized role (FPRI, Apr 2026).
+- Analysts assess drones (including fiber) transformed warfare's character but have not by themselves been decisive in outcomes (GIS Reports, 2026).
+
+**Systems / programs:** Long-range fiber FPVs (40-50 km class); Hybrid fiber-plus-RF failover FPVs (Ukraine); Russian 'Drone Line' echeloned UAS allocation including fiber FPVs
+
+**Defensive countermeasures**
+- Extend layered defenses (nets, detection, interceptors) deeper into the rear as fiber range grows.
+- Shift exposed resupply to night moves, dispersed packets, and unmanned ground vehicles to survive 15-30 km kill zones.
+- Plan for hybrid links: defenders cannot assume a fiber drone stays RF-silent if its cable breaks.
+
+**Sources:** National Interest · CEPA · The War Zone (TWZ) · FPRI · GIS Reports Online · DroneXL
+
+
+<a name="acoustic-detection"></a>
+## Acoustic detection networks
+
+### Why acoustic sensing matters: the jamming-immune drone problem  ·  _2026-06-15_ · confidence: high
+
+Fiber-optic-controlled and fully autonomous drones emit no radio-frequency signal, making them invisible to RF detectors and immune to electronic warfare jamming. Acoustic detection sidesteps this entirely by listening for the engine/propeller noise every powered drone produces, giving Ukraine a passive early-warning layer that works where radar and RF sensing fail. Because the sensor only listens, it emits nothing and cannot itself be jammed or located by enemy EW.
+
+**Key facts**
+- Fiber-optic drones use a physical spooled cable for control/video, so they are immune to RF jamming and interception and produce no RF emissions to detect (Atlantic Council, 2025; Wikipedia 'Fiber optic drone', 2025).
+- Fiber-optic drones are reported to be LOUDER than equivalent non-tethered drones because the propellers must generate extra thrust to carry the cable-spool payload, an acoustic vulnerability (Euromaidan Press / Forbes, Jan 2025).
+- NATO flagged fiber-optic FPV drones as an unsolved detection challenge through 2025 (Journal of Electromagnetic Dominance, May 2025).
+- Ukraine turned to acoustic networks after Russian strikes degraded radar infrastructure early in the 2022 invasion, seeking a low-cost, resilient detection layer (multiple, 2024-2026).
+- Shahed-136 one-way attack drones are noisy, propeller-driven aircraft whose sound is a recognized weakness exploited by acoustic systems (United24 Media, 2025).
+
+**Systems / programs:** Conceptual basis underpinning Sky Fortress, Zvook, FENEK, ARes and Kara Dag detectors in Ukraine; relevant to detecting fiber-optic FPVs and autonomous/INS-guided drones that defeat RF and jamming-based defenses.
+
+**Defensive countermeasures**
+- Acoustic cues provide passive, EW-proof early warning that is fused with radar/EO to cue interceptors and mobile fire groups; pairs with infrared-laser sweeps and IR cameras that detect fiber-cable reflections for fiber-optic drones (descriptive/defensive).
+
+**Sources:** https://www.atlanticcouncil.org/blogs/ukrainealert/fiber-optics-drones-have-emerged-as-critical-kit-for-both-russia-and-ukraine/ · https://euromaidanpress.com/2025/01/25/forbes-ukraine-russia-hunt-invisible-fiber-optic-drones-with-microphones-infrared-lasers/ · https://euromaidanpress.com/2025/02/03/russias-fiber-optic-drones-dodge-jamming-but-ukraine-hunts-them-with-infrared-and-sound/ · https://www.jedonline.com/2025/05/15/nato-seeks-solutions-for-fiber-optic-fpv-drones/ · https://en.wikipedia.org/wiki/Fiber_optic_drone
+
+### Sky Fortress: Ukraine's nationwide acoustic sensor network  ·  _2026-06-15_ · confidence: high
+
+Sky Fortress is Ukraine's flagship distributed acoustic early-warning network, born from a garage prototype of a cellphone and microphone on a six-foot pole and scaled to a nationwide grid by 2026. Tens of thousands of cheap pole-mounted microphones detect the characteristic sound of Shahed drones, cruise missiles and other low-flyers, then feed AI-classified tracks to defenders. Its radical low cost and resilience made it a model copied by Russia and adopted by NATO partners.
+
+**Key facts**
+- Deployed from 2022; created by two Ukrainian engineers who mounted a cellphone and microphone on a ~6-foot pole (Wikipedia; United24 Media, 2024-2026).
+- Network reported at 8,000 sensors in earlier coverage, growing to ~14,000 active sensors, and described as 'more than 10,000' as of 2026 (United24 Media; militarnyi, 2024-2026).
+- Cost per sensor unit roughly $400-$1,000, so the whole network costs less than two Patriot interceptor missiles (United24 Media, 2024-2026).
+- Tracks an estimated ~20% of all targets entering Ukrainian airspace using acoustic data alone (Ukrainska Pravda / DroneXL, 2025).
+- In one documented raid, sensors detected all 84 incoming drones, enabling 80 interceptions, a ~95% success rate (reported 2025-2026).
+- Demonstrated privately to representatives of 11 NATO countries at a European training ground (reported circa 2023).
+- As of April 2026, deployed by the U.S. military at Prince Sultan Air Base, Saudi Arabia, against Shahed drones (Wikipedia, 2026).
+
+**Systems / programs:** Sky Fortress (Ukraine) - ~10,000-14,000 pole-mounted acoustic sensors; ~$400-$1,000/unit; part of the Brave1 defense-tech pool; AI/ML classification of drone and cruise-missile signatures.
+
+**Defensive countermeasures**
+- Acoustic detections are fused with radar data and pushed to mobile firing teams equipped with tablets and anti-aircraft guns, enabling cued intercept of Shaheds; serves as a national early-warning tripwire ahead of higher-cost air defenses (defensive).
+
+**Sources:** https://en.wikipedia.org/wiki/Sky_Fortress_(drone_defense_system) · https://united24media.com/war-in-ukraine/sky-fortress-ukraines-acoustic-detection-system-that-tracks-drones-cheap-and-fast-9451 · https://www.pravda.com.ua/eng/news/2025/07/29/7523876/ · https://www.eurasiantimes.com/us-military-might-impressed-by-ukraines-acousti/ · https://militarnyi.com/en/news/nato-shows-interest-in-ukrainian-acoustic-detection-networks-for-air-defense/
+
+### Zvook: AI acoustic sensors on cell towers for drones and missiles  ·  _2026-06-15_ · confidence: high
+
+Zvook is a Ukrainian acoustic detection network that mounts highly sensitive microphone units on existing radio/cell towers and uses AI to classify and triangulate threats. It covers roughly 5% of Ukrainian territory and is part of the Brave1 pool, complementing the larger Sky Fortress grid. Zvook also fielded a small tactical sensor specifically aimed at jamming-immune FPV and fiber-optic drones.
+
+**Key facts**
+- Zvook covers about 5% of Ukrainian territory and continues to grow; publicly demonstrated via the Brave1 platform (Defense Express; militarnyi, 2024-2025).
+- Reported detection ranges of about 5 km for drones and about 7 km for cruise missiles, using multi-microphone triangulation (militarnyi / inews, 2025).
+- AI algorithms localize threats to roughly 5-degree accuracy while filtering urban and weather background noise; developers moved toward a four-microphone setup for better triangulation (2025).
+- Sensors mount on radio towers and are fully passive, operating where radar cannot safely emit (2025).
+- Zvook released the NW0 'tactical acoustic sensor' to detect FPV drones, including fiber-optic types, by flight sound (militarnyi, 2025).
+- NW0 declared detection range 150-450 m with 360-degree coverage and round-the-clock AI analysis; recommended sensor spacing of 400-600 m to build a reliable net (militarnyi, 2025).
+- When Russia altered Shahed acoustic signatures, accuracy reportedly degraded only ~3%, corrected by model retraining (2025-2026).
+
+**Systems / programs:** Zvook (Ukraine) - tower-mounted AI acoustic sensors, ~5% national coverage, ~5 km drone / ~7 km cruise-missile range, ~5-degree bearing accuracy; Zvook NW0 tactical FPV/fiber-optic sensor, 150-450 m, 360-degree, AI-filtered.
+
+**Defensive countermeasures**
+- Real-time threat tracks feed the Zvook UI, an interactive map monitoring dozens to hundreds of sensors, for cueing air-defense and mobile response; optional audible local alerting; designed to extend coverage into RF-denied/radar-gap zones (defensive).
+
+**Sources:** https://www.unmannedairspace.info/counter-uas-systems-and-policies/ukrainian-start-up-zvook-launches-new-low-cost-c-uas-acoustic-sensor/ · https://militarnyi.com/en/news/ukraine-develops-acoustic-detector-for-fpv-drones/ · https://en.defence-ua.com/weapon_and_tech/the_russians_begin_deploying_acoustic_detection_system_for_uavs_and_cruise_missiles_copying_ukrainian_solution_again-11820.html · https://sashaantonov.substack.com/p/the-sound-of-innovation-how-ukraine
+
+### FENEK: passive 7-microphone array for mobile fire groups  ·  _2026-06-15_ · confidence: high
+
+FENEK is a Ukrainian acoustic detection system built around a compact seven-microphone array on a single mast, designed specifically to support mobile anti-aircraft fire teams and protect critical infrastructure. By measuring tiny time differences between microphones (TDOA), it computes the bearing to a sound source with about two-degree accuracy, all while emitting nothing and remaining invisible to enemy EW. It is explicitly tuned to detect fiber-optic FPV drones that defeat RF sensing.
+
+**Key facts**
+- FENEK detects Shahed-type drones at up to 3 km and cruise missiles at up to 5 km via passive TDOA triangulation (militarnyi; defence-blog, 2025).
+- Array uses seven microphones: six in a circle across two rows plus a seventh at the central top, measuring time differences to derive vertical and horizontal angles (militarnyi, 2025).
+- A single mast-mounted unit can give a mobile fire group azimuth accuracy of about two degrees (militarnyi, 2025).
+- System is fully passive - it only 'listens' - so it is invisible to electronic warfare and effective against fiber-optic-controlled drones that emit no RF (militarnyi, 2025).
+- Data goes to an automated operator workstation that requires no internet connection; can run autonomously or as part of larger control systems (militarnyi, 2025).
+- Underwent field testing in Ukraine in 2025; later updated to add cruise-missile detection (thedefender.media; defence-blog, 2025).
+
+**Systems / programs:** FENEK (Ukraine) - 7-microphone passive mast unit; ~3 km drone / ~5 km cruise-missile detection; ~2-degree azimuth accuracy; offline operator workstation.
+
+**Defensive countermeasures**
+- Provides mobile AA fire teams a precise bearing to cue machine-gun and anti-aircraft-gun engagement of Shaheds and FPVs, including jamming-immune fiber-optic types; integrates into larger C2 systems for layered defense of critical infrastructure (defensive).
+
+**Sources:** https://militarnyi.com/en/news/ukraine-develops-fenek-acoustic-drone-detection-system/ · https://militarnyi.com/en/news/ukrainian-fenek-detecting-cruise-missiles/ · https://defence-blog.com/ukraines-fenek-acoustic-system-now-detects-cruise-missiles/ · https://thedefender.media/en/2025/07/fenek-sensor-undergo-tests/ · https://fenek.com.ua/en/
+
+### ARes: phased acoustic array with beamforming for targeting  ·  _2026-06-15_ · confidence: high
+
+ARes is a Ukrainian acoustic target-designation system that goes beyond detection to provide weapon-aiming guidance, using a phased microphone array and beamforming to scan the sky with millions of sound 'beams.' It detects FPV drones at a few hundred meters and Shaheds out to about 5 km, in fog and cloud and at any time of day, while remaining completely passive. An onboard webcam overlays an acoustic projection so operators can pinpoint a threat's direction visually.
+
+**Key facts**
+- ARes designates FPV targets at 200-300 m and Shahed drones up to 5 km, confirmed in field tests (militarnyi; United24 Media; thedefensepost, Dec 2025).
+- Uses phased microphone array technology and beamforming, scanning the environment with millions of sound 'beams' to isolate loud and quiet sources individually (militarnyi, 2025).
+- Operates in cloud cover and fog, day or night, and is completely passive (emits no signals), with 360-degree hemispheric coverage scanning all directions simultaneously (militarnyi, 2025).
+- Equipped with a webcam that overlays an acoustic projection to help operators pinpoint exact target direction (militarnyi, 2025).
+- Provides not just detection but accurate weapon guidance to help operators engage targets - i.e., acoustic targeting (militarnyi; defensemirror, 2025).
+
+**Systems / programs:** ARes (Ukraine) - phased acoustic array + beamforming; FPV 200-300 m, Shahed up to 5 km; passive, all-weather, 360-degree; webcam acoustic-overlay aiming.
+
+**Defensive countermeasures**
+- Acoustic targeting cues mobile fire groups' machine guns and anti-aircraft installations onto approaching Shaheds and FPVs up to 5 km out, improving probability of kill, especially against fiber-optic drones invisible to RF (defensive).
+
+**Sources:** https://militarnyi.com/en/news/ukraine-developed-the-ares-acoustic-system-for-targeting-drones-and-missiles/ · https://united24media.com/latest-news/ares-reveals-cutting-edge-acoustic-system-for-tracking-drones-and-missiles-in-real-time-14008 · https://thedefensepost.com/2025/12/09/ukraine-acoustic-targeting-shaheds/ · https://defensemirror.com/news/40656
+
+### How acoustic detection works: passive arrays, TDOA and AI classification  ·  _2026-06-15_ · confidence: high
+
+Acoustic drone detection relies on arrays of sensitive microphones that capture the distinctive broadband noise of drone propellers and motors, then use time-difference-of-arrival (TDOA) triangulation across microphones to compute bearing and, with multiple nodes, location. Machine-learning classifiers trained on large sound datasets distinguish drone and missile signatures from background noise and identify threat type. Because the sensors only listen, the entire approach is passive, low-cost, and immune to jamming.
+
+**Key facts**
+- Detection exploits the characteristic noise of drone propeller blades and motors via microphone arrays (Euromaidan Press; drone-warfare.com, 2025).
+- Direction/location is derived by TDOA - measuring tiny differences in when each microphone hears the sound - as used by FENEK (7 mics) and Zvook (moving to 4 mics) (militarnyi, 2025).
+- AI/ML models are trained on large sound datasets to classify threats with high accuracy and to filter urban/weather noise (United24 Media; militarnyi, 2025).
+- Systems are passive (emit nothing), making them invisible to EW and unable to be jammed, and they work in fog, cloud and darkness where EO/IR struggles (militarnyi; United24 Media, 2025).
+- Peer-reviewed 2025-2026 work confirms acoustic localization with MEMS microphones plus ML, and that radar-acoustic fusion (e.g., transformer encoders) improves robustness (Acta Acustica, 2026; arXiv 2507.19785, 2025).
+
+**Systems / programs:** Common technical layer across Sky Fortress, Zvook, FENEK, ARes and Kara Dag detectors; MEMS/condenser microphone arrays + TDOA + ML classifiers; bearing accuracy ranging ~2-5 degrees depending on system.
+
+**Defensive countermeasures**
+- Produces classified threat tracks (type, bearing, sometimes range) that are fused with radar/EO and relayed to interceptors, EW cueing, and mobile gun teams; passive operation lets it fill radar gaps and detect RF-silent/fiber-optic drones (defensive).
+
+**Sources:** https://drone-warfare.com/counter-uas/acoustic-detection/ · https://acta-acustica.edpsciences.org/articles/aacus/full_html/2026/01/aacus250134/aacus250134.html · https://arxiv.org/pdf/2507.19785 · https://militarnyi.com/en/news/ukraine-develops-fenek-acoustic-drone-detection-system/
+
+### Cueing the kill chain: from microphone to mobile fire group  ·  _2026-06-15_ · confidence: high
+
+Acoustic detection's operational value in Ukraine is as the front end of a cheap, distributed kill chain against Shaheds and FPVs. Sensors pass classified tracks into a fused common picture and onto tablets carried by mobile fire groups, who engage with machine guns and anti-aircraft guns, or hand the cue to interceptor drones and EW. This lets Ukraine reserve scarce, expensive interceptor missiles for the threats that get through.
+
+**Key facts**
+- Sky Fortress acoustic data is fused with radar and sent to mobile firing teams equipped with tablets and anti-aircraft guns (United24 Media, 2024-2026).
+- ARes and FENEK explicitly aim to cue mobile fire groups, detecting Shaheds out to ~5 km to enable machine-gun / AA engagement (militarnyi, 2025).
+- A single FENEK mast gives a fire group ~2-degree azimuth, enough to slew guns onto a target (militarnyi, 2025).
+- Acoustic nets give early warning that lets Ukraine avoid spending multimillion-dollar interceptors on cheap drones, a core cost-asymmetry rationale (CEPA; United24 Media, 2025).
+- Ukraine's Brave1 'Dataroom' initiative shares acoustic-detection data and tech with allied partners (DroneXL / United24 Media, 2025-2026).
+
+**Systems / programs:** Integration layer linking Sky Fortress / Zvook / FENEK / ARes sensor feeds to mobile fire groups (tablets + AA guns/machine guns), interceptor drones, and EW cueing; coordinated via Brave1 ecosystem.
+
+**Defensive countermeasures**
+- Acoustic early warning and bearing data cue gun-based mobile groups and interceptors as a low-cost first tier, preserving expensive SAM interceptors for leakers; entirely a defensive air-defense cueing function.
+
+**Sources:** https://united24media.com/war-in-ukraine/sky-fortress-ukraines-acoustic-detection-system-that-tracks-drones-cheap-and-fast-9451 · https://militarnyi.com/en/news/ukraine-developed-the-ares-acoustic-system-for-targeting-drones-and-missiles/ · https://cepa.org/article/drone-defenses-buyers-flock-to-the-ukrainian-bazaar/ · https://unn.ua/en/news/us-interested-in-ukrainian-acoustic-drone-detection-systems-to-combat-shaheds
+
+### Acoustic interceptors: hunting FPVs by sound (SECTR / Talon Avionics)  ·  _2026-06-15_ · confidence: medium
+
+Battlefield lessons from Ukraine spawned a new class of counter-drone interceptor that uses acoustics not just to detect but to home onto hostile FPVs in flight. The U.S. firm Talon Avionics' SECTR carries a microphone array with beamforming on the interceptor itself to find and engage drones by their motor sound, fused with radar in a layered architecture. It illustrates how acoustic cueing extends into terminal guidance against jamming-immune FPVs.
+
+**Key facts**
+- SECTR is made by Talon Avionics (Boise, Idaho), an autonomous platform that detects, tracks and neutralizes drones using AI acoustic sensing fused with conventional radar (United24 Media; militarnyi; defence-blog, 2026).
+- Ground acoustic sensing identifies drone motor signatures at up to ~100 m; the interceptor drone carries a 16-microphone array with a beamforming algorithm to find hostile drones by sound (United24 Media, 2026).
+- Stated performance: engages targets within ~1 second with a hit probability of 95%+ against drones up to 1 kg (United24 Media; dronexl, 2026).
+- The SECTR-IK-02 station is a modular launcher holding up to 100 interceptor tubes, run by a single operator, mountable on a vehicle or fixed site for convoy/FOB/infrastructure defense (United24 Media, 2026).
+- Concept is a direct response to RF-silent / fiber-optic FPV drones that defeat jamming and RF detection (multiple, 2026).
+
+**Systems / programs:** SECTR / SECTR-IK-02 (Talon Avionics, USA) - 16-mic beamforming interceptor + radar fusion; acoustic detect ~100 m; up to 100 interceptors per station; 95%+ hit probability vs sub-1 kg drones.
+
+**Defensive countermeasures**
+- Acoustic sensing here cues and terminally guides physical interceptor drones onto hostile FPVs, a defensive point-defense layer for convoys, forward bases and critical infrastructure against jamming-immune drones.
+
+**Sources:** https://united24media.com/latest-news/us-firm-unveils-ai-powered-sectr-drone-interceptor-that-hunts-fpvs-by-sound-17837 · https://militarnyi.com/en/news/u-s-develops-acoustic-guided-system-to-intercept-fpv-drones/ · https://defence-blog.com/u-s-firm-develops-interceptor-drone-with-ai-sound-targeting/ · https://dronexl.co/2026/04/14/us-startup-fpv-drones-sound/
+
+### Detecting fiber-optic FPVs: acoustic plus infrared sweeps  ·  _2026-06-15_ · confidence: high
+
+Fiber-optic FPV drones became a defining 2024-2026 threat because their control cable makes them immune to jamming and RF detection. Ukrainian developers including Kara Dag responded with combined acoustic and visual approaches, pairing directional microphones with diffuse infrared lasers and IR cameras that catch reflections off the trailing fiber cable. The added cable payload also makes these drones acoustically louder, which acoustic sensors exploit.
+
+**Key facts**
+- Fiber-optic drones are immune to EW jamming/interception because they carry a physical control/video cable instead of using RF (Atlantic Council; Photonics Online, 2025).
+- Ukrainian company Kara Dag proposed using acoustic and visual signatures with advanced processing to detect tethered fiber-optic drones (Euromaidan Press / Forbes, Jan 2025).
+- Detection setups combine directional microphones with diffuse infrared lasers sweeping the sky while IR cameras capture cable reflections (Euromaidan Press, Feb 2025).
+- Fiber-optic drones are louder than comparable untethered drones due to extra thrust for the cable spool, aiding acoustic detection (Forbes/Euromaidan, 2025).
+- Zvook NW0 and FENEK are explicitly marketed for detecting fiber-optic FPVs that EW cannot see (militarnyi, 2025).
+- NATO publicly sought solutions for fiber-optic FPV drones in 2025, underscoring the threat's seriousness (JED, May 2025).
+
+**Systems / programs:** Kara Dag acoustic+visual detector (Ukraine); Zvook NW0 and FENEK tactical acoustic sensors applied to fiber-optic FPVs; hybrid acoustic + IR-laser + IR-camera detection rigs.
+
+**Defensive countermeasures**
+- Multi-modal passive detection (sound + IR) provides the only practical cueing against jamming-immune fiber-optic drones, feeding mobile gun teams and interceptors; purely detective/defensive.
+
+**Sources:** https://euromaidanpress.com/2025/01/25/forbes-ukraine-russia-hunt-invisible-fiber-optic-drones-with-microphones-infrared-lasers/ · https://euromaidanpress.com/2025/02/03/russias-fiber-optic-drones-dodge-jamming-but-ukraine-hunts-them-with-infrared-and-sound/ · https://www.atlanticcouncil.org/blogs/ukrainealert/fiber-optics-drones-have-emerged-as-critical-kit-for-both-russia-and-ukraine/ · https://www.photonicsonline.com/doc/russia-s-turns-to-fiber-optic-drones-ukraine-looks-for-response-0001
+
+### Limitations and the case for sensor fusion  ·  _2026-06-15_ · confidence: high
+
+Acoustic detection is cheap, passive and jamming-proof, but it has real constraints: short range relative to radar, sensitivity to wind and ambient noise, angular ambiguity for overhead targets, and difficulty resolving swarms. Consequently it is deployed as one layer in a fused, multi-sensor architecture combining radar, EO/IR and RF, where each modality covers the others' blind spots. Research and field practice in 2025-2026 converge on fusion as the most reliable counter-UAS approach.
+
+**Key facts**
+- Most acoustic systems are effective only to roughly 300-500 m under favorable conditions (some short-range units far less), versus kilometers for radar (Airsight; arXiv reviews, 2025-2026).
+- Wind, ambient temperature and broadband noise can mask drone signatures and degrade performance (AIP Advances review, 2025; Airsight).
+- Systems can show angular ambiguity when a target is directly overhead and may struggle to resolve multiple simultaneous threats / swarms (academic reviews, 2025).
+- Note the tension with reported long ranges (Sky Fortress/Zvook/FENEK cite multi-km Shahed/cruise-missile detection): big propeller drones and cruise missiles are far louder than small FPVs, so range depends heavily on target type and array size.
+- Peer-reviewed 2025-2026 work shows radar+acoustic fusion (e.g., transformer encoders) yields more robust detection/classification than any single sensor (arXiv 2507.19785, 2025).
+- Operationally, acoustic nets are valued for catching threats radar misses and for filling gaps where radar cannot safely emit, not as standalone defenses (drone-warfare.com; Zvook coverage, 2025).
+
+**Systems / programs:** Applies across Sky Fortress, Zvook, FENEK, ARes; deployed alongside radar, EO/IR cameras and RF sensors in layered C-UAS; spacing (e.g., Zvook 400-600 m) chosen to overcome short per-sensor range.
+
+**Defensive countermeasures**
+- Fusion of acoustic with radar/EO/RF reduces false positives and widens the threat envelope, then cues interceptors, EW and mobile fire groups; acoustic's role is the passive, low-cost, jamming-proof gap-filler in a defensive stack.
+
+**Sources:** https://www.airsight.com/blog/drone-detection-technology-sensor-modalities · https://pubs.aip.org/aip/adv/article/15/12/120701/3373725/From-classical-approaches-to-recent-advancements-A · https://arxiv.org/pdf/2507.19785 · https://drone-warfare.com/counter-uas/acoustic-detection/
+
+### Export and adoption: Lithuania, the U.S., NATO and Russian copies  ·  _2026-06-15_ · confidence: high
+
+Ukraine's combat-proven acoustic networks rapidly became an export and alliance asset in 2025-2026. Lithuania committed to field Sky Fortress from 2026, the U.S. deployed it abroad and studied Ukrainian systems against Shaheds, and NATO showed broad interest after demonstrations. Russia, in turn, began copying the approach by mounting microphones on its own mobile-comms towers, the clearest sign the model works.
+
+**Key facts**
+- Lithuania announced (July 2025, via Armed Forces Commander Gen. Raimundas Vaiksnoras) it will deploy Sky Fortress from 2026, with testing in late 2025, prompted partly by a July 28, 2025 Shahed-type incursion (Ukrainska Pravda; militarnyi; DroneXL, 2025).
+- As of April 2026 the U.S. military deployed Sky Fortress at Prince Sultan Air Base, Saudi Arabia, against Shahed drones (Wikipedia, 2026).
+- U.S. officials expressed strong interest in Ukrainian acoustic systems to counter Shaheds; U.S. firms (Talon Avionics) built acoustic interceptors directly on Ukraine lessons (UNN; United24 Media, 2025-2026).
+- NATO showed interest in Ukrainian acoustic detection networks for air defense, with reporting of additional next-generation sensor funding tied to demonstrations (militarnyi; armyrecognition, 2025).
+- Russia began deploying its own acoustic drone/cruise-missile detection by installing microphones on mobile comms towers - described as copying the Ukrainian Zvook solution (Defense Express, 2025).
+- Both Sky Fortress and Zvook are part of Ukraine's Brave1 defense-tech pool, with a 'Dataroom' initiative to share acoustic data with allies (CEPA; DroneXL, 2025-2026).
+
+**Systems / programs:** Sky Fortress (Lithuania 2026, U.S. Prince Sultan AB 2026); Zvook (Brave1, copied by Russia on comms towers); SECTR (U.S., Ukraine-derived); NATO sensor procurement interest.
+
+**Defensive countermeasures**
+- Allied adoption extends Ukraine's passive, jamming-proof early-warning layer to NATO airspace defense and base/infrastructure protection, cueing local fire units and interceptors; defensive air-defense proliferation.
+
+**Sources:** https://www.pravda.com.ua/eng/news/2025/07/29/7523876/ · https://militarnyi.com/en/news/lithuania-to-deploy-ukrainian-acoustic-drone-detection-system/ · https://en.defence-ua.com/weapon_and_tech/the_russians_begin_deploying_acoustic_detection_system_for_uavs_and_cruise_missiles_copying_ukrainian_solution_again-11820.html · https://en.wikipedia.org/wiki/Sky_Fortress_(drone_defense_system) · https://cepa.org/article/drone-defenses-buyers-flock-to-the-ukrainian-bazaar/
+
+
+<a name="rf-radar-detection"></a>
+## RF & radar detection
+
+### Passive RF direction-finding as the cheap front line of drone detection  ·  _2026-06-15_ · confidence: high
+
+Passive RF sensors detect a drone's control, telemetry and video downlinks without emitting, preserving the sensor's own stealth in a contested electromagnetic environment. In Ukraine these range from handheld detectors issued to frontline troops up to multi-antenna arrays that classify, geolocate and triangulate emitters. The approach is low-cost and emission-free, but it fails entirely against drones that radiate nothing (fiber-optic) or only briefly (autonomous).
+
+**Key facts**
+- Passive RF DF finds drones by their command links, telemetry and video downlinks rather than by emitting, so the sensor itself stays hidden (Military Embedded Systems, 2024-2025).
+- Typical RF-based C-UAS arrays use four omnidirectional antennas for detection plus direction finding, with detection out to roughly 1.5 km (Military Embedded Systems, 2024).
+- Ukraine has made handheld RF detectors standard frontline kit, creating a distributed early-warning network at the individual-soldier level (Drone Warfare / aerodefense, 2024-2025).
+- RF detection only works while the drone is actually transmitting; control links, telemetry and video are the 'clear sign' a drone is present, so an RF-silent drone is invisible to it (Military Embedded Systems, 2024).
+
+**Systems / programs:** Handheld frontline RF detectors (Ukraine, distributed use); Four-antenna omnidirectional RF DF arrays (generic Western C-UAS pattern); Brave1-pooled Ukrainian RF/passive sensors feeding the Delta ecosystem
+
+**Defensive countermeasures**
+- Detection cue: any radiated control/telemetry/video link gives an angle of arrival; multiple spaced sensors triangulate both drone and operator location. Limit: fiber-optic drones emit nothing and autonomous drones emit only briefly, so RF DF must be layered with radar, EO/IR and acoustic to cover the RF-silent gap.
+
+**Sources:** https://militaryembedded.com/unmanned/counter-uas/practical-cuas-from-rf-detection-to-multiband-jamming · https://militaryembedded.com/unmanned/counter-uas/defeating-uas-threats-requires-complex-and-flexible-solutions · https://drone-warfare.com/counter-uas/rf-detection/ · https://blog.aerodefense.tech/counter-uas
+
+### DJI AeroScope: a passive RF tool both sides used, with shrinking coverage  ·  _2026-06-15_ · confidence: high
+
+AeroScope decodes the proprietary telemetry that DJI consumer drones broadcast, revealing drone position, model and even the operator's GPS location, and both Ukrainian and Russian forces deployed it. Its value has eroded because it only sees certain DJI models and nothing else, and DJI added encryption in 2024 that locked older receivers out. It is a useful illustration of how protocol-specific passive RF detection degrades as adversaries change radios or go RF-silent.
+
+**Key facts**
+- AeroScope picks up DJI telemetry broadcasts including the operator's GPS location, and both Ukrainian and Russian forces use it (aerodefense / DroneDJ, 2024-2025).
+- AeroScope struggles to recognize pre-2014 drones and does not detect all DJI models, and misses non-DJI drones entirely (securityanddefence.pl, 2024).
+- In 2024 DJI introduced a new encryption mechanism plus a USB dongle hardware upgrade, creating blind spots for non-DJI RF systems incompatible with the dongles (aerodefense, 2024).
+- Ukraine fields one of the densest EW environments on Earth, with jammers, GPS spoofers and directional RF interceptors across the front and rear (aerodefense, 2024-2025).
+
+**Systems / programs:** DJI AeroScope (passive RF receiver, with 2024 encryption dongle); Handheld directional RF interceptors (Ukrainian frontline)
+
+**Defensive countermeasures**
+- Detection cue: decode the drone's own telemetry broadcast to get model, position and operator location. Limit: protocol-specific; defeated by encryption, non-DJI radios, or RF silence. Layered radar/acoustic sensing is needed because any single-protocol RF tool can be obsoleted by a firmware or hardware change.
+
+**Sources:** https://blog.aerodefense.tech/dji-aeroscope · https://dronedj.com/guides/dji-aeroscope/ · https://securityanddefence.pl/Analysis-of-the-power-of-drones-and-limitations-of-the-anti-drone-solutions-on-the,208347,0,2.html
+
+### Pulse-Doppler AESA radar for small drones: Leonardo RPS-42 and the Merops kill chain  ·  _2026-06-15_ · confidence: high
+
+S-band pulse-Doppler AESA radars detect small drones by their Doppler return and feed tracks into interceptor systems. The Leonardo RPS-42 has been paired with the Ukrainian-developed Merops counter-drone system, which began combat testing in Ukraine by mid-2024 and was credited with more than 1,000 Shahed-type intercepts by November 2025. Merops is radar-agnostic, ingesting tracks from multiple radar types, which is why the US Army later deployed it against Iranian Shaheds in the Middle East.
+
+**Key facts**
+- Leonardo RPS-42 is an S-band pulse-Doppler AESA radar; each ~50 lb panel covers a 90x90 degree arc and four panels give 360 degrees (Inside Unmanned Systems, 2025-2026).
+- RPS-42 reaches 18-24 miles against larger targets but drops to about three miles against small Group 1 drones (Inside Unmanned Systems, 2025-2026).
+- Merops began combat testing in Ukraine by mid-2024 and was credited with 1,000+ Shahed-type intercepts by November 2025 (militarnyi / Inside Unmanned Systems / The Defense Post, 2025).
+- Merops is radar-agnostic and can ingest tracks from multiple radar types, demonstrated linked to RPS-42 during NATO demonstrations in Poland (Inside Unmanned Systems / Army Recognition, 2025-2026).
+
+**Systems / programs:** Leonardo RPS-42 (S-band pulse-Doppler AESA); Merops counter-drone interceptor system (Ukraine-tested); L-MADIS (US Marine Corps C-UAS that uses RPS-42)
+
+**Defensive countermeasures**
+- Detection cue: Doppler return from rotor/airframe motion, then handoff to a kinetic interceptor. Limit: small-drone range collapses to a few km, so radar must be cued by RF or acoustic for wide-area warning; range and clutter rejection are the binding constraints against Group 1 UAS.
+
+**Sources:** https://insideunmannedsystems.com/pentagon-deploys-merops-drone-interceptor-system-to-counter-iranian-shahed-threat/ · https://militarnyi.com/en/news/mysterious-merops-intercepted-more-than-a-thousand-shahed-like-drones-over-ukraine/ · https://militarnyi.com/en/news/merops-counter-drone-system-gains-integration-with-various-radars/ · https://thedefensepost.com/2025/11/20/us-counter-drone-nato/
+
+### Lightweight FMCW tactical radar at scale: Robin Radar IRIS in Ukraine  ·  _2026-06-15_ · confidence: high
+
+Robin Radar's IRIS is a lightweight Frequency-Modulated Continuous-Wave (FMCW) radar built for small-drone detection, with more than 200 units deployed in Ukraine under Dutch and European funding. Ukraine integrates IRIS directly into its kill chain to detect and engage small and medium drones and to track Russian long-range one-way attack munitions. A 2025 Long Range Mode upgrade extended its reach against Shahed-class loitering munitions.
+
+**Key facts**
+- IRIS is a ~29 kg FMCW radar using a pair of 12 W radars, detecting small drones at 5-12 km (Overt Defense / EDR Magazine, DSEI 2025).
+- More than 200 IRIS systems are deployed in Ukraine, including on-the-move (OTM) mounted variants, funded by the Dutch government and European partners (Overt Defense, 2025).
+- Ukraine integrates IRIS into its kill chain to detect/engage small (1.5 kg) and medium (3 kg) drones and to track Russian long-range one-way munitions (Overt Defense, 2025).
+- In September 2025 Robin Radar unveiled an IRIS Long Range Mode (LRM) module extending detection/classification of Shahed loitering munitions and fixed-wing drones at 5-12 km (The Defense Post / EDR Magazine, 2025).
+
+**Systems / programs:** Robin Radar IRIS (FMCW, 200+ in Ukraine); IRIS Long Range Mode (LRM) module (2025); Robin Radar ELVIRA (first purpose-built drone-detection radar, lineage)
+
+**Defensive countermeasures**
+- Detection cue: FMCW micro-Doppler classifies small rotorcraft vs. fixed-wing and feeds the kill chain. Limit: radar reveals its own position by emitting (the Russian Valdai radar was found and destroyed), and tiny low-flying FPVs in clutter remain hard; pairing with passive RF and EO/IR mitigates emitter vulnerability and clutter.
+
+**Sources:** https://www.overtdefense.com/2025/09/16/dsei-2025-robin-radars-iris-small-but-capable/ · https://www.edrmagazine.eu/dsei-2025-robin-radar-systems-deploys-the-lrm-module-for-iris-radar · https://thedefensepost.com/2025/09/22/robin-iris-radar/ · https://www.robinradar.com/drone-detection-radar-system
+
+### Compact 3D air-defense radars with drone-tracker modes: Saab Giraffe 1X and HENSOLDT SPEXER  ·  _2026-06-15_ · confidence: medium
+
+Established air-defense radar makers added dedicated small-drone modes to compact 3D radars to meet C-UAS demand surging out of Ukraine. Saab's Giraffe 1X advertises a drone-tracker function and won a US Army order in 2025 explicitly tied to air-defense and counter-UAS demand. HENSOLDT's SPEXER 2000 3D MkIII uses X-band pulse-Doppler with automatic target classification and is being integrated into Rheinmetall air-defense products.
+
+**Key facts**
+- Saab Giraffe 1X is a compact 3D radar with a dedicated 'drone tracker function' to detect/track mini-UAVs while cutting false alarms (Defence Matters, 2025).
+- In October 2025 Saab disclosed a ~$46 million US Army order for Giraffe 1X explicitly tied to air-defense and counter-UAS demand (Defence Matters, 2025).
+- HENSOLDT SPEXER 2000 3D MkIII uses X-band pulse-Doppler with automatic target classification to separate small aerial targets from background (Defence Matters, 2025).
+- In December 2025 Reuters reported SPEXER radars would be supplied for Rheinmetall air-defense applications including Skyranger 30 and a laser drone-defense system (Defence Matters / Reuters, 2025).
+
+**Systems / programs:** Saab Giraffe 1X (compact 3D, drone-tracker mode); HENSOLDT SPEXER 2000 3D MkIII (X-band pulse-Doppler); Rheinmetall Skyranger 30 (SPEXER integration)
+
+**Defensive countermeasures**
+- Detection cue: automatic target classification distinguishes small drones from birds/clutter and cues guns or lasers. Limit: classification confidence degrades for very small/slow FPVs and in heavy clutter, and the radar emits; layering with EO/IR confirmation and passive RF reduces false alarms and emitter exposure.
+
+**Sources:** https://defencematters.eu/tactical-radars-for-small-drones-the-valdai-claim-and-western-alternatives/
+
+### Electronically-scanned and holographic 'staring' radar: Echodyne and Aveillant  ·  _2026-06-15_ · confidence: high
+
+Solid-state electronically-scanned and 'staring/holographic' radars trade mechanical scanning for continuous wide-area coverage, well suited to tracking many small drones at once. Echodyne's EchoShield/EchoGuard are being procured for US Air Force small-drone defense and demonstrated cueing laser effectors, while Aveillant's holographic Gamekeeper continuously illuminates the whole sky and distinguishes drones from birds. These represent the high-end sensing layer that pairs with cheaper acoustic/RF nets used in Ukraine.
+
+**Key facts**
+- Echodyne EchoShield detects very small UAS at ~1.5 km, small quadcopters ~3 km, larger multirotors ~5.3 km, and small fixed-wing up to ~7.9 km (Military Aerospace / Echodyne, 2025).
+- EchoShield was selected for Trust Automation's SUADS under a $490M USAF IDIQ contract awarded August 2025 (The Defense Post / UAS Magazine, 2025-2026).
+- At DiDEX 2025 Echodyne EchoGuard integrated with Aurelius Systems' laser effector to detect/classify/track threats in urban environments at low SWaP (Echodyne, 2025).
+- Aveillant's holographic Gamekeeper radar continuously stares at the whole sky, detecting small UAS, distinguishing them from birds, and tracking in 3D out to 5 km (Defence IQ / Unmanned Airspace).
+
+**Systems / programs:** Echodyne EchoShield and EchoGuard (electronically scanned, MESA); Aveillant Gamekeeper (holographic 'staring' radar); Trust Automation SUADS (USAF small-UAS air defense)
+
+**Defensive countermeasures**
+- Detection cue: persistent staring/ESA coverage tracks many small drones simultaneously and bird-filters via micro-Doppler, then cues lasers or guns. Limit: small-target range is still only a few km and the radar emits; effective only when fused with passive RF for wide-area cueing and EO/IR for ID.
+
+**Sources:** https://www.militaryaerospace.com/uncrewed/article/55376487/echodyne-provides-radar-for-air-force-suads-counter-drone-architecture · https://thedefensepost.com/2026/04/21/echodyne-radar-counter-drone/ · https://www.defenceiq.com/defence-technology/articles/holographic-radar-to-counter-uas-attacks · https://www.echodyne.com/resources/news-events/counter-uas-technology-2025/
+
+### Acoustic sensing fills the RF gap: Ukraine's Sky Fortress and Zvook  ·  _2026-06-15_ · confidence: high
+
+Acoustic detection listens for the distinctive engine/rotor signature of drones and missiles, working even when targets are RF-silent. Ukraine's Sky Fortress fielded roughly 14,000 cheap acoustic sensors that reportedly account for a large share of airspace tracking, while Zvook covers a smaller footprint; both are Brave1-pooled. Machine learning keeps accuracy high even when adversaries try to alter drone sound signatures, making acoustics a critical complement to radar and RF.
+
+**Key facts**
+- Sky Fortress fields ~14,000 acoustic sensors across Ukraine; Zvook covers about 5% of Ukrainian territory (United24 / DroneXL, 2025).
+- Each Sky Fortress unit costs roughly $400-$1000 and listens for the signatures of cruise missiles, long-range missiles and UAVs including the Shahed's 'lawnmower hum' (United24 / Medium, 2025).
+- Sky Fortress reportedly tracks an estimated ~20% of all targets entering Ukrainian airspace using acoustic data alone (United24, 2025).
+- ML training kept accuracy high even when Russia altered drone noise signatures, with only a ~3% accuracy decline; Lithuania plans to roll out the system in 2026 (United24 / DroneXL, 2025).
+
+**Systems / programs:** Sky Fortress (Ukraine, ~14,000 acoustic sensors); Zvook (Ukraine acoustic network, Brave1); Lithuania Sky Fortress rollout (2026)
+
+**Defensive countermeasures**
+- Detection cue: rotor/engine acoustic signature, classified by ML, works against RF-silent fiber-optic and autonomous drones that radar/RF miss. Limit: short detection range, degraded by wind/ambient noise and quieter electric FPVs; valuable mainly as a dense low-cost early-warning layer feeding radar/EO-IR for confirmation.
+
+**Sources:** https://united24media.com/war-in-ukraine/sky-fortress-ukraines-acoustic-detection-system-that-tracks-drones-cheap-and-fast-9451 · https://dronexl.co/2025/07/29/lithuania-sky-fortress-ukrainian-drone/ · https://www.army.mil/article/292099/listening_to_the_sky_acoustic_drone_detection_systems_ukraine_emerging_technologies · https://drosonic.com/blog/ukraine-drone-defense-lessons.html
+
+### Multi-sensor fusion: SAPIENT, Ukraine's Delta, and the layered detection umbrella  ·  _2026-06-15_ · confidence: high
+
+No single sensor covers all drone threats, so modern C-UAS fuses radar, RF, EO/IR and acoustic into one picture that filters false targets and confirms real ones. Western forces standardize on the SAPIENT open architecture of sensor, fusion, effector and decision nodes, while Ukraine's combat-validated Delta ecosystem networks thousands of cheap sensors. Fusion is specifically the recommended answer to RF-silent fiber-optic drones, combining acoustic, radar and optical cues that each cover the others' blind spots.
+
+**Key facts**
+- C-UAS uses four sensor categories layered together: radar, EO/IR, acoustic and RF (Drone Warfare, 2024-2025).
+- SAPIENT defines hierarchical Sensor Edge Nodes (radar/RF/EO-IR/acoustic), Effector Nodes, Fusion Nodes and Decision Nodes; Ukraine's combat-validated Delta ecosystem is the parallel non-Western standard (Drone Warfare / antidronesuav, 2025).
+- The recommended solution to RF-silent fiber-optic drones is fusing acoustic, radar and optical sensors so they compensate for each other (Tom Cooper Substack / Drone Warfare, 2025).
+- Ukrainian combat networks of 14,000+ sensors at under $500/unit demonstrate mass fusion deployment, with reported high interception rates (multi-sensor fusion analysis, 2025).
+
+**Systems / programs:** SAPIENT open C-UAS architecture (Western standard); Ukraine Delta ecosystem (combat-validated fusion network); Brave1 sensor pool (Sky Fortress / Zvook / RF feeds)
+
+**Defensive countermeasures**
+- Detection cue: cross-correlate tracks so an acoustic or EO/IR hit confirms what RF or radar misses, slashing false alarms. Limit: fusion adds latency and data-link/bandwidth load and still cannot create a cue from a target that emits, sounds and reflects too little; coverage degrades where sensor density is thin.
+
+**Sources:** https://drone-warfare.com/counter-uas/multi-sensor-fusion/ · https://xxtomcooperxx.substack.com/p/sensor-fusion-detecting-rf-silent · https://www.antidronesuav.com/how-to-design-a-multi-sensor-fusion-counter-drone-system-rf-radar-eo-ir/ · https://www.quickset.com/how-counter-uas-systems-work/
+
+### The fiber-optic blind spot: drones that emit no RF at all  ·  _2026-06-15_ · confidence: high
+
+Fiber-optic FPV drones trail a thin spooled optical cable, carrying video and commands with zero radio emission, so they defeat both RF jamming and RF detection. Mass-produced by both sides since late 2024, they have become a central C-UAS problem because passive RF and AeroScope-style tools simply cannot see them. Detection falls back on acoustic, EO/IR (cables glint in infrared) and radar, but these are the very modalities that struggle most against small, low-flying drones.
+
+**Key facts**
+- Fiber-optic drones transmit video and commands over a physical cable, so they are immune to RF jamming and emit no control/telemetry link for RF DF to find (Army.mil / Army Recognition, 2025).
+- Russia roughly doubled fiber-optic FPV production to more than 50,000 per month by September 2025; both sides use them en masse (Atlantic Council / CSIS / Lowy, 2025).
+- Their onboard electronics emit only 'extremely weak' signals that are very difficult to detect, and physical cable-finding has 'not proven very successful' (US Army, August 2025).
+- Recommended detection falls back on acoustics (they are heavier and louder), IR (cables are visible in IR), and radar for moving spools; countering them is so hard that kinetic interception is often the only effective option, and it was the central theme of NATO's 2025 Innovation Challenge (Army.mil / Army Recognition / globalsecurity, 2025).
+
+**Systems / programs:** Russian and Ukrainian fiber-optic FPV drones (mass-produced); Acoustic nets (Sky Fortress/Zvook) and EO/IR as fallback detection; NATO 2025 Innovation Challenge (focused on fiber-optic counters)
+
+**Defensive countermeasures**
+- Detection cue: none from RF; defenders must use acoustic signature, IR-visible cable glint, or radar return from the moving drone/spool. Limit: this is the primary gap in RF-centric C-UAS; layered acoustic + EO/IR + short-range radar partially covers it, but kinetic interception (guns, nets, interceptor drones) is often the only reliable defeat.
+
+**Sources:** https://www.army.mil/article/287737/fiber_optic_drones_posing_a_significant_c_uas_challenge · https://www.atlanticcouncil.org/blogs/ukrainealert/fiber-optics-drones-have-emerged-as-critical-kit-for-both-russia-and-ukraine/ · https://www.armyrecognition.com/focus-analysis-conflicts/army/conflicts-in-the-world/russia-ukraine-war-2022/electronic-warfare-how-fiber-optic-fpv-drones-are-redefining-the-ukrainian-battlefield · https://www.globalsecurity.org/wmd/library/news/ukraine/2025/03/ukraine-250312-rferl03.htm
+
+### The autonomous blind spot: machine-vision terminal guidance that goes RF-silent  ·  _2026-06-15_ · confidence: medium
+
+Drones using inertial navigation, visual odometry and machine-vision targeting can fly and strike with their radio link cut, removing the emission that RF detection depends on and the signal that jamming attacks. Ukraine has fielded optical-navigation interceptors that lock on visually then sever the radio link, and recovered Shaheds with Nvidia chips and thermal modules for autonomous night targeting. As of 2025 this is real but immature - poor cameras, moving-target difficulty and inconsistent software keep fully autonomous strikes rare.
+
+**Key facts**
+- If the link is jammed, an autonomy-equipped drone continues by visual odometry and machine vision and strikes without any external signal (United24 / GlobalSecurity, 2025).
+- In 2025 Ukraine recovered Shaheds containing Nvidia chipsets and thermal-vision modules enabling autonomous night target lock (UkrainesArmsMonitor / Atlantic Council, 2025).
+- Late-2025 Ukrainian interceptors use optical-navigation edge processing to visually lock onto Russian drones, then cut the radio link entirely so there is no signal to jam or detect (National Interest / UkrainesArmsMonitor, 2025).
+- Machine vision is not yet a game-changer: poor camera quality, difficulty hitting moving targets and inconsistent software keep fully autonomous strikes rare (EUobserver / Homeland Security Newswire, 2025).
+
+**Systems / programs:** Granta GA-10FPV-AI and DoD Solution autonomous targeting modules (Ukraine); Optical-navigation interceptor drones (Ukraine, late 2025); Shahed-type loitering munitions with Nvidia/thermal autonomy modules
+
+**Defensive countermeasures**
+- Detection cue: a brief launch/mid-course RF transmission may still betray the drone before it goes autonomous, and radar/acoustic/EO-IR remain available. Limit: once the link is cut there is nothing for RF to detect or for EW to jam, so defense shifts to radar/acoustic/optical detection plus kinetic interception; current immaturity, not detectability, is the main brake.
+
+**Sources:** https://united24media.com/latest-news/new-ai-guided-drone-system-helps-ukraine-bypass-russian-jamming-14057 · https://nationalinterest.org/feature/the-next-evolution-ukraines-drone-defense · https://ukrainesarmsmonitor.substack.com/p/drone-warfare-in-ukraine-russian · https://euobserver.com/216348/ai-helps-ukrainian-drones-against-russian-signal-jamming-but-fully-autonomous-strikes-remain-rare/
+
+### Drone saturation versus detection economics: the Shahed campaign  ·  _2026-06-15_ · confidence: high
+
+Mass raids stress detection and interception economics even when individual drones are detectable, because the defender must classify and engage hundreds of tracks per night including decoys. Russia scaled Shahed launches from roughly 200 to over 1,000 per week through 2025, forcing Ukraine to prioritize degrading accuracy over guaranteed interception. This drives demand for cheap dense sensor nets (acoustic/RF) feeding a fused picture, since high-end radar alone cannot affordably blanket the airspace.
+
+**Key facts**
+- Russia increased Shahed launches from ~200 per week to more than 1,000 per week by March 2025 (CSIS, 2025).
+- Ukraine increasingly prioritized reducing drone accuracy via EW over direct interception, given the sheer nightly volume of Shaheds (CSIS / Britannica, 2025).
+- Russia mixes decoy drones into raids to exhaust sensors and interceptors, raising the classification burden on detection systems (UkrainesArmsMonitor, 2025).
+- Cheap mass sensor nets (Sky Fortress ~14,000 units at $400-1000 each) exist precisely because high-end radar cannot economically blanket the airspace against saturation (United24 / CSIS, 2025).
+
+**Systems / programs:** Shahed-136 / Geran-2 loitering munitions and decoy variants; Ukrainian layered detection (acoustic nets + radar + RF + EW); Merops/RPS-42 high-end interception layer
+
+**Defensive countermeasures**
+- Detection cue: dense cheap sensors provide volume coverage while high-end radar handles precise tracking for interceptors. Limit: saturation and decoys overwhelm sensor classification and interceptor magazines; the answer is layered, cost-asymmetric sensing plus EW that degrades accuracy when kinetic interception cannot keep up.
+
+**Sources:** https://www.csis.org/analysis/drone-saturation-russias-shahed-campaign · https://ukrainesarmsmonitor.substack.com/p/drone-warfare-in-ukraine-russian · https://www.britannica.com/technology/drone-warfare · https://united24media.com/war-in-ukraine/sky-fortress-ukraines-acoustic-detection-system-that-tracks-drones-cheap-and-fast-9451
+
+
+<a name="ew-jamming"></a>
+## Electronic warfare / jamming
+
+### EW saturation collapsed radio-FPV reliability on the Ukrainian front  ·  _2026-06-15_ · confidence: high
+
+By 2024-2025 the contact line in Ukraine became one of the most electronically contested environments in history, with dense jamming degrading radio-controlled FPV drones to the point that many failed within 1-2 km of the launch point in heavily jammed sectors. FPV operator hit rates that ran 40-60% in favorable 2023 conditions fell to roughly 20-30% or lower in saturated sectors by mid-2024. This collapse of the radio link is the central driver behind the shift to fiber-optic and autonomy-assisted drones.
+
+**Key facts**
+- Ukrainian FPV hit rates dropped from ~40-60% (2023, favorable conditions) to ~20-30% or lower in heavily jammed sectors by mid-2024 (Military Machine, 2025).
+- EW saturation rendered standard radio-controlled FPV drones unreliable beyond ~1-2 km in contested sectors by 2024-2025 (Euromaidan Press, 2025).
+- Russian and Ukrainian forces both rapidly expanded production of EW systems to interfere with GNSS and satellite comms across the theater (GPS World, 2025).
+- GNSS denial became a baseline planning assumption in frontline areas of operation; short-range FPVs frequently omit GNSS entirely (Ukraine War Analytics, 2026).
+- The end of 2024 marked a turning point where conventional EW systems began to be defeated by unjammable fiber-optic FPV drones (ts2.tech / IEEE Spectrum, 2025).
+
+**Systems / programs:** Radio-controlled analog/digital FPV drones (Ukraine + Russia); Russian theater and tactical EW complexes (Krasukha family, Pole-21, Shipovnik-Aero, Borisoglebsk-2)
+
+**Defensive countermeasures**
+- Defensive: dense layered jamming to deny enemy FPV/recon links along the contact line.
+- Adversary adaptation: migration to fiber-optic FPV (no RF emissions), AI terminal guidance for the last 400-500 m, and frequency-agile multi-band radios.
+
+**Sources:** https://militarymachine.com/russia-electronic-warfare-ukraine-drones · https://euromaidanpress.com/2025/06/26/ukraine-jamming-fails-fiber-drones-russia/ · https://www.gpsworld.com/innovation-recent-gps-jamming-in-regions-of-geopolitical-conflict/ · https://ukraine-war-analytics.com/technology/gps-gnss-denial-navigation-alternatives.html · https://ts2.tech/en/drone-warfare-and-developments-in-ukraine-2024-2025/
+
+### The fiber-optic drone: the wired answer to unjammable strike  ·  _2026-06-15_ · confidence: high
+
+Fiber-optic FPV drones trail a hair-thin glass cable that carries both control and video, emitting no RF and leaving nothing for an EW system to detect or jam. First seen in Russian use in late 2024, they reached mass-level fielding in Ukraine by summer 2025 and are now a defining weapon of the war. They deliver a crystal-clear feed to impact and are used to hunt the very EW systems that would otherwise stop radio FPVs.
+
+**Key facts**
+- Fiber-optic FPVs trail roughly 10-20 km of fiber (some reports cite 30+ km strike range) carrying video and control with zero RF emissions (DroneXL, 2025; Atlantic Council, 2025).
+- First seen in Russian use in late 2024; reached mass-level fielding in Ukraine by summer 2025 (New Geopolitics Research Network, 2025).
+- By September 2025 Russia alone was estimated to produce 50,000+ fiber-optic FPV drones per month (defense-industry analysts, 2025).
+- A 10 km fiber spool can weigh ~2.3 kg; cable is ~0.37 mm diameter at ~410 g/km, limiting payload/range/speed (Al Majalla; DroneLife, 2025).
+- Used as a first wave to destroy enemy EW and jamming nodes, since they cannot themselves be jammed (DroneXL, 2025).
+- Cut or entangled cable is the single point of failure; severed fiber means total loss of the drone (DroneLife / M2 Optics, 2025).
+
+**Systems / programs:** Russian fiber-optic FPV (early-2024 origin, e.g. 'Knyaz Vandal' / Prince Vandal of Novgorod family); Ukrainian fiber-optic FPV production (numerous domestic makers, scaled 2025)
+
+**Defensive countermeasures**
+- Counter-fiber tactics: spotting and cutting trailed cable, terrain/foliage that snags spools, and physical netting.
+- Because fiber is immune to RF jamming, the EW response is to attack the launch teams and spool logistics rather than the link itself.
+
+**Sources:** https://dronexl.co/2025/04/23/fiber-optic-drones-warfare-ukraine/ · https://www.atlanticcouncil.org/blogs/ukrainealert/fiber-optics-drones-have-emerged-as-critical-kit-for-both-russia-and-ukraine/ · https://www.newgeopolitics.org/2025/12/28/ukraines-deftech-at-the-end-of-2025-from-drone-mass-to-systems-warfare/ · https://en.majalla.com/node/331233/science-technology/how-fibre-optic-drones-are-reshaping-warfare · https://dronelife.com/2025/07/21/tethered-and-unstoppable-how-fiber-optic-drones-are-rewriting-the-rules-of-battlefield-control/
+
+### The frequency-band arms race: 400 MHz to 5.8 GHz and frequency hopping  ·  _2026-06-15_ · confidence: high
+
+Drone control and video links cluster in identifiable bands - long-range control around 700-1100 MHz, analog/digital video at 2.4 GHz and 5.8 GHz, and increasingly fragmented sub-bands as both sides chase the spectrum. Jammers and radios escalated through 2024 from a single 900 MHz module to seven or more modules as Russian drones spread across 750-1050 MHz and lower. The practical result is that no fixed-band jammer covers the whole threat, pushing both sides toward frequency-hopping (FHSS) and band diversification.
+
+**Key facts**
+- Ukrainian FPVs commonly use 2.4 GHz / 5.8 GHz for analog/digital video; ~400-1100 MHz for control links (Ukrainska Pravda, 2025).
+- By spring 2024 a single 900 MHz module was insufficient as Russian drones spread to 750-1050 MHz; by summer 4-5 modules, by autumn 7+ were needed (Ukrainska Pravda, 2025).
+- Reported Russian band split: ~20% of drones operating in 400-490 MHz and ~30% in 720-1020 MHz (Ukrainska Pravda, 2025).
+- Ukrainian EW-UA systems cover ~400-1100 MHz plus 2.4 and 5.8 GHz (Ukrainska Pravda, 2025).
+- EW-resistant modules use proprietary FHSS algorithms with three control channels that switch when jamming is detected (The Defender, 2026).
+- Drones on standardized signal protocols (analog 2.4/5.8 GHz; control 400-1100 MHz) are the most vulnerable to jamming (Ukrainska Pravda, 2025).
+
+**Systems / programs:** Multi-band FPV control radios (ELRS / proprietary FHSS); Ukrainian 'EW-UA' jammer family; The Swarm EW-resistance module + repeater + Vataha control case
+
+**Defensive countermeasures**
+- Defensive: multi-module, multi-band jammers and frequency scanning to keep pace with hopping radios.
+- Adversary adaptation: FHSS with multiple control channels, band diversification, and migration to fiber/autonomy to exit the RF fight entirely.
+
+**Sources:** https://www.pravda.com.ua/eng/articles/2025/08/08/7525279/ · https://thedefender.media/en/2026/04/the-swarm/ · https://vgi.com.ua/en/drones-vs-electronic-warfare-whos-winning-the-battle-for-the-skies-in-ukraine/
+
+### Russian theater and tactical EW complexes targeting drones and navigation  ·  _2026-06-15_ · confidence: high
+
+Russia fields a layered EW ecosystem from large theater complexes down to squad-level 'trench EW' boxes. Krasukha-class systems degrade radar and navigation at long ranges, Pole-21 builds a GNSS-denial dome over fixed sites, and Shipovnik-Aero can take control of a drone while geolocating its operator. Below these, cheap trench jammers protect small infantry groups from FPV and reconnaissance drones out to short ranges.
+
+**Key facts**
+- Krasukha-4 is cited as operating at ranges up to ~300 km, disrupting radar, navigation, and comms; credited early in the war with degrading Bayraktar TB2 effectiveness (GlobalSecurity, 2023).
+- Pole-21 (fielded ~2016) creates a GNSS/radio-navigation denial dome; Russia claims 60 km range, Ukrainian intelligence assesses 25+ km (National Defense Magazine, 2024).
+- Shipovnik-Aero (~10 km range) can take control of a drone while geolocating the operator to ~1 m accuracy (National Defense Magazine, 2024).
+- Krasukha-4 and Borisoglebsk-2 reportedly jammed/ spoofed GPS to degrade Ukrainian TB2 operations (techrxiv, 2025).
+- 'Trench EW' boxes work to ~10 km and shield small tactical groups from recon and FPV drones (National Defense Magazine, 2024).
+- Ukraine reported destroying 80+ Russian EW systems since the start of the full-scale war (Yahoo/Ukrainian command, 2024).
+
+**Systems / programs:** Krasukha-2/-4; Pole-21; Shipovnik-Aero; Borisoglebsk-2; Squad-level 'trench EW' jammers
+
+**Defensive countermeasures**
+- Defensive (Russian) use is itself a counter-UAS and counter-PGM layer; it also exposes EW nodes to first-wave fiber-optic strike.
+- Ukrainian adaptation: targeting EW nodes with unjammable fiber drones, CRPA antennas, and INS/visual navigation to bypass GNSS denial.
+
+**Sources:** https://www.nationaldefensemagazine.org/articles/2024/3/8/daily-fight-for-ukraine-spectrum-superiority-puts-electronic-warfare-front-center · https://www.globalsecurity.org/wmd/library/news/russia/2023/09/russia-230916-sputnik01.htm · https://www.techrxiv.org/doi/full/10.36227/techrxiv.175203757.71749390/v1 · https://news.yahoo.com/ukrainian-forces-destroy-over-80-065112362.html
+
+### GNSS denial and spoofing on the battlefield  ·  _2026-06-15_ · confidence: high
+
+Intense GPS/GNSS jamming and, increasingly, spoofing has become a baseline condition across the Ukrainian theater, degrading precision-guided munitions, loitering munitions, and any drone that depends on satellite navigation. Both sides assume GNSS will be unavailable in contested zones. The 2025 shift from simply blocking signals to falsifying them (spoofing) is a notable escalation that can drive navigating systems off-course rather than just denying a fix.
+
+**Key facts**
+- GNSS denial is treated as a baseline assumption in frontline areas; short-range FPVs often omit GNSS entirely and rely on operator terrain familiarity (Ukraine War Analytics, 2026).
+- Intense GPS jamming, spoofing, and terrain masking has degraded multiple precision-guided weapons and unmanned systems (GPS World, 2025).
+- In 2025 interference shifted from primarily blocking signals to falsifying (spoofing) them (Spire / Militarnyi, 2025).
+- Controlled Reception Pattern Antennas (CRPAs) are used to filter jamming/spoofing and hold a satellite lock (Ukraine War Analytics, 2026).
+- In 2025 Ukraine recovered AI-enabling Nvidia chipsets and thermal modules from Shahed wreckage, indicating navigation/targeting hardening against GNSS denial (United24 / IEEE Spectrum, 2025).
+
+**Systems / programs:** GNSS jamming/spoofing emitters (theater and tactical); CRPA anti-jam antennas; Inertial navigation + visual/scene-matching navigation on hardened drones; Swarmer GNSS-denied autonomy software
+
+**Defensive countermeasures**
+- Defensive: GNSS jamming/spoofing to deny PGM and drone navigation.
+- Adversary adaptation: CRPA antennas, INS, visual/terrain navigation, fiber links, and AI terminal guidance that does not require GNSS.
+
+**Sources:** https://ukraine-war-analytics.com/technology/gps-gnss-denial-navigation-alternatives.html · https://www.gpsworld.com/innovation-recent-gps-jamming-in-regions-of-geopolitical-conflict/ · https://spire.com/blog/space-reconnaissance/gnss-interference-report-russia/ · https://getswarmer.com/news/how-swarmer-cuts-through-the-noise-in-gnss-denied-environments/
+
+### Control-link and video-link jamming of FPV and recon drones  ·  _2026-06-15_ · confidence: medium
+
+Beyond GNSS, EW directly attacks the two radio links a drone needs: the command/control uplink and the video downlink. Jamming the control link severs piloting; jamming video blinds the operator even if control survives. Because analog video and standardized control protocols sit in predictable bands (2.4/5.8 GHz, 400-1100 MHz), they are the easiest links to break - which is exactly why fiber and onboard autonomy have spread.
+
+**Key facts**
+- Drones on standardized signal protocols (~400-1100 MHz control) and analog 2.4/5.8 GHz video are especially vulnerable to link jamming (Ukrainska Pravda, 2025).
+- Shipovnik-Aero can not only jam but take over a drone's control link while geolocating the operator to ~1 m (National Defense Magazine, 2024).
+- Airborne repeaters lifted by drones extend control/video range and improve radio horizon against ground jamming (The Defender, 2026).
+- The Swarm's 2025 system lets a drone launch via a mast link then switch to an airborne repeater mid-flight for better radio horizon (The Defender, 2026).
+- Last-mile AI keeps a target locked after jamming breaks the video/control link in the final approach (The Defense Post, 2025).
+
+**Systems / programs:** Shipovnik-Aero (link takeover + geolocation); Bukovel-AD (jams data links and GPS); The Swarm airborne repeater + Vataha control case; Airborne signal-repeater drones
+
+**Defensive countermeasures**
+- Defensive: jam/spoof both uplink and downlink; geolocate and strike operators.
+- Adversary adaptation: airborne repeaters, FHSS multi-channel radios, fiber links, and AI terminal lock so the strike completes even after link loss.
+
+**Sources:** https://www.pravda.com.ua/eng/articles/2025/08/08/7525279/ · https://www.nationaldefensemagazine.org/articles/2024/3/8/daily-fight-for-ukraine-spectrum-superiority-puts-electronic-warfare-front-center · https://thedefender.media/en/2026/04/the-swarm/ · https://thedefensepost.com/2025/11/19/ai-upgrade-ukrainian-drones/
+
+### AI terminal guidance and machine vision as the autonomy answer to jamming  ·  _2026-06-15_ · confidence: high
+
+Where fiber tethers a drone physically, AI terminal guidance lets a radio drone finish its mission after the link is jammed. An operator selects a target while the video link is intact; an onboard module then holds the lock and flies the final hundreds of meters autonomously, ignoring the radio horizon. By late 2025 this 'last-mile' targeting had become near-standard across Ukraine's FPV fleet and is a primary route to jam-resistant strike that does not require a cable.
+
+**Key facts**
+- Vyriy + The Fourth Law mass-produced Vyriy-10 FPVs with the TFL-1 AI terminal-guidance module for jam-resistant strikes (United24 Media, 2025).
+- TFL-1 provides autonomous terminal guidance for the final ~400-500 m and is built to endure heavy jamming by ignoring the radio horizon (United24, 2025).
+- A ~$100 AI upgrade gives FPVs last-meter accuracy in heavy jamming (The Defense Post, Nov 2025).
+- TAF Drones' 'Last Mile' module passed NATO-standard compliance and continues a mission after signal loss/interference (Ukraine's Arms Monitor, 2025).
+- 100+ Ukrainian companies were working on machine-vision drones by 2025 (Ukraine's Arms Monitor, 2025).
+- Full autonomy remains years away due to compute/hardware limits; current systems are last-mile assist, not full mission autonomy (DroneXL, Oct 2025).
+
+**Systems / programs:** TFL-1 (The Fourth Law) terminal-guidance module on Vyriy-10; TAF Drones 'Last Mile' module; Low-cost AI machine-vision targeting upgrades
+
+**Defensive countermeasures**
+- Defensive (counter-autonomy): physical/kinetic interception and visual decoys/obscurants since RF jamming alone no longer stops the terminal phase.
+- This is itself the adversary adaptation to jamming - autonomy substitutes for a jammable link in the final approach.
+
+**Sources:** https://united24media.com/latest-news/new-ai-guided-drone-system-helps-ukraine-bypass-russian-jamming-14057 · https://thedefensepost.com/2025/11/19/ai-upgrade-ukrainian-drones/ · https://spectrum.ieee.org/ukraine-killer-drones · https://dronexl.co/2025/10/26/ukraine-ai-drone-revolution-hits-hardware-reality/
+
+### Defensive counter-UAS EW: Lima, Bukovel-AD and the 'anti-drone dome'  ·  _2026-06-15_ · confidence: high
+
+Ukraine has built a non-kinetic counter-UAS layer to conserve scarce interceptor missiles, using EW to disrupt Shahed/Geran loitering munitions and guided bombs rather than shoot them down. The Lima system jams and spoofs at city scale, while vehicle-mounted Bukovel-AD detects and jams drone links and GPS at tactical range. These are networked into an 'anti-drone dome' alongside interceptor drones and mobile fire teams.
+
+**Key facts**
+- Lima EW (Cascade Systems) has disrupted 20,000+ Shahed drones and dozens of missiles; ~$68,000 per unit (Kyiv Post, 2025).
+- Roughly 30-100 Lima units are needed to protect a major city (Kyiv Post, 2025).
+- Bukovel-AD (Proximus LLC) detects drones to ~70 km and jams data links / GPS to ~20 km (The Defense Post, 2025).
+- Lima was designed in 2022 to counter UAVs, especially Shahed-136/Geran-2 and UMPK-guided glide bombs (The Defense News, 2025).
+- Ukraine unveiled a system networking 'thousands' of EW units against drones in 2025 (The Defense Post, Jul 2025).
+- AI-powered Sky Sentinel turret (kinetic, minimal human input) downed at least six Shaheds, complementing EW in the dome (DroneXL, 2025).
+
+**Systems / programs:** Lima EW (Cascade Systems); Bukovel-AD (Proximus LLC); Networked EW grid linking 'thousands' of units; Sky Sentinel AI turret (kinetic complement)
+
+**Defensive countermeasures**
+- Defensive EW: jam/spoof Shahed navigation and guided-bomb links to save interceptors.
+- Adversary adaptation: Shaheds add inertial nav, AI chips, and thermal seekers to resist GNSS denial; fiber FPVs bypass jamming entirely.
+
+**Sources:** https://www.kyivpost.com/post/76818 · https://thedefensepost.com/2025/07/10/ukraine-system-ew-drones/ · https://newatlas.com/military/ukraines-anti-drone-expertise-rise/ · https://dronexl.co/2025/06/07/ukraine-ai-powered-sky-sentinel-turret-russian-shahed-drones/
+
+### Drone-mounted and airborne EW: jamming from the sky and beyond the radio horizon  ·  _2026-06-15_ · confidence: medium
+
+EW in Ukraine is no longer purely a ground discipline. Both sides lift jammers and signal repeaters on drones to extend reach beyond the line-of-sight radio horizon, and Ukraine's strike drones now hunt Russian armor and EW nodes past that horizon. Airborne repeaters keep friendly control/video links alive over jammed ground, while airborne jammers can suppress enemy links from altitude where propagation is far better.
+
+**Key facts**
+- Signal repeaters - airborne or ground - extend connection range and are often lifted to height by other drones (Ukrainska Pravda, 2025).
+- The Swarm's drone launches on a ground-mast link, then switches mid-flight to an airborne repeater for a better radio horizon (The Defender, 2026).
+- Ukraine fielded strike drones to hit Russian armor and EW beyond the radio horizon (Kyiv Independent, 2025).
+- Next-gen Ukrainian FPVs were unveiled that strike out to ~25 km through jamming (United24 Media, 2025).
+- Airborne EW exploits altitude to improve propagation and reach over terrain that shields ground jammers (industry reporting, 2025).
+
+**Systems / programs:** The Swarm airborne repeater + Vataha case; Repeater-relay drones (mother/relay UAVs); Long-range strike drones targeting EW past the radio horizon
+
+**Defensive countermeasures**
+- Defensive: airborne repeaters sustain friendly links over jammed ground; airborne jammers suppress enemy links from altitude.
+- Adversary adaptation: counter-relay targeting, and the broader shift to fiber/autonomy that does not depend on the relayed RF link.
+
+**Sources:** https://www.pravda.com.ua/eng/articles/2025/08/08/7525279/ · https://thedefender.media/en/2026/04/the-swarm/ · https://kyivindependent.com/new-ukrainian-strike-drones-are-chasing-russian-armor-and-ew-past-the-radio-horizon/ · https://united24media.com/war-in-ukraine/ukraine-unveils-next-gen-fpv-drones-that-strike-25-km-through-jamming-18315
+
+### Spillover: Russian GNSS interference disrupting European aviation and shipping  ·  _2026-06-15_ · confidence: high
+
+The EW contest has spilled well beyond the front line. Russian GNSS jamming and spoofing originating from Kaliningrad and the Kola Peninsula now degrades civil aviation and maritime navigation across the Nordic, Baltic, and Arctic regions. By 2025 incidents had escalated sharply, the interference shifted from jamming to spoofing, and the EU imposed sanctions on the Russian EW unit responsible - underscoring how battlefield EW practice is becoming a strategic, peacetime-affecting capability.
+
+**Key facts**
+- Around 40% of European air traffic is affected by GNSS interference, with a 5-10x increase in Russian jamming/spoofing in Nordic/Baltic/Arctic regions (EPC, 2025).
+- Interference triangulated to two coastal sites in Kaliningrad to ~1 km precision, near known EW units (Defense News, Jul 2025).
+- EU sanctioned members of Russia's 841st Separate Electronic Warfare Center over GNSS interference affecting civil aviation and maritime navigation (Militarnyi, 2025).
+- Lithuania reported hundreds of GNSS interference events weekly - ~20x higher than 2024 (Spire, 2025).
+- European Commission President von der Leyen's aircraft was hit by GPS jamming en route to Plovdiv, Bulgaria - one of ~80 incidents blamed on Russia since 2022 (Military.com, 2025).
+- ICAO formally condemned Russia (and North Korea) over GPS signal interference in 2025 (AeroTime, 2025).
+
+**Systems / programs:** Kaliningrad and Kola Peninsula GNSS jamming/spoofing emitters; Russia's 841st Separate Electronic Warfare Center
+
+**Defensive countermeasures**
+- Defensive: civil aviation/maritime fallback to inertial and multi-constellation receivers; CRPA anti-jam antennas; ICAO/EU monitoring and sanctions.
+- Demonstrates the strategic reach of frontline EW techniques into peacetime navigation infrastructure.
+
+**Sources:** https://www.epc.eu/publication/flying-blind-how-to-prevent-russian-gps-operations-from-causing-a-european-air-disaster/ · https://www.defensenews.com/global/europe/2025/07/02/researchers-home-in-on-origins-of-russias-baltic-gps-jamming/ · https://militarnyi.com/en/news/europe-announces-sanctions-over-gps-jamming-in-the-baltics/ · https://spire.com/blog/space-reconnaissance/gnss-interference-report-russia/ · https://www.military.com/daily-news/2025/09/02/what-know-about-russias-gps-jamming-operation-europe/
+
+### The EW-vs-fiber dynamic: why an old wired idea beat modern jamming  ·  _2026-06-15_ · confidence: high
+
+The most consequential EW story of the war is dialectical: dense jamming neutralized cheap radio FPVs, so both sides revived a wired control concept - fiber optics - that jamming simply cannot touch. This reversed the spectrum advantage, forcing EW operators to shift from jamming links to physically hunting fiber spools and launch teams, and accelerated a parallel move to onboard autonomy. The net effect by 2025-2026 is a layered standoff where no single technique dominates and adaptation cycles measure in weeks.
+
+**Key facts**
+- The novelty was adapting an old wire-linked concept to a small, low-cost drone in a jamming-saturated environment (Al Majalla, 2025).
+- Conventional EW began to be defeated at the end of 2024 specifically by unjammable fiber-optic FPVs (ts2.tech / IEEE Spectrum, 2025).
+- Fiber's immunity comes from zero RF emissions - there is nothing to detect or jam (DroneXL, 2025).
+- Tradeoff: fiber adds cable weight (~2.3 kg per 10 km spool), limits speed/payload, and fails completely if the cable is cut (DroneLife, 2025).
+- Parallel adaptation: AI last-mile guidance lets radio drones finish a strike after the link is jammed, offering jam-resistance without a tether (The Defense Post, 2025).
+- The U.S. Army flagged fiber-optic drones as a significant counter-UAS challenge precisely because EW does not work against them (U.S. Army, 2025).
+
+**Systems / programs:** Fiber-optic FPV (Russia + Ukraine); AI terminal-guidance modules (TFL-1, TAF 'Last Mile'); Conventional RF jammers now repurposed toward operator/spool hunting
+
+**Defensive countermeasures**
+- Defensive EW response to fiber: shift from link jamming to detecting/cutting cable and targeting launch crews and spool supply.
+- Adversary adaptation flow: jamming -> fiber (immune) -> autonomy (link-independent) -> layered mix; each side's edge lasts only weeks.
+
+**Sources:** https://en.majalla.com/node/331233/science-technology/how-fibre-optic-drones-are-reshaping-warfare · https://ts2.tech/en/drone-warfare-and-developments-in-ukraine-2024-2025/ · https://dronexl.co/2025/04/23/fiber-optic-drones-warfare-ukraine/ · https://www.army.mil/article/287737/fiber_optic_drones_posing_a_significant_c_uas_challenge · https://thedefensepost.com/2025/11/19/ai-upgrade-ukrainian-drones/
+
+
+<a name="interceptor-drones"></a>
+## Interceptor drones (drone-on-drone)
+
+### Interceptor drones become Ukraine's primary anti-Shahed layer (2025-2026)  ·  _2026-03-05_ · confidence: high
+
+By early 2026, cheap purpose-built interceptor drones had displaced expensive surface-to-air missiles as Ukraine's main tool for downing Russian Shahed/Geran one-way attack drones. Ukraine's Commander-in-Chief Oleksandr Syrskyi stated that around 70% of Shahed-class drones destroyed near Kyiv in February 2026 were killed by interceptor drones, and in February interceptors were credited with more than 70% of Shahed downings overall.
+
+**Key facts**
+- Feb 2026: ~70% of Shahed-class drones destroyed around Kyiv were knocked out by interceptor drones, per CinC Syrskyi.
+- Jan 2026: Ukraine reported a record 1,704 Shaheds shot down in a single month, with ~70% credited to interceptor drones (Defense News, Mar 2026).
+- Oct 12, 2025: President Zelenskyy stated Ukraine's interceptors achieved a 68% success rate against Shaheds (United24/Fox News).
+- By 2026 a senior Zelenskyy defense-industry adviser claimed Ukraine could down up to '97% of Shaheds' in some engagements (WSJ via Kyiv Independent).
+- Russia produced ~404 Shahed-type drones daily in late 2025/early 2026 and planned to scale toward 1,000/day (Syrskyi).
+
+**Systems / programs:** Ukrainian interceptor UAS fleet (Octopus-100, Sting, ELF-P, SkyFall P1-SUN); Brave1 defense-tech cluster; Defense Procurement Agency; DOT-Chain Defence marketplace
+
+**Defensive countermeasures**
+- Interceptors form the innermost cheap-kill layer of a multi-tier air defense, thinning Shahed salvos over hundreds of kilometers before they reach SAM batteries (Patriot, NASAMS, IRIS-T) and mobile fire teams. They depend on early detection: acoustic sensor networks and radar feed target tracks and coordinates to interceptor pilots, who then engage or cue FPV crews.
+
+**Sources:** https://www.defensenews.com/global/europe/2026/03/05/novel-interceptor-drones-bend-air-defense-economics-in-ukraines-favor/ · https://united24media.com/latest-news/zelenskyy-ukraines-interceptors-achieve-68-success-rate-against-russian-shahed-drones-12417 · https://www.yahoo.com/news/ukrainian-drones-mark-22-increase-111443488.html · https://kyivindependent.com/zelensky-is-promising-500-800-interceptor-drones-per-day-by-november-where-are-they/
+
+### Cost asymmetry: $1,000-$5,000 interceptors vs $120,000+ Shaheds and million-dollar SAMs  ·  _2026-03-11_ · confidence: high
+
+The core argument for interceptor drones is economic: a single interceptor costs roughly $1,000-$5,000 while a Shahed/Geran costs Russia an estimated $35,000-$150,000, and legacy SAM interceptors cost $1 million (NASAMS) to over $3 million (Patriot). Using drones rather than missiles to kill drones reverses the cost-exchange ratio that previously favored the attacker.
+
+**Key facts**
+- Interceptor drones reported at $3,000-$5,000 each; Octopus and Sting ~$2,500; SkyFall's P1-SUN ~$1,000 to units (Defense News / Military Times, 2026).
+- A single Shahed estimated at ~$120,000-$150,000 (some sources cite as low as ~$35,000 to manufacture).
+- Patriot interceptor >$3 million; NASAMS round slightly over $1 million.
+- RUSI: one Patriot system was damaged after downing 73 of 75 successive Gerans, illustrating the unsustainable missile-vs-drone exchange.
+- Pentagon and Gulf monarchies expressed interest in buying Ukrainian ~$1,000-$2,500 interceptors in 2026.
+
+**Systems / programs:** Octopus-100; Sting (Wild Hornets); SkyFall P1-SUN; Patriot / NASAMS (legacy comparison)
+
+**Defensive countermeasures**
+- Cost asymmetry lets Ukraine reserve scarce, expensive SAMs for cruise/ballistic missiles and aircraft while saturating the cheap Shahed threat with mass-produced drones. This preserves high-end magazine depth and avoids 'shooting down a $50k drone with a $3M missile' attrition.
+
+**Sources:** https://www.militarytimes.com/news/pentagon-congress/2026/03/11/these-are-ukraines-1000-interceptor-drones-the-pentagon-wants-to-buy/ · https://www.defensenews.com/global/europe/2026/03/05/novel-interceptor-drones-bend-air-defense-economics-in-ukraines-favor/ · https://www.rusi.org/explore-our-research/publications/commentary/octopus-adds-additional-layer-ukraines-air-defences · https://dronexl.co/2026/05/25/ukraine-shahed-drones-interceptor-pentagon/
+
+### Octopus-100: scaled Ukrainian-UK interceptor for high-altitude Geran intercepts  ·  _2026-05-05_ · confidence: high
+
+The Octopus-100 is a cylindrical interceptor with four tail-mounted propellers and a nose sensor, designed to climb to roughly 13,000 feet to engage Geran-2 drones and using image recognition for terminal autonomous guidance. After IP/bureaucratic delays it entered serial production in autumn 2025, and Ukraine ordered 8,000 units with a Ukraine-UK plan to co-produce ~1,000 per month.
+
+**Key facts**
+- Octopus can climb to ~13,000 ft to intercept Geran-2s and uses image recognition for terminal-phase autonomous guidance (RUSI).
+- Production-ready early 2025; serial production delayed to autumn 2025 due to Ukrainian IP bureaucracy (RUSI).
+- Oct 2025: Ukraine-UK partnership announced to mass-produce Octopus-100 - first Ukrainian combat drone to be built in a NATO country.
+- Jan 2026: former Defense Minister Shmyhal announced plans for joint Ukraine-UK production of 1,000 Octopus/month from Feb 2026.
+- May 2026: Ukraine ordered 8,000 Octopus interceptors, scaled across 29 licensed Ukrainian companies with UK support.
+
+**Systems / programs:** Octopus-100; Brave1; Ukraine-UK joint production line
+
+**Defensive countermeasures**
+- Octopus extends the interceptor envelope upward to catch Gerans flying at altitude that low/short-range FPV interceptors cannot reach, adding a dedicated layer between man-portable fire teams and SAMs. Terminal image-recognition reduces dependence on a skilled FPV pilot for the final seconds.
+
+**Sources:** https://www.rusi.org/explore-our-research/publications/commentary/octopus-adds-additional-layer-ukraines-air-defences · https://thedefensepost.com/2026/05/05/ukraine-buys-octopus-interceptor-drones/ · https://en.wikipedia.org/wiki/Octopus-100 · https://www.defensenews.com/global/europe/2026/05/05/nato-nations-size-up-an-interceptor-drone-bazaar-where-low-price-is-everything/
+
+### Sting (Wild Hornets): a ~$2,500 FPV interceptor flying at 280-315 km/h  ·  _2025-08-01_ · confidence: high
+
+The Sting, built by the civil-society-backed Ukrainian maker Wild Hornets, is a quadcopter interceptor with a central dome housing a warhead and camera, piloted via VR goggles. It outpaces Shahed/Gerbera drones, reaching demonstrated speeds of 315 km/h, and has accounted for hundreds of Shahed and over a thousand reconnaissance/strike-drone kills.
+
+**Key facts**
+- Sting costs ~$2,500; reported hit rate of 80-90% (Wild Hornets / Interesting Engineering, 2025).
+- Baseline speed ~160 km/h at autumn-2024 debut; max listed 280 km/h; demonstrated 315 km/h in Aug 2025.
+- Engagement range up to ~25 km; detection-to-destruction cycle ~10-15 seconds; ~6 days pilot training.
+- By early Oct 2025, units with Wild Hornets drones reportedly destroyed 600+ Shahed/Gerbera munitions and 1,268 reconnaissance/strike drones.
+- Reporting cited Sting downing ~1,000 Russian Shaheds over a roughly four-month span.
+
+**Systems / programs:** Sting; Wild Hornets (Dyki Shershni); VR-goggle / ground control station piloting
+
+**Defensive countermeasures**
+- Sting's high speed lets it run down Shaheds and faster Gerbera decoys that slower FPVs cannot catch, while its short engagement cycle suits radar/acoustic-cued point defense around cities. It pairs with detection networks that hand off coordinates so the operator only needs the terminal intercept.
+
+**Sources:** https://thedefender.media/en/2025/08/dyki-shershni-showcased-sting-315-km-god/ · https://interestingengineering.com/military/ukraine-sting-interceptor-drone-russian-shaheds · https://en.wikipedia.org/wiki/Sting_(drone) · https://wildhornets.com/en/sting-interceptor
+
+### Brave1-backed autonomy: automating ~95% of the Shahed interception  ·  _2026-06-08_ · confidence: high
+
+In 2026 Ukraine fielded autonomous interceptor modules that automate the bulk of the Shahed intercept. A Brave1-developed system by MaXon Systems integrates with Ukraine's radar network so an operator selects a target and the drone autonomously identifies, tracks, and engages it, automating ~95% of the process after successful combat tests in Kharkiv Oblast.
+
+**Key facts**
+- Defense Minister Fedorov announced a Brave1 autonomous interceptor automating 95% of Shahed interception (Ukrinform/United24, 2026).
+- System built by MaXon Systems integrates directly with Ukraine's radar network for real-time target tracking.
+- Developer went from prototype to combat use in under a year via Brave1's funding and accelerated testing pathways.
+- A separate 'TFL Anti-Shahed' module automatically guides interceptor drones toward Shahed-type targets.
+- June 2026 Ukrainian MoD reporting: interceptor drones already autonomously engage Shahed-type UAVs after Kharkiv-region tests.
+
+**Systems / programs:** Brave1 autonomous interceptor (MaXon Systems); TFL Anti-Shahed module; Ukrainian national radar network integration
+
+**Defensive countermeasures**
+- Autonomy attacks the human bottleneck: skilled FPV interceptor pilots are scarce, so automating identification/tracking/terminal engagement lets fewer operators handle larger raids and tighter timelines. Radar-network integration is what makes the autonomy work, again underscoring detection as the enabling layer.
+
+**Sources:** https://www.ukrinform.net/rubric-defense/4131648-new-ukrainian-drone-system-automates-95-of-shahed-interceptions-dm-fedorov.html · https://united24media.com/war-in-ukraine/ukrainian-ai-interceptors-are-now-downing-russian-shahed-drones-autonomously-19054 · https://www.globalsecurity.org/wmd/library/news/ukraine/2026/06/ukraine-260608-ukraine-mod02.htm · https://militarnyi.com/en/news/ukraine-s-interceptor-drones-receive-modules-that-automatically-target-shahed-drones/
+
+### ELF-P and counter-reconnaissance: interceptors killing Orlan, ZALA, Supercam  ·  _2025-12-01_ · confidence: medium
+
+Beyond Shaheds, Ukrainian interceptors increasingly hunt Russian reconnaissance UAVs that direct artillery and glide-bomb strikes. The Brave1-unveiled ELF-P drone is purpose-built to destroy Orlan, ZALA, and SuperCam recon platforms, and by December 2025 one interceptor effort recorded more than 300 confirmed kills of such drones.
+
+**Key facts**
+- Brave1 cluster unveiled the ELF-P interceptor specifically to target Orlan, ZALA, and SuperCam reconnaissance drones (2025).
+- By Dec 2025, 300+ confirmed UAV interceptions recorded including Orlan-10, ZALA, Supercam, and Merlin.
+- Aug 2025: Ukraine's 118th Mechanized Brigade shot down a modified Orlan configured as an FPV carrier - a first.
+- An AI-equipped rare Russian ZALA recon drone was downed by a Ukrainian FPV interceptor (Kyiv Post, 2025).
+- Tactical-level recon interceptors added to DOT-Chain Defence so brigades can order counter-Orlan/ZALA assets directly.
+
+**Systems / programs:** ELF-P (Brave1); FPV interceptors of frontline brigades (e.g., 118th Mechanized); DOT-Chain Defence tactical catalog
+
+**Defensive countermeasures**
+- Killing the recon UAV blinds Russian artillery and glide-bomb targeting at the source, a counter-ISR layer distinct from rear-area Shahed defense. It relies on tight radar-operator-to-pilot coordination at the brigade level to detect and vector onto small, low, slow recon drones.
+
+**Sources:** https://united24media.com/latest-news/ukraines-new-elf-p-drone-targets-russian-orlan-and-zala-reconnaissance-drones-4289 · https://en.defence-ua.com/news/aerial_ambushes_interceptor_drones_cripple_russias_zala_orlan_and_supercam_recon_missions_video-15227.html · https://www.pravda.com.ua/eng/news/2025/08/22/7527390/ · https://www.kyivpost.com/post/67525
+
+### Scaling production: 100,000 interceptors in 2025, doubled in four months of 2026  ·  _2026-04-28_ · confidence: high
+
+Ukraine industrialized interceptor production rapidly: it built 100,000 interceptor drones in 2025 with capacity up roughly eightfold, then received more interceptors in the first four months of 2026 than in all of 2025. Daily deliveries to frontline units rose from about 1,000 to over 1,500 per day across the 2025-2026 winter.
+
+**Key facts**
+- Ukraine's NSDC: 100,000 interceptor drones produced in 2025; capacity grew ~8x.
+- Dec 2025: Defence Procurement Agency contracting/delivering nearly 950-1,000 interceptor drones per day.
+- Dec 2025-Jan 2026: frontline units received an average of 1,500+ interceptor drones per day.
+- By ~April 2026: Ukraine had received twice as many interceptor drones in four months as in all of 2025 (Euromaidan/Militarnyi).
+- March 2026 alone: interceptor drones reportedly destroyed over 33,000 enemy drones of various types.
+
+**Systems / programs:** Defense Procurement Agency direct contracts; Army of Drones.Bonus program; DOT-Chain Defence digital platform
+
+**Defensive countermeasures**
+- Mass production is itself the countermeasure to Russia's planned 1,000-Shahed/day surge: defense only works if interceptor output matches or exceeds incoming raid volume. Distributed procurement (DPA contracts, Bonus points, DOT-Chain marketplace) lets units pull the specific interceptor type they need rather than waiting on centralized allocation.
+
+**Sources:** https://euromaidanpress.com/2026/04/28/ukraine-doubled-all-of-2025s-interceptor-drones-in-just-four-months-minister-says/ · https://www.globalsecurity.org/wmd/library/news/ukraine/2025/12/ukraine-251218-ukraine-mod01.htm · https://militarnyi.com/en/news/ukrainian-defense-forces-receive-twice-as-many-interceptor-drones-in-2026-as-in-all-of-2025/ · https://thedefensepost.com/2025/11/28/ukraine-dot-chain-drones-delivered/
+
+### The bottleneck: pilots, seekers, and the gap to 500-800 interceptors per day  ·  _2025-11-15_ · confidence: medium
+
+Despite booming airframe production, Ukraine struggled to hit Zelensky's October 2025 promise of 500-800 interceptor sorties per day by November 2025. Reporting identified shortages of trained interceptor pilots and of key seeker/sensor components, plus the inherent difficulty of catching faster or higher-flying threats, as the limiting factors rather than drone numbers alone.
+
+**Key facts**
+- Oct 27, 2025: Zelensky said Ukraine would reach 500-800 interceptors per day in November (Kyiv Independent).
+- Kyiv Independent reported a 'critical shortage' kept interceptors from fully blanking out Shaheds despite output.
+- Bottlenecks include trained interceptor-drone pilots and supply of seeker/optical components, not just airframes.
+- Autonomy modules (Brave1/MaXon, ~95% automation) are partly a response to the pilot shortage.
+- Russia's move to faster jet-powered and higher-altitude Geran variants raises the performance bar for interceptors.
+
+**Systems / programs:** Interceptor pilot training pipeline; Seeker / optical sensor supply chain; Brave1 autonomy as bottleneck mitigation
+
+**Defensive countermeasures**
+- Layered defense compensates for the interceptor gap: when interceptor throughput falls short, mobile gun teams, electronic warfare, and SAMs cover the remainder. Investment in autonomy and domestic seeker production targets the true constraints rather than simply building more airframes.
+
+**Sources:** https://kyivindependent.com/zelensky-is-promising-500-800-interceptor-drones-per-day-by-november-where-are-they/ · https://www.defensenews.com/global/europe/2026/03/05/novel-interceptor-drones-bend-air-defense-economics-in-ukraines-favor/ · https://www.unmannedairspace.info/counter-uas-systems-and-policies/assessing-the-range-of-ukrainian-shahed-interceptors-and-their-capabilities/ · https://medium.com/@hayekesteloo/russias-shahed-production-surge-ukraine-s-top-commander-warns-of-1-000-drones-per-day-by-2026-2d759560f69f
+
+### NATO and Gulf interest: Ukraine's interceptors become an export and doctrine model  ·  _2026-05-05_ · confidence: high
+
+Ukraine's combat-proven cheap interceptors became sought-after exports in 2025-2026 as NATO and Gulf states confronted the same Shahed threat. Five NATO nations agreed to jointly develop affordable interceptor drones, the Netherlands committed funding for joint production, and the Pentagon explored buying Ukrainian designs after they reportedly protected U.S. troops from Iranian Shaheds.
+
+**Key facts**
+- Germany, France, Italy, Poland and the UK agreed to jointly develop affordable interceptor drones (2025-2026).
+- Oct 2025: Netherlands committed EUR 200 million (~$215M) toward joint drone production.
+- Ukraine-UK Octopus deal marks the first Ukrainian combat drone produced in a NATO country (Oct 2025).
+- TWZ: cheap interceptors proven in Ukraine were used to protect U.S. troops against Iranian Shaheds.
+- 2026: Pentagon and Gulf monarchies sought Ukrainian ~$1,000-$2,500 interceptors as Shaheds spread to the Gulf.
+
+**Systems / programs:** Octopus-100 (Ukraine-UK line); Five-nation NATO interceptor initiative; Netherlands-funded joint production
+
+**Defensive countermeasures**
+- Allied adoption spreads the layered cheap-interceptor doctrine beyond Ukraine and builds redundant Western production capacity, hedging against the global proliferation of Shahed-class one-way attack drones. Export designs still require pairing with local radar/acoustic detection to be effective.
+
+**Sources:** https://www.defensenews.com/global/europe/2026/05/05/nato-nations-size-up-an-interceptor-drone-bazaar-where-low-price-is-everything/ · https://www.twz.com/land/cheap-interceptor-drones-proven-in-ukraine-protected-u-s-troops-against-iranian-shaheds · https://thedefensepost.com/2026/05/05/ukraine-buys-octopus-interceptor-drones/ · https://dronexl.co/2026/05/25/ukraine-shahed-drones-interceptor-pentagon/
+
+### Detection-cued layered C-UAS: radar, acoustics, and pilot handoff  ·  _2026-01-01_ · confidence: high
+
+Interceptor drones only work as part of a sensing-and-cueing chain. Ukraine layers acoustic sensor networks and radar over hundreds of kilometers to detect incoming Shaheds and recon UAVs, then passes precise tracks to interceptor pilots or autonomous modules for the terminal engagement, with mobile fire teams and SAMs covering leakers.
+
+**Key facts**
+- RUSI: Octopus is one layer among acoustic sensors, mobile fire teams, and other UAV interceptors that thin salvos over hundreds of km.
+- Brigades use tight radar-operator-to-interceptor-pilot coordination; radar teams pass exact coordinates for engagement.
+- Brave1/MaXon autonomous interceptor integrates directly with Ukraine's national radar network for real-time tracking.
+- Detection-to-destruction cycle for Sting reported at ~10-15 seconds once a target is handed off.
+- TFL Anti-Shahed and ELF-P modules automate terminal guidance once a track is provided.
+
+**Systems / programs:** Acoustic sensor network; National radar network; Mobile fire teams; Interceptor UAS (Octopus, Sting, ELF-P)
+
+**Defensive countermeasures**
+- This is the integration story: interceptors are the cheap kinetic effector at the end of a kill chain whose front end is detection and cueing. Without dense, networked sensors feeding real-time tracks, fast low-observable Shaheds and small recon drones cannot be engaged in time, so sensor density is as decisive as interceptor count.
+
+**Sources:** https://www.rusi.org/explore-our-research/publications/commentary/octopus-adds-additional-layer-ukraines-air-defences · https://en.defence-ua.com/news/aerial_ambushes_interceptor_drones_cripple_russias_zala_orlan_and_supercam_recon_missions_video-15227.html · https://www.globalsecurity.org/wmd/library/news/ukraine/2026/06/ukraine-260608-ukraine-mod02.htm · https://wildhornets.com/en/sting-interceptor
+
+
+<a name="counter-shahed"></a>
+## Counter-Shahed / one-way-attack defense
+
+### The Threat Baseline: Mass Shahed/Geran Raids Scale to 600+ Drones Per Night  ·  _2026-06-15_ · confidence: high
+
+Russia's one-way attack (OWA) drone campaign against Ukraine grew from dozens to triple-digit nightly salvos through 2025-2026, designed to saturate and exhaust defenses. The decoy-plus-warhead mix forces defenders to expend resources against unarmed Gerbera decoys, and several 2026 nights exceeded 600 launched airframes. Understanding raid scale is the foundation of any layered counter-OWA defense.
+
+**Key facts**
+- By April 2026 the average launch rate reached ~219 total UAVs/day including ~145-167 Shahed/Geran strike drones, exceeding peaks of 208/day in March 2026 and 203/day in July 2025 (ISIS/Institute for Science and International Security, 2026).
+- Three nights in April 2026 each saw over 600 Shahed-type UAVs launched in a single night (ISIS, 2026).
+- In July 2025 the daily average of Shahed/Geran strike launches was ~120/day, rising through 129/day (March 2026) and 144/day (April 2026) (ISIS, 2026).
+- Russia mixes cheap Gerbera decoys with warhead-carrying Gerans to saturate sensors and bait interceptors (Kyiv Independent, 2025).
+- Ukraine faced roughly 8x more jet-powered Russian drones in the period versus the prior year (Defence Blog, 2026).
+
+**Systems / programs:** Shahed-136 / Geran-2 (propeller OWA drone); Gerbera decoy drones; Shahed-238 / Geran-3 (turbojet variant)
+
+**Defensive countermeasures**
+- Threat triage: classify decoy vs. warhead-bearing tracks to ration scarce interceptors
+- Reserve high-value SAM ammunition for confirmed threats; push decoys/low-threat tracks to guns and interceptor drones
+- Distributed early-warning sensing to count and route the raid before it reaches defended zones
+
+**Sources:** https://isis-online.org/isis-reports/a-comprehensive-analytical-review-of-russian-shahed-type-uavs-deployment-against-ukraine-in-2025 · https://isis-online.org/uploads/isis-reports/documents/April-2026-Updated-Analysis-of-Russian-Shahed-type-UAVs-Deployment-Against-Ukraine.pdf · https://kyivindependent.com/the-shahed-is-an-evolving-threat-that-will-keep-haunting-ukraine-and-the-rest-of-us/ · https://defence-blog.com/ukraine-faces-8x-more-jet-powered-russian-drones-than-last-year/
+
+### Mobile Fire Groups (MVG): Ukraine's Frontline Counter-OWA Workhorse  ·  _2026-06-15_ · confidence: high
+
+Since mid-2023 Ukraine has fielded hundreds of Mobile Fire Groups (mobilni vohnevi hrupy / MVG) - light pickups and tactical vehicles with heavy machine guns and autocannons - as the cost-effective primary layer against Shahed raids. They are cued by a national sensor network and reposition along expected ingress corridors. The model is now studied and copied by the U.S. Army and others.
+
+**Key facts**
+- Ukraine has deployed MVGs nationwide since mid-2023, typically pickups with heavy machine guns or anti-aircraft mounts, to avoid spending expensive missiles on cheap drones (Reuters/Defence Blog, 2023-2025).
+- A mobile fire group from the 112th Territorial Defense Brigade defended Chernihiv Oblast airspace on the night of Feb 20, 2025 during a 160-Shahed/decoy raid, of which 87 were shot down (United24 Media, 2025).
+- On the night of April 2, 2025, mobile fire teams of the Odesa Anti-Aircraft Missile Brigade destroyed 10 Russian drones including Shaheds (United24 Media, 2025).
+- The U.S. Army began fielding Ukraine-inspired mobile counter-drone fire teams (Defence Blog, 2025).
+- Russia has begun using guided Shaheds specifically to hunt and strike Ukrainian mobile fire groups while they engage (United24 Media, 2025).
+
+**Systems / programs:** Mobile Fire Groups (MVG) on pickups / light tactical vehicles; 112th Territorial Defense Brigade fire groups; Odesa Anti-Aircraft Missile Brigade mobile teams; Vehicle-mounted heavy machine guns and autocannons
+
+**Defensive countermeasures**
+- Distributed, repositionable shooters along predicted drone ingress corridors
+- Tablet-based cueing from fused acoustic + radar early warning
+- Cost-imposition: cheap guns/MG fire against cheap drones to preserve missiles
+- Dispersal and shoot-and-scoot to survive guided-Shahed counter-targeting
+
+**Sources:** https://united24media.com/latest-news/russian-forces-use-guided-shaheds-to-hunt-ukrainian-mobile-fire-groups-17861 · https://defence-blog.com/u-s-army-fields-ukraine-inspired-mobile-fire-teams-to-counter-drones/ · https://frontliner.ua/en/the-fight-against-shaheds-why-mobile-fire-groups-need-to-be-modernized/
+
+### Heavy Machine-Gun Teams: M2 Browning, Avenger and the Altitude Problem  ·  _2026-06-15_ · confidence: high
+
+Crew-served heavy machine guns - chiefly the .50 cal M2 Browning, including the Avenger's M3P variant - remain a core MVG weapon for visually-engaged low-altitude Shaheds. They are cheap per shot but limited in effective ceiling, which Russia has exploited by flying higher. Teams now pair guns with interceptor drones to reach drones beyond MG range.
+
+**Key facts**
+- On April 2, 2025 Ukraine recorded the first video of an AN/TWQ-1 Avenger using its M3P (.50 cal M2 variant, up to ~1,200 rounds/min) to down a Shahed (United24 Media, 2025).
+- A Kyiv-area unit protecting Irpin uses .50 cal M2 Brownings mounted on pickup beds against OWA drones (Business Insider, 2025).
+- In early 2025 Russia modified Shaheds to fly faster and higher, beyond effective M2 Browning range, degrading MG-team effectiveness (Business Insider/AOL, 2025).
+- Some Ukrainian MG crews still rely on nearly century-old Maxim-pattern and WWI-era weapons, prompting calls for modernization (Yahoo/Frontliner, 2025).
+- Interceptor drones with small warheads are now issued to supplement MG teams for high/fast threats they cannot reach (AOL, 2025-2026).
+
+**Systems / programs:** M2 Browning .50 cal heavy machine gun; AN/TWQ-1 Avenger (M3P gun variant); Maxim-pattern and legacy machine guns; FPV interceptor drones (supplement)
+
+**Defensive countermeasures**
+- Visual/night-vision-cued direct-fire engagement of low-altitude tracks
+- Tracer/HEI ammunition for night observation of fall-of-shot
+- Hand-off to interceptor drones when target exceeds MG ceiling
+- Layering MG teams under gun-system and SAM umbrellas
+
+**Sources:** https://united24media.com/latest-news/ukrainian-avenger-downs-russian-shahed-drone-with-browning-machine-gun-in-first-ever-recorded-strike-7298 · https://www.yahoo.com/news/world/articles/why-ukrainian-mobile-air-defense-095001783.html · https://www.aol.com/articles/machine-gunners-going-head-head-130324242.html
+
+### Gepard: The 1970s Autocannon That Became Ukraine's Anti-Shahed MVP  ·  _2026-06-15_ · confidence: high
+
+The German Flakpanzer Gepard, with twin radar-cued 35mm Oerlikon autocannons, has emerged as one of Ukraine's most effective and economical mid-range Shahed killers. Its onboard radar and high-explosive-incendiary ammunition let it engage drones (and even cruise missiles) at ranges far beyond machine guns. Sustained operations created a major 35mm ammunition demand that Germany and Rheinmetall have funded.
+
+**Key facts**
+- The Gepard mounts twin radar-directed 35mm Oerlikon autocannons, giving it an organic search/track radar uncommon among legacy guns (TWZ/GlobalSecurity, 2025).
+- Gepards have downed not only Shaheds but Russian Kh-101 cruise missiles over Ukraine (TWZ, 2025).
+- In January 2025 Rheinmetall was commissioned to deliver 180,000 rounds of 35mm HEI-T ammunition for Ukraine's Gepards, funded by Germany, in the high-double-digit-million-euro range (Rheinmetall, 2025).
+- Ukrainian Air Force has publicly stated it needs more Gepard, Skynex and similar gun systems to bolster drone defense (Ukrinform, 2025).
+- Euromaidan Press described Ukraine 'solving the hardest math problem in air defense with a 1970s German gun' due to Gepard cost-effectiveness (2025).
+
+**Systems / programs:** Flakpanzer Gepard (twin 35mm Oerlikon autocannon SPAAG); 35mm HEI-T (High Explosive Incendiary Tracer) ammunition; Gepard onboard search and tracking radar
+
+**Defensive countermeasures**
+- Radar-cued autocannon engagement at ranges beyond MG reach
+- Airburst/HEI ammunition to maximize single-pass kill probability
+- Point defense of power plants, grid nodes and cities against drone+cruise-missile mixes
+- Sustained ammunition supply chain to keep guns in action through mass raids
+
+**Sources:** https://www.rheinmetall.com/en/media/news-watch/news/2025/01/2025-01-06-35mm-gepardmunition-fuer-ukr · https://euromaidanpress.com/2025/07/20/ukraine-drone-defense/ · https://www.ukrinform.net/rubric-ato/3769132-ukraine-needs-gepard-skynex-similar-systems-to-bolster-air-defenses-air-force-spox.html · https://www.globalsecurity.org/military/world/ukraine/ua-gepard.htm
+
+### Skynex: Networked 35mm Revolver Guns with Airburst Ammunition  ·  _2026-06-15_ · confidence: high
+
+Rheinmetall's Skynex is a modern networked short-range air defense system pairing 35mm revolver cannons with programmable AHEAD airburst ammunition and a command-and-control node, delivered to Ukraine to shield western critical infrastructure. It has proven effective against Shahed/Geran drones and even Kh-101 and Kalibr cruise missiles. Skynex represents the high end of the gun-based counter-OWA layer.
+
+**Key facts**
+- Germany completed delivery of four Skynex systems to Ukraine, each with up to four guns, deployed in western Ukraine to protect power plants and grid nodes (Army Recognition, 2025).
+- Skynex in Ukraine has downed not only Shahed/Geran drones but also Kh-101 and Kalibr cruise missiles (Defense Express, 2025).
+- Footage showed Skynex tracking and destroying a Shahed within seconds during a mass attack (RBC-Ukraine, 2025).
+- Skynex fires programmable 35mm AHEAD airburst rounds, increasing hit probability against small drones (Rheinmetall, 2025).
+
+**Systems / programs:** Rheinmetall Skynex (35mm revolver cannon SHORAD); AHEAD programmable airburst ammunition; Skynex C2 / fire-control node
+
+**Defensive countermeasures**
+- Networked guns slaved to a central fire-control/C2 node
+- Programmable airburst to defeat small, hardened OWA airframes
+- Fixed-site point defense of grid and energy infrastructure
+- Multi-gun coverage to handle simultaneous tracks in a salvo
+
+**Sources:** https://www.armyrecognition.com/news/army-news/2025/germany-completes-skynex-delivery-to-ukraine-to-counter-russian-drones-and-missiles · https://en.defence-ua.com/news/rheinmetalls_skynex_in_ukraine_proves_effective_not_only_against_shahed_drones_but_also_against_kh_101_and_kalibr_missiles-16405.html · https://newsukraine.rbc.ua/news/skynex-air-defense-system-delivers-flawless-1752323791.html
+
+### Acoustic Sensing: Sky Fortress / Zvook Low-Cost Detection Network  ·  _2026-06-15_ · confidence: high
+
+Ukraine built a national low-cost acoustic detection mesh - Sky Fortress and Zvook (Brave1 pool) - using thousands of cheap microphone units to hear and triangulate the distinctive Shahed engine note. Acoustic tracks are fused with radar and pushed to mobile fire teams' tablets, enabling the sensor-to-shooter loop that makes MVGs viable. The U.S. has expressed interest in adopting the model.
+
+**Key facts**
+- Sky Fortress fields roughly 14,000 acoustic sensors across Ukraine, each unit built for about $400-$1,000 (United24 Media / TWZ, 2025).
+- Acoustic data is fused with radar and sent to mobile firing teams equipped with tablets and anti-aircraft guns (United24 Media, 2025).
+- The U.S. has examined Ukraine's acoustic drone-detection network as a low-cost air-defense option (TWZ / UNN, 2025).
+- The ARes system lets mobile fire groups detect approaching Shaheds from ~5 km, increasing successful engagement odds (Frontliner, 2025).
+- The FENEK acoustic sensor underwent testing in Ukraine in mid-2025 (The Defender, 2025).
+
+**Systems / programs:** Sky Fortress acoustic detection network; Zvook acoustic sensors (Brave1); ARes mobile-group detection system; FENEK acoustic sensor
+
+**Defensive countermeasures**
+- Dense low-cost acoustic mesh for passive, jam-resistant detection
+- Sensor fusion of acoustic + radar tracks into a common picture
+- Tablet-based cueing to push tracks directly to nearest shooter
+- ~5 km early warning to give gun/MG teams time to orient and engage
+
+**Sources:** https://united24media.com/war-in-ukraine/sky-fortress-ukraines-acoustic-detection-system-that-tracks-drones-cheap-and-fast-9451 · https://www.twz.com/air/ukraines-acoustic-drone-detection-network-eyed-by-u-s-as-low-cost-air-defense-option · https://frontliner.ua/en/the-fight-against-shaheds-why-mobile-fire-groups-need-to-be-modernized/ · https://thedefender.media/en/2025/07/fenek-sensor-undergo-tests/
+
+### Searchlights, Night Optics and the Russian Light-Avoidance Counter  ·  _2026-06-15_ · confidence: medium
+
+Because Shaheds attack predominantly at night, MVGs initially used powerful searchlights to illuminate drones for gun and MG engagement. Russia adapted by programming drones to avoid strong light sources en route, pushing Ukrainian crews toward night-vision devices and thermal optics instead. This is a clear example of the fast measure/counter-measure cycle in counter-OWA defense.
+
+**Key facts**
+- MVGs used searchlights to illuminate low-flying Shaheds at night for visual gun engagement (Ukrainian mobile air-defense reporting, 2024-2025).
+- By May 2025 Ukrainian mobile air-defense sources reported Shaheds had begun avoiding strong light sources en route, prompting a shift to night-vision devices (search-aggregated Ukrainian AD reporting, 2025).
+- Night-vision and thermal optics increasingly replace or supplement searchlights for target acquisition (2025).
+- Russia's move to higher-altitude night flight further reduced the utility of ground searchlights against fast/high tracks (2025).
+
+**Systems / programs:** Vehicle/tripod-mounted searchlights; Night-vision devices (NVDs); Thermal imaging optics for fire groups
+
+**Defensive countermeasures**
+- Searchlight illumination for night visual engagement (early approach)
+- Shift to passive NVD/thermal optics after drone light-avoidance adaptation
+- Combine acoustic cueing with optics to acquire dark, light-avoiding tracks
+- Continuous TTP iteration against adaptive drone routing
+
+**Sources:** https://united24media.com/war-in-ukraine/sky-fortress-ukraines-acoustic-detection-system-that-tracks-drones-cheap-and-fast-9451 · https://frontliner.ua/en/the-fight-against-shaheds-why-mobile-fire-groups-need-to-be-modernized/
+
+### Interceptor Drones: $1,000-$5,000 Air-to-Air Counters Scaling to Thousands/Day  ·  _2026-06-15_ · confidence: high
+
+Cheap FPV-derived interceptor drones (Sting, Yolka, Octopus and 20+ producers) have become Ukraine's fastest-growing counter-Shahed layer, designed to hit OWA drones flying too high/fast for machine guns. Costing a few thousand dollars each, they directly attack the cost-exchange problem and are produced at thousands per day. The Pentagon and allies are now buying into the model.
+
+**Key facts**
+- By January 7, 2026 Ukraine had ramped interceptor-drone output to ~1,500 FPV-based units/day; the Sting model exceeded 10,000 units/month by March 2026 (United24 Media / Yahoo, 2026).
+- Interceptor drones ran roughly $3,000-$5,000 by end-2025, with one maker cutting price to ~$2,300 in January 2026 (United24 Media, 2026).
+- President Zelensky cited an average interceptor-drone success rate of ~68%; cumulative Shahed/Gerbera downings by interceptors reached ~7,000 by May 2026 (United24 Media, 2026).
+- Ukraine and the UK planned joint production of 1,000 Octopus interceptors/month from February 2026 (Militarytimes/TWZ, 2026).
+- The Pentagon expressed interest in Ukraine's ~$1,000 interceptor drones (Military Times, 2026); cheap interceptors proven in Ukraine protected U.S. troops against Iranian Shaheds (TWZ, 2026).
+
+**Systems / programs:** Sting interceptor drone; Yolka interceptor drone; Octopus interceptor (UK-Ukraine joint production); FPV-based interceptor drones (20+ Ukrainian producers)
+
+**Defensive countermeasures**
+- Air-to-air kinetic interception of high/fast OWA tracks beyond gun ceiling
+- Radar/acoustic cueing of interceptors to ingress tracks
+- Mass low-cost production to match raid scale and fix cost-exchange
+- Layer interceptors above MG/gun teams to extend engagement envelope
+
+**Sources:** https://united24media.com/war-in-ukraine/how-ukraine-started-2026-with-record-anti-shahed-drone-production-and-a-new-era-in-air-defense-14847 · https://www.militarytimes.com/news/pentagon-congress/2026/03/11/these-are-ukraines-1000-interceptor-drones-the-pentagon-wants-to-buy/ · https://www.twz.com/land/cheap-interceptor-drones-proven-in-ukraine-protected-u-s-troops-against-iranian-shaheds · https://www.yahoo.com/news/articles/ukraine-building-nearly-1-000-031244757.html
+
+### AI Gun Turrets: Sky Sentinel Autonomous Detect-Track-Engage  ·  _2026-06-15_ · confidence: high
+
+Sky Sentinel is a Ukrainian-developed AI-driven turret that mounts a heavy machine gun with commercial off-the-shelf sensors and software to autonomously detect, track and engage Shahed-type drones. At roughly $150,000 per unit, a few dozen can defend a city for less than the cost of a single SAM interceptor. It represents the automation of the gun-based layer to handle reaction-time-critical engagements.
+
+**Key facts**
+- Sky Sentinel integrates a heavy machine gun with COTS sensors and AI for autonomous detect/track/engage of threats like the Shahed-136; unit cost ~$150,000 (DroneXL / National Interest, 2025).
+- Early in deployment Sky Sentinel had downed at least six drones in combat (DroneXL, 2025).
+- United24 estimates 10-30 Sky Sentinels could protect a city, with 30 units costing less than many single air-defense missiles (2025).
+- The U.S. Army has published on the Sky Sentinel concept, reflecting allied interest (Army.mil, 2025).
+
+**Systems / programs:** Sky Sentinel AI gun turret; Heavy machine gun (turret-mounted); COTS EO/IR sensors + AI fire-control software
+
+**Defensive countermeasures**
+- Autonomous detect-track-engage to compress the kill chain
+- Fixed/relocatable point defense rings around cities and infrastructure
+- Cost-effective mass: dozens of turrets per defended area vs. one SAM round
+- Integration into the broader sensor network for cueing
+
+**Sources:** https://dronexl.co/2025/06/07/ukraine-ai-powered-sky-sentinel-turret-russian-shahed-drones/ · https://nationalinterest.org/blog/buzz/ukraines-ai-driven-sky-sentinel-turret-rewriting-air-defense-as-we-know-it-bw-120325 · https://www.army.mil/article/291738/sky_sentinel
+
+### The Economics: Cheap Drones vs Expensive Interceptors (Cost-Exchange Crisis)  ·  _2026-06-15_ · confidence: high
+
+The central strategic problem of counter-OWA defense is cost-exchange: a ~$20,000-$100,000 Shahed forces defenders to fire $2-4 million SAMs, a ratio that mass raids can exploit to bankrupt defenses. Ukraine's answer is to push as many engagements as possible down to guns ($cents-dollars/round), MVGs and few-thousand-dollar interceptor drones, reserving missiles for the highest-value threats. This logic is now driving NATO and Gulf-state planning.
+
+**Key facts**
+- Shahed-136 production cost is cited at ~$20,000-$50,000 (Iran-built) while PAC-3 interceptors run ~$4.2M, a worst-case ~120:1 cost-exchange ratio (CNBC / MissileStrikes, 2026).
+- Some analyses cite the Russian/upgraded Shahed/Geran at up to ~$100,000 - still far cheaper than any SAM (United24 Media, 2026).
+- An SM-2 at ~$2.1M vs a ~$50,000 Shahed is a ~42:1 ratio (MissileStrikes, 2025).
+- Gulf/Israeli interceptors can cost $3M-$12M each, making saturation by cheap drones a deliberate attrition strategy (Defence Security Asia, 2026).
+- The attacker strategy is to launch cheap-drone waves to exhaust interceptors, then follow with ballistic missiles once defenses are degraded (analysis, 2026).
+
+**Systems / programs:** Shahed-136 / Geran-2 (attacker, ~$20k-$100k); PAC-3 / Patriot, SM-2 (expensive interceptors); Guns, MVGs, interceptor drones (low-cost defensive layers)
+
+**Defensive countermeasures**
+- Tier engagements by cost: guns/MG/interceptor-drones first, missiles last
+- Decoy discrimination to avoid wasting missiles on Gerberas
+- Scale cheap-shooter production to match raid throughput
+- Protect cost-exchange ratio as an explicit doctrinal objective
+
+**Sources:** https://www.cnbc.com/2026/03/05/iran-shahed-136-drone-cost-air-defense-gulf-war-us-israel-gulf-scorpion-strike-centcom.html · https://missilestrikes.com/blog/asymmetric-warfare-cheap-drones-expensive-interceptors · https://defencesecurityasia.com/en/iran-drone-swarm-vs-us-missile-defence-cost-war-shahed-thaad-patriot-attrition-analysis/ · https://quwa.org/iran/military-news-iran/shahed-drone-irans-attrition-weapon-and-the-cost-exchange-crisis-of-2026/
+
+### Threat Evolution: Higher/Faster Flight, Jet Geran-3 and EW-Resistant Navigation  ·  _2026-06-15_ · confidence: medium
+
+Russia has continuously adapted the Shahed/Geran to defeat each defensive layer: flying higher and faster to escape machine guns, fielding the turbojet Geran-3/Shahed-238 for transonic terminal dives, and switching navigation to Ukrainian mobile networks/Telegram control to bypass GPS jamming. Each adaptation collapses the engagement window and forces the defense to keep iterating. This entry frames why counter-OWA defense must be continuously layered and updated.
+
+**Key facts**
+- In early 2025 Russia modified Shaheds to fly faster and higher, beyond effective Browning MG range (Business Insider, 2025).
+- The turbojet Shahed-238 / Geran-3 (Toloue-10/13A engine) cruises ~500-600 km/h vs the Shahed-136's ~180-185 km/h, cutting SHORAD engagement windows to single-digit seconds in terminal dive (Quwa / Calibre Defence, 2025-2026).
+- Newer Shaheds use Ukrainian mobile networks and Telegram-bot control rather than GPS, to bypass GPS jamming/spoofing EW (search-aggregated reporting, 2025).
+- 2026-theatre variants reportedly add terrain-contour-matching and electro-optical terminal seekers for autonomous recognition in the final 5-10 km (Calibre Defence/analysis, 2026).
+- Ukraine faced roughly 8x more jet-powered drones than the prior year, but says interceptor drones are scaling to match (Defence Blog / AOL, 2026).
+
+**Systems / programs:** Shahed-238 / Geran-3 (turbojet, Toloue-10/13A); Telegram-bot / mobile-network guided Shahed variants; EO terminal-seeker and TERCOM-equipped variants
+
+**Defensive countermeasures**
+- Push interception higher/farther via interceptor drones and radar-cued guns as MGs lose reach
+- Diversify navigation-denial beyond GPS jamming (cellular/RF monitoring)
+- Compress sensor-to-shooter latency to counter shrinking engagement windows
+- Continuous TTP and ammunition/airburst updates against new airframes
+
+**Sources:** https://kyivindependent.com/the-shahed-is-an-evolving-threat-that-will-keep-haunting-ukraine-and-the-rest-of-us/ · https://quwa.org/iran/military-news-iran/shahed-drone-irans-attrition-weapon-and-the-cost-exchange-crisis-of-2026/ · https://www.calibredefence.co.uk/shahed-and-geran-the-evolution-of-russias-deep-strikes/ · https://www.aol.com/articles/russias-jet-powered-shaheds-looming-045724485.html
+
+### Layered Architecture and Declining Intercept Rates: The Sensor-to-Shooter Doctrine  ·  _2026-06-15_ · confidence: medium
+
+Ukraine's counter-OWA defense is an explicitly layered architecture: acoustic/radar sensing feeds a common picture that cues the cheapest capable shooter (MG team, gun, interceptor drone, or SAM) for each track, with EW degrading navigation throughout. Despite this, raw monthly intercept rates fell sharply as raid volume and jet drones outpaced defenses, underscoring that layering must keep scaling. The doctrine - fuse sensors, triage threats, engage low-to-high in cost - is now the template studied internationally.
+
+**Key facts**
+- Interception rates were consistently 94-97% from Aug 2024 to Feb 2025, then dropped to ~82% (May) and ~86% (June) 2025 as raids intensified (Shahed Tracker, 2025).
+- Later 2025 monthly figures fell much further (cited overall ~17% / ~28% for strike UAVs in some Dec 2025 datasets), reflecting saturation by mass raids - though methodology and 'lost from radar' counting vary (search-aggregated data, 2025).
+- During 100-200 drone/day raids, effectiveness reportedly ranged ~40-50% up to ~70-80% depending on layer availability (aggregated reporting, 2025).
+- The defense fuses Sky Fortress acoustic + radar data and pushes tracks to tablet-equipped mobile fire teams (United24 Media, 2025).
+- RUSI/CSIS-type analysis frames this as a 'salvo war' requiring complexity and layering across EW, guns, interceptors and SAMs (CSIS 'The New Salvo War'; New Geopolitics, 2025).
+
+**Systems / programs:** Fused acoustic (Sky Fortress/Zvook) + radar sensor network; Tiered shooters: MVG/MG, Gepard/Skynex guns, interceptor drones, SAMs (Patriot/IRIS-T/NASAMS, FrankenSAM); Electronic warfare / GPS jamming layer
+
+**Defensive countermeasures**
+- Common operating picture from fused multi-sensor detection
+- Threat triage and cheapest-capable-shooter assignment
+- Low-to-high engagement layering (EW -> guns/MG -> interceptor drones -> SAMs)
+- Continuous scaling of cheap layers to keep pace with rising raid volume
+
+**Sources:** https://www.csis.org/analysis/new-salvo-war · https://www.newgeopolitics.org/2025/11/15/complexity-and-layering-how-ukraines-air-defence-must-operate/ · https://united24media.com/war-in-ukraine/sky-fortress-ukraines-acoustic-detection-system-that-tracks-drones-cheap-and-fast-9451 · https://cepa.org/article/ukraines-air-defenses-world-class-and-improving/
+
+
+<a name="layered-cuas"></a>
+## Layered C-UAS architecture & doctrine
+
+### The layered C-UAS principle: no single effector wins, defense in depth does  ·  _2026-06-15_ · confidence: high
+
+Ukraine's hard-won lesson (2022-2026) is that counter-UAS is an architecture problem, not a single-technology problem. Effective defense layers cheap detection (acoustic/RF/radar/optical) feeding a tiered effector stack so that each threat is handed to the cheapest sufficient killer. The doctrine is redundant and economically sustainable rather than dependent on exquisite, scarce munitions.
+
+**Key facts**
+- Since 2022 Ukraine built a multi-layered air defense combining mobile fire groups, MANPADS, helicopter intercept teams, interceptor drones, electronic warfare, fighter aircraft, and traditional SAMs (CEPA, multiple, 2025).
+- Active countermeasures must ideally include a layered mix of kinetic effectors (AAA guns) and non-kinetic means (EW, directed energy, interceptor drones) rather than any single solution (CEPA, 2025).
+- From 2022-2025 counter-drone warfare shifted from centralized air defense toward flexible, economically sustainable solutions relying more on local action and physical protection (Riga/LIIA, Military Review, 2025).
+- Russia's 2025 aerial campaign used massed Shahed salvoes combined with cruise and ballistic missiles specifically to exhaust and overwhelm a single-layer defense (MWI, 2025).
+- The core lesson exported to Gulf/NATO planners: drone defense must START with a cheap, numerous drone-against-drone layer, not a force structure built around million-dollar missiles (War on the Rocks, 2025).
+
+**Systems / programs:** Ukraine integrated air defense (mobile fire groups + MANPADS + interceptor drones + EW + SAMs + fighters); layered NATO C-UAS architecture concept
+
+**Defensive countermeasures**
+- WORKS: defense in depth where each layer culls a portion of the raid and hands survivors to the next; cheap layers absorb mass so expensive layers are reserved for leakers. FAILS: relying on any single modality or on exquisite SAMs alone, which is rapidly cost-exhausted by mass one-way-attack drones.
+
+**Sources:** https://cepa.org/comprehensive-reports/an-urgent-matter-of-drones/ · https://mwi.westpoint.edu/from-culture-to-system-a-roadmap-for-turning-ukraines-counterdrone-innovation-into-a-capability/ · https://warontherocks.com/cogs-of-war/lessons-from-ukraine-for-defending-gulf-airspace-from-shaheds/ · https://www.csis.org/analysis/lessons-ukraine-conflict-modern-warfare-age-autonomy-information-and-resilience
+
+### Sky Fortress: cheap acoustic sensor mesh as the wide-area detection floor  ·  _2026-06-15_ · confidence: high
+
+Sky Fortress is a nationwide Ukrainian acoustic detection mesh that fills the low-altitude radar blind zone where Shaheds and cruise missiles hide. Built from thousands of sub-$500 microphone nodes, it generates a low-cost early-warning picture that cues mobile fire groups and other effectors. It demonstrates that mass, cheap, distributed sensing is the practical floor of a layered architecture.
+
+**Key facts**
+- Sky Fortress emerged in 2022 to detect low-flying cruise missiles and drones invisible to radar in blind zones (United24, Wikipedia, 2025).
+- By 2026 the network used 10,000+ acoustic sensors (some reporting 14,000+), each under $500, with the whole network costing less than two Patriot missiles (United24, Army.mil, 2026).
+- Roughly 20% of targets entering Ukrainian airspace are tracked using acoustic data alone (United24, 2025).
+- Related Ukrainian acoustic systems include Zvook and FENEK, deployed alongside Sky Fortress (US Army, 'Listening to the Sky', 2026).
+- International pull-through: Lithuania moving to deploy Sky Fortress from 2026; the platform was deployed by US forces at Prince Sultan Air Base for Shahed defense (United24, DroneXL, 2026).
+
+**Systems / programs:** Sky Fortress (acoustic mesh), Zvook, FENEK; feeds the national air picture and mobile fire group targeting
+
+**Defensive countermeasures**
+- WORKS: mass cheap microphones detect low/slow threats that radar misses, at trivial unit cost; localizes by triangulation across nodes. FAILS/LIMITS: acoustic range is short and degrades against high-altitude divers and in high-noise environments; it is detection only and must be fused with effectors to be useful.
+
+**Sources:** https://united24media.com/war-in-ukraine/sky-fortress-ukraines-acoustic-detection-system-that-tracks-drones-cheap-and-fast-9451 · https://en.wikipedia.org/wiki/Sky_Fortress_(drone_defense_system) · https://www.army.mil/article/292099/listening_to_the_sky_acoustic_drone_detection_systems_ukraine_emerging_technologies · https://dronexl.co/2025/07/29/lithuania-sky-fortress-ukrainian-drone/
+
+### Multi-sensor fusion: why no single detection modality is trusted  ·  _2026-06-15_ · confidence: medium
+
+Operational and engineering consensus (2025) is that single-modality detection (RF alone, radar alone, optical alone) produces too many false positives to support autonomous engagement. The working pattern fuses wide-area radar for early warning, RF for rapid cueing and emitter context, EO/IR for positive ID, and acoustic for the low/slow blind zone, with AI correlation and dynamic confidence weighting. Fusion only helps if it REDUCES operator workload and false alarms.
+
+**Key facts**
+- Single-modality detection produces too many false positives in real-world conditions to support autonomous operations (Drone Warfare C-UAS 101, 2025).
+- The best layered stack pairs wide-area radar (early warning), RF (cueing + emitter context), and EO/IR (ID + evidence) under one C2 alert engine (Drone Warfare, 2025).
+- Fusing multiple sensor types yields ~70% faster drone classification versus single-sensor processing (sensor-fusion research, 2025).
+- Dynamic confidence weighting is essential: downgrade EO/IR in rain, downgrade RF in high-noise urban RF environments, lean on radar/acoustic instead (hierarchical fuzzy fusion frameworks, 2025).
+- Fiber-optic and fully autonomous terminal-guidance drones emit no RF, defeating the RF detection layer and forcing reliance on radar/EO/IR/acoustic (Army Recognition, JED, 2025).
+
+**Systems / programs:** Multi-sensor fusion C2 (radar + RF + EO/IR + acoustic) with single alert engine; AI-driven correlation / hierarchical fuzzy decision frameworks
+
+**Defensive countermeasures**
+- WORKS: cross-cueing modalities to confirm tracks cuts false alarms and speeds classification; one operator workflow, one alert engine. FAILS: bolting on sensors without fusion just multiplies false alerts and operator load; RF-only stacks go blind against fiber-optic and autonomous drones.
+
+**Sources:** https://drone-warfare.com/counter-uas/multi-sensor-fusion/ · https://www.antidronesuav.com/how-to-design-a-multi-sensor-fusion-counter-drone-system-rf-radar-eo-ir/ · https://www.prnewswire.com/news-releases/sensor-fusion-is-the-new-defense-frontier-ai-video-joins-rf-in-the-race-to-counter-drones-302740367.html · https://www.jedonline.com/2025/05/15/nato-seeks-solutions-for-fiber-optic-fpv-drones/
+
+### Delta: the cloud C2 / common air picture binding sensors to shooters  ·  _2026-06-15_ · confidence: high
+
+Delta is Ukraine's cloud-based situational-awareness and battle-management system that aggregates sensor, drone, and intelligence feeds into a single map and pushes target tracks across ground, air, and naval units. It is the connective tissue that lets a distributed sensor mesh cue distributed effectors, and it has demonstrated NATO interoperability (Link 16, multi-national C2). Mandated force-wide in 2025, it is the closest thing to a unified air picture in the layered architecture.
+
+**Key facts**
+- Delta is a cloud-based SA/BMS aggregating real-time sensor, drone, and intel data into a unified interface with interactive mapping and automated target tracking (Wikipedia, Militarnyi, 2025).
+- In 2023 Delta demonstrated compatibility with 15 SA/C2 systems from 10 countries (incl. 3 NATO systems) and Link 16 data exchange with F-16s (CSIS, ACT, 2024-2025).
+- At NATO REPMUS 2025, Delta coordinated 50+ unmanned vehicles and integrated with other combat systems to deconflict friend/foe (Militarnyi, 2025).
+- August 2025 order mandated Delta use at all levels of Ukraine's defense forces; 130,000+ Russian targets confirmed hit/destroyed since force-wide rollout (Ukrainska Pravda, 2025).
+- CSIS assessed Delta as functioning de facto CJADC2 (combined joint all-domain command and control) technology already in combat (CSIS, 2025).
+
+**Systems / programs:** Delta situational awareness system (CJADC2-class); Link 16 interoperability; integrated air picture
+
+**Defensive countermeasures**
+- WORKS: a shared cloud air picture lets cheap distributed sensors cue any available effector and deconflict fires; interoperable with NATO C2. FAILS/LIMITS: a common picture does not by itself assign accountability for a given airspace (see fragmentation lesson); cloud C2 depends on resilient comms and is an EW/cyber target.
+
+**Sources:** https://en.wikipedia.org/wiki/Delta_(situational_awareness_system) · https://www.csis.org/analysis/does-ukraine-already-have-functional-cjadc2-technology · https://militarnyi.com/en/news/ukraine-deploys-delta-situational-awareness-system-across-all-defense-units/ · https://www.pravda.com.ua/eng/news/2025/10/08/8001757/
+
+### Mobile fire groups: the cheap kinetic layer against Shahed mass raids  ·  _2026-06-15_ · confidence: high
+
+Mobile fire groups are pickup-mounted teams with heavy machine guns, optics, MANPADS, and tablet targeting that race to engage low-flying Shaheds cued by the acoustic/radar picture. They are a deliberately cheap, numerous kinetic layer meant to attrit mass raids without expending missiles. They work against low/slow drones but were directly countered when Russia changed Shahed flight profiles.
+
+**Key facts**
+- Mobile fire groups are pickup-mounted teams with machine guns, optics, and targeting computers; Zelenskyy credited them with a significant share of successful Shahed engagements (Euronews/Reuters, 2025).
+- Mistral MANPADS-equipped mobile fire groups were deployed from 2022 as part of the kinetic layer (MWI, 2025).
+- They down only a portion of incoming targets and are most effective against low, slow profiles (CEPA, AOL/Business Insider, 2025).
+- Russia adapted by flying Shaheds as low as 100m to slip under detection, then conversely diving from 2km+ to stay above machine-gun and small-arms range (Ukrainska Pravda, AOL, 2025-2026).
+- Ukraine also fields improvised aerial gun platforms (e.g., Yak-52 with door gunner) and helicopter intercept teams as part of the same cheap-kinetic layer (Aerospace Global News, 2025).
+
+**Systems / programs:** Mobile fire groups (technicals + HMG + MANPADS + tablet targeting); helicopter intercept teams; Yak-52 gun platforms
+
+**Defensive countermeasures**
+- WORKS: extremely cheap, distributed, rapidly cued kinetic engagement of low/slow drones; preserves missiles for harder targets. FAILS: countered by altitude changes (very low to hide, very high to dive out of gun range), by night/weather limiting optics, and by sheer raid volume saturating a finite number of trucks.
+
+**Sources:** https://www.euronews.com/2026/03/06/affordable-and-efficient-why-everyone-wants-ukraines-drone-interceptors · https://www.pravda.com.ua/eng/articles/2026/03/11/8025014/ · https://www.aol.com/news/russia-drone-tactic-dive-bombing-060045402.html · https://aerospaceglobalnews.com/news/ukraine-yak-52-shahed-drone-machine-gun/
+
+### Interceptor drones: the cost-curve-fixing drone-vs-drone layer  ·  _2026-06-15_ · confidence: high
+
+Interceptor drones evolved (2024-2026) from experiments into a scalable operational layer that kills Shaheds and reconnaissance UAVs with cheap airframes instead of multimillion-dollar missiles. They now account for a large share of Shahed downings around defended cities and have inverted the cost exchange in the defender's favor. This is the layer Western/Gulf planners are most urgently copying.
+
+**Key facts**
+- Drones were credited with 70%+ of Shahed downings around Kyiv in February 2026; about one in three Russian aerial targets over Ukraine is now killed by interceptor drones (Kyiv Post, Defense News, 2026).
+- Interceptor drones cost roughly EUR1,000-4,000 vs EUR25,000-40,000 for a Shahed and ~EUR3.5M for a Patriot interceptor (Euronews, War on the Rocks, 2026).
+- Ukraine produced ~100,000 interceptor drones in 2025, an eightfold capacity increase (NSDC, 2025-2026).
+- AI-enabled systems (Brave1-developed) automate ~95% of the interception process from launch to kill (Fedorov, 2026).
+- First USV-launched interceptor-drone Shahed kill demonstrated April 2026, extending the layer over maritime approaches (Breaking Defense, 2026).
+
+**Systems / programs:** Ukrainian interceptor drones (Brave1 ecosystem; multiple named airframes); AI auto-intercept; USV-launched interceptors
+
+**Defensive countermeasures**
+- WORKS: cheap, mass-producible, AI-cued drone-vs-drone intercept fixes the adverse cost curve and scales to mass raids. FAILS/LIMITS: needs tactical radar to cue effectively (a documented Ukrainian shortfall); high-diving and very fast targets stress intercept geometry; still maturing against ballistic/cruise threats.
+
+**Sources:** https://www.kyivpost.com/post/77764 · https://www.defensenews.com/global/europe/2026/03/05/novel-interceptor-drones-bend-air-defense-economics-in-ukraines-favor/ · https://www.twz.com/news-features/inside-ukraines-interceptor-drone-innovations-swatting-down-thousands-of-shahed-drones · https://breakingdefense.com/2026/04/in-a-first-ukraines-drone-force-launches-interceptor-drone-from-usv-to-destroy-shahed/
+
+### Electronic warfare: the non-kinetic layer and its hard limits  ·  _2026-06-15_ · confidence: high
+
+EW (jamming, spoofing) is the cheapest non-kinetic layer and the first line against radio-controlled and GNSS-dependent drones, but its effectiveness is partial, range-limited, and self-revealing. The Ukraine experience (2022-2025) shows EW must be one layer among many, not a wall, because the threat adapts faster than fixed jammers and because emitting EW betrays your position.
+
+**Key facts**
+- Kvertus AD MW jamming guns neutralize FPV drones only 60-70% of the time, with limited range (Riga/LIIA report, 2025).
+- Jamming creates a protective bubble that can itself make a position easier to geolocate and target (LIIA, 2025).
+- EW gear produced before 2020 was largely unusable and even 2021-2022 gear only partly usable, because Russian EW techniques evolved too fast (LIIA, 2025).
+- Fiber-optic FPV drones (Russia spring 2024, Ukraine soon after) are immune to jamming and bypass the entire EW layer (Army Recognition, Wikipedia, 2024-2025).
+- By 2025 fiber-optic drones were common and reached 19km+ behind the front (Kramatorsk, Oct 2025); some airframes target 40-100km range (Army Recognition, NextGen Defense, 2025).
+
+**Systems / programs:** Frontline EW (Kvertus AD MW jamming guns, vehicle/positional jammers, GNSS spoofing); counter-fiber-optic detection still maturing
+
+**Defensive countermeasures**
+- WORKS: cheap soft-kill against radio/GNSS-dependent drones; protective bubbles over key assets; degrades swarms en masse. FAILS: 60-70% (not 100%) effectiveness, short range, rapid threat adaptation, self-revealing emissions, and complete bypass by fiber-optic and autonomous terminal-guidance drones.
+
+**Sources:** https://liia.lv/en/publications/the-drone-revolution-lessons-from-ukraine-1476?get_file=1 · https://www.armyrecognition.com/focus-analysis-conflicts/army/conflicts-in-the-world/russia-ukraine-war-2022/electronic-warfare-how-fiber-optic-fpv-drones-are-redefining-the-ukrainian-battlefield · https://en.wikipedia.org/wiki/Fiber_optic_drone · https://militarymachine.com/russia-electronic-warfare-ukraine-drones
+
+### Sensor-to-shooter: compressing the timeline is the real performance metric  ·  _2026-06-15_ · confidence: medium
+
+Ukraine's edge is less any single device than the speed of the observe-orient-decide-act loop connecting a detection to a kill. A cheap distributed sensor mesh feeding a cloud air picture (Delta) that auto-cues the cheapest available effector compresses the timeline against fleeting low/slow targets. AI auto-intercept and automated track handoff are the levers shrinking this loop.
+
+**Key facts**
+- Ukraine built a distributed observe-orient-decide-act architecture at industrial scale where battlefield-to-production feedback runs faster than any comparable system in history (MWI, 2025).
+- AI interception systems now automate ~95% of the launch-to-kill chain, collapsing human decision latency (Fedorov, Brave1, 2026).
+- Acoustic mesh + cloud C2 provide cueing for low-flying threats that would otherwise be detected too late for engagement (United24, CSIS, 2025-2026).
+- A documented bottleneck is the shortage of tactical radar to provide precise terminal cueing to interceptors despite good wide-area awareness (MWI, 2025).
+- Capital and tasking flow to demonstrated effectiveness measured in confirmed hits, with units acting as their own rapid procurement officers (MWI/Defense One, 2026).
+
+**Systems / programs:** OODA/sensor-to-shooter chain: acoustic+RF+radar mesh -> Delta cloud air picture -> auto-cued effector (gun/MANPADS/interceptor/EW); AI auto-intercept
+
+**Defensive countermeasures**
+- WORKS: automation and a shared picture shrink decision latency so fleeting low/slow targets can be engaged in time; cheap sensors buy reaction time. FAILS: gaps in tactical radar break terminal cueing; comms/EW disruption of the cloud picture stretches the loop; raid mass can still outpace finite shooters.
+
+**Sources:** https://mwi.westpoint.edu/from-culture-to-system-a-roadmap-for-turning-ukraines-counterdrone-innovation-into-a-capability/ · https://www.thedefensenews.com/Ukraine-Deploys-AI-Powered-Air-Defense-System-That-Automates-95-of-Shahed-Drone-Interceptions/ · https://www.csis.org/analysis/does-ukraine-already-have-functional-cjadc2-technology · https://www.defenseone.com/ideas/2026/04/ukraine-defense-industry-innovates-modern-war/412594/
+
+### Fragmentation: the doctrinal failure mode of Ukraine's layered defense  ·  _2026-06-15_ · confidence: high
+
+The most important 2025 critique is institutional, not technical: Ukraine has world-leading layers but no overarching architecture binding them. Multiple services and authorities each field countermeasures with no single accountable owner for a defined airspace, no shared concept of operations, and siloed testing. This is the cautionary lesson for NATO adopters: layers without integration are not a system.
+
+**Key facts**
+- MWI (2025) identifies four gaps: no single point of accountability for an airspace mission; no integrated concepts of operations binding tech to doctrine/training; shortage of tactical radar; and scattered testing/analysis capacity creating silos.
+- Multiple actors operate counter-UAS independently: Unmanned Systems Forces R&D center, individual brigades, National Guard, Territorial Defense, regional authorities, and intelligence services (MWI, 2025).
+- CEPA (2025) assessed Ukraine's approach as not self-sustaining, not acting as a unified whole, and lacking a holistic architectural view.
+- NATO is treating Ukraine lessons as live requirements, running layered C-UAS experimentation (Crucible 1-26 / Eastern Sentry, ~500 personnel, ~215 systems, 21 nations) to force integration deliberately (Inside Unmanned Systems, 2025-2026).
+- Lesson for adopters: capability comes from a deliberate architecture with clear ownership, not from accumulating point solutions (MWI, CEPA, 2025).
+
+**Systems / programs:** NATO layered C-UAS experimentation (Crucible 1-26, Eastern Sentry); Ukrainian Unmanned Systems Forces C-UAS R&D center
+
+**Defensive countermeasures**
+- WORKS: bottom-up innovation generates effective layers fast. FAILS: absence of a single accountable airspace owner, shared CONOPS, sufficient tactical radar, and unified test/analysis means layers do not combine into a coherent defense; this organizational gap, not hardware, is the limiting factor.
+
+**Sources:** https://mwi.westpoint.edu/from-culture-to-system-a-roadmap-for-turning-ukraines-counterdrone-innovation-into-a-capability/ · https://cepa.org/comprehensive-reports/an-urgent-matter-of-drones/ · https://insideunmannedsystems.com/nato-tests-layered-c-uas-architecture-in-romania-under-eastern-sentry/ · https://shape.nato.int/NSATU/operational-insights/ukraine-counter-uncrewed-aircraft-systems-lessons-learned
+
+### Force protection at the tactical edge: physical hardening when EW fails  ·  _2026-06-15_ · confidence: high
+
+At the front line, the saturation of jam-immune fiber-optic and autonomous FPV drones (2024-2025) pushed defense back toward physical, passive measures: nets, cope cages, anti-drone tunnels over roads, dispersion, and concealment. The lesson is that the innermost layer of a C-UAS architecture is no longer electronic but physical, because the terminal threat increasingly cannot be jammed.
+
+**Key facts**
+- Fiber-optic FPV drones are immune to jamming and spoofing because the control link is a physical cable, defeating the EW layer entirely (Wikipedia, Army Recognition, 2024-2025).
+- Counter-drone warfare shifted (2022-2025) toward local action and physical protection rather than formal air defense networks at the edge (LIIA, 2025).
+- Discarded fiber-optic cable now litters Ukrainian operational areas in dense webs, evidence of the volume of jam-immune sorties forcing physical countermeasures (Army Recognition, 2025).
+- Russian fiber-optic drones struck 19km+ behind the line (Kramatorsk, Oct 2025), extending the zone requiring physical hardening well into the rear (Army Recognition, 2025).
+- NATO formally sought solutions for fiber-optic FPV drones in 2025, acknowledging soft-kill alone is insufficient at the edge (JED, 2025).
+
+**Systems / programs:** Passive force protection (nets/cope cages, road tunnels, dispersion, concealment); short-range hard-kill (shotguns, HMG, interceptor FPV) as edge layers against jam-immune drones
+
+**Defensive countermeasures**
+- WORKS: physical barriers, dispersion, and concealment degrade terminal FPV/fiber-optic attacks that EW cannot touch; short-range hard-kill backstops. FAILS: passive measures are labor-intensive, never complete, and yield ground/mobility; they buy survivability, not airspace control, and scale poorly across a long front.
+
+**Sources:** https://en.wikipedia.org/wiki/Fiber_optic_drone · https://liia.lv/en/publications/the-drone-revolution-lessons-from-ukraine-1476?get_file=1 · https://www.armyrecognition.com/focus-analysis-conflicts/army/conflicts-in-the-world/russia-ukraine-war-2022/electronic-warfare-how-fiber-optic-fpv-drones-are-redefining-the-ukrainian-battlefield · https://www.jedonline.com/2025/05/15/nato-seeks-solutions-for-fiber-optic-fpv-drones/
+
+### The cost-exchange imperative: matching cheap threats with cheap effectors  ·  _2026-06-15_ · confidence: high
+
+The unifying economic lesson of the layered architecture is that you must engage cheap threats with the cheapest sufficient effector, or be bankrupted by your own defense. Using Patriot-class missiles against Shaheds is the failure mode Gulf and Western forces are now correcting. The whole point of layering is to triage each track to the lowest-cost killer that can service it.
+
+**Key facts**
+- Patriot interceptors (~$3.5M each, batteries up to $1B) against Shaheds (~$25k-40k) is an unsustainable cost exchange (War on the Rocks, Euronews, 2025-2026).
+- Interceptor drones at $2k-4k let threats be engaged at a fraction of missile cost; Sky Fortress sensor mesh costs less than two Patriot missiles total (War on the Rocks, United24, 2025-2026).
+- Ukraine's combat networks of 14,000+ sensors run at under $500 per unit (Army.mil/United24, 2026).
+- Russia deliberately uses massed cheap Shahed salvoes to drain expensive interceptor inventories (MWI, CSIS, 2025).
+- The exported doctrine: build from a cheap, numerous drone-vs-drone layer up, reserving exquisite missiles only for leakers and the hardest targets (War on the Rocks, CSIS, 2025).
+
+**Systems / programs:** Cost-tiered effector triage: acoustic/RF mesh (cheap detect) -> EW + guns + interceptor drones (cheap kill) -> MANPADS/SAM/Patriot (reserved for leakers/hard targets)
+
+**Defensive countermeasures**
+- WORKS: triaging each track to the lowest-cost sufficient effector keeps the defense economically sustainable against mass raids. FAILS: defaulting to high-end SAMs against cheap drones is rapidly cost-exhausted and is exactly the saturation effect the attacker engineers.
+
+**Sources:** https://warontherocks.com/cogs-of-war/lessons-from-ukraine-for-defending-gulf-airspace-from-shaheds/ · https://www.csis.org/analysis/unpacking-irans-drone-campaign-gulf-early-lessons-future-drone-warfare · https://united24media.com/world/as-iranian-drones-strike-us-gulf-allies-ukraines-layered-air-defense-model-proves-its-value-16453 · https://www.army.mil/article/292099/listening_to_the_sky_acoustic_drone_detection_systems_ukraine_emerging_technologies
+
+
+<a name="optical-ai"></a>
+## Optical/IR detection & AI autonomy
+
+### Machine-Vision Terminal Guidance: The TFL-1 Module and the Rise of "Fire-and-Forget" FPVs  ·  _2025-09_ · confidence: high
+
+In 2025 Ukrainian autonomy developer The Fourth Law and drone maker Vyriy began mass-producing FPV drones carrying the TFL-1 machine-vision terminal-guidance module. After a human operator visually identifies and locks a target, an onboard computer running computer-vision tracking flies the final approach, maintaining lock and impact accuracy even after the radio/video link is jammed. This is the most visible example of vision-based last-mile guidance moving from prototype to industrial scale.
+
+**Key facts**
+- Vyriy and The Fourth Law announced mass production of TFL-1-equipped autonomous FPV drones in September 2025 (Ukrainska Pravda, Kyiv Post, 2025).
+- TFL-1 operates on a 'fire-and-forget' principle: after the operator visually locks a target, onboard Ai tracks it and makes real-time micro-adjustments to impact, surviving EW/radio jamming because the kill decision is made outside jamming's effective window (TechUkraine; The Fourth Law, 2025).
+- Reported strike effectiveness rose 2x-4x versus purely operator-controlled FPVs, while drone cost increased only ~10% (TechUkraine, 2025; IEEE Spectrum, 2025).
+- The Fourth Law was founded late 2023 by Yaroslav Azhnyuk; its autonomy module costs roughly $50, with thousands dispatched to eastern Ukraine (IEEE Spectrum, 2025).
+- TFL-1 has earned NATO codification, and a Vyriy-10-TFL-1 drone was priced around UAH 18,500 (~US$382) (Defense Express; The Fourth Law, 2025).
+- Separate reporting describes a ~$100 AI upgrade giving Ukrainian FPVs 'last-meter' accuracy under heavy jamming (The Defense Post, Nov 2025).
+
+**Systems / programs:** TFL-1 terminal-guidance module (The Fourth Law) - machine-vision last-mile autonomy; Vyriy-10 / VYRIY PRO 10 FPV airframe carrying TFL-1; Brave1 / DOT-Chain procurement marketplace distributing these systems
+
+**Defensive countermeasures**
+- Awareness only: because the kill decision is made onboard after lock, RF jamming of the last leg loses effectiveness, pushing defenders toward physical concealment, breaking line-of-sight, and pre-lock disruption (smoke, multispectral nets).
+- Detecting the launch/cruise phase before terminal lock (acoustic + optical sensing) becomes more important than disrupting the final approach.
+
+**Sources:** https://www.pravda.com.ua/eng/news/2025/09/15/7530919/ · https://www.kyivpost.com/post/60152 · https://techukraine.org/2025/07/22/the-ai-co-pilot-yaroslav-azhnyuks-the-fourth-law-unlocks-a-new-era-for-drones-with-tfl-1-module/ · https://en.defence-ua.com/weapon_and_tech/how_ukrainian_fpv_drones_with_automated_terminal_guidance_work-14687.html · https://spectrum.ieee.org/autonomous-drone-warfare · https://thedefensepost.com/2025/11/19/ai-upgrade-ukrainian-drones/
+
+### Why Last-Mile Vision Matters: Jamming Defeats Half of FPVs Before Impact  ·  _2025-03_ · confidence: high
+
+Electronic warfare has become the dominant FPV killer in Ukraine, reportedly bringing down at least half of FPV drones before they reach their target. Vision-based terminal guidance is a direct response: it lets a drone finish its run after the control and video links are cut, because the final guidance loop is computed onboard from the camera image rather than transmitted over a jammable link. This is the structural reason autonomy is being adopted, described here at the threat-awareness level.
+
+**Key facts**
+- Jamming reportedly brings down at least half of FPVs before they reach their target (David Hambling / Forbes reporting, 2025).
+- Small FPV drones are credited with destroying roughly twice as much enemy equipment as every other weapon combined, making the jamming-survival problem strategically central (Forbes, 2025).
+- CSIS analysis (2025) identifies last-mile navigation and automatic target recognition as the specific functions where AI most enhances drones under EW and GPS denial.
+- Both Ukraine and Russia have pursued machine-vision lock-and-track since mid-2023; the strike command is effectively issued before the drone enters the jamming-vulnerable final meters (Ukraine's Arms Monitor, 2023-2025).
+- Forbes/Hambling characterized AI-enabled drones in early 2025 as having moved from 'laboratory experiments to viable if limited weapons' in about 18 months, not yet dominant battlefield-wide (Forbes, 2025).
+- Human pilots reportedly still outperformed AI in some 2025 field tests, with AI hit-rate claims around 80% but mixed real-world results (Euromaidan Press citing Forbes, Mar 2025).
+
+**Systems / programs:** Generic FPV + EW-survival autonomy retrofit modules (awareness-level description); Computer-vision target-tracking pipelines used for last-mile guidance
+
+**Defensive countermeasures**
+- Awareness: layered EW remains useful against the cruise/command phase even if it cannot stop a locked terminal run.
+- Defenders increasingly rely on physical interception (nets, interceptor drones) and concealment rather than RF jamming alone, since jamming the terminal phase is degraded.
+
+**Sources:** https://euromaidanpress.com/2025/03/06/forbes-ukrainian-ai-drones-claim-80-hit-rate-yet-human-pilots-remain-superior/ · https://www.csis.org/analysis/ukraines-future-vision-and-current-capabilities-waging-ai-enabled-autonomous-warfare · https://ukrainesarmsmonitor.substack.com/p/drone-warfare-in-ukraine-machine · https://spectrum.ieee.org/autonomous-drone-warfare
+
+### CSIS: AI Functions Driving Battlefield Autonomy (Footage Analysis, ATR, Tracking, Last-Mile Nav)  ·  _2025-05_ · confidence: high
+
+CSIS analysis frames the drone-autonomy trend around four AI functions where machine learning adds the most value: drone-footage analysis, automatic target recognition (ATR), target tracking, and autonomous navigation including last-mile guidance. Under sustained EW, GPS denial, and mass attrition, both sides are fielding platforms that can navigate and select targets without a live external link. This entry captures the analytic framing rather than any build detail.
+
+**Key facts**
+- CSIS (Kateryna Bondar, 2025) identifies AI's biggest contributions as footage analysis, target recognition, target tracking, and autonomous/last-mile navigation.
+- Russia is described as moving beyond remote-controlled systems toward platforms that operate, navigate, and select targets without external communication, driven by EW/GPS denial and attrition (CSIS, 2025).
+- Ukraine was producing well over 3 million drones annually across air/ground/sea in 2025, targeting ~7 million in 2026, providing the industrial base for autonomy retrofits (CSIS, 2025).
+- A CSIS event in May 2025 explicitly discussed last-mile solutions and automatic target recognition as near-term, fielded capabilities.
+- CSIS notes AI-guided systems have been used to cut operator training time, since the AI handles the hardest final-approach phase (CSIS, 2025).
+
+**Systems / programs:** Analytic categories: footage analysis, ATR, target tracking, last-mile navigation (CSIS framing); Ukrainian and Russian autonomy ecosystems (Brave1 cluster; Russian sovereign drone ecosystem)
+
+**Defensive countermeasures**
+- Awareness: CSIS notes AI struggles to distinguish small/fast or ambiguous targets and cannot reliably tell soldiers from civilians - a limitation defenders and policymakers track.
+- Weather and sensor cost remain practical brakes on full autonomy, relevant to defensive planning.
+
+**Sources:** https://www.csis.org/analysis/ukraines-future-vision-and-current-capabilities-waging-ai-enabled-autonomous-warfare · https://www.csis.org/analysis/how-russia-building-sovereign-drone-ecosystem-ai-driven-autonomy · https://www.csis.org/analysis/russia-ukraine-drone-war-innovation-frontlines-and-beyond
+
+### EO/IR Sensors as the Backbone of Counter-UAS Detection  ·  _2025-12_ · confidence: high
+
+Electro-optical and infrared (EO/IR) cameras are the confirmation-and-tracking layer of modern counter-UAS architectures, working alongside radar, RF sensing, and acoustics. Detecting small drones is fundamentally hard because at range a UAS may occupy only a handful of pixels, making detection limited by signal-to-noise ratio rather than raw resolution. This is the defensive sensing context for everything autonomous drones are forcing.
+
+**Key facts**
+- EO/IR optics provide visual confirmation and tracking in layered C-UAS systems and are a prerequisite for any effective defeat mechanism (Inside Unmanned Systems; euro-sd.com, 2025-2026).
+- At extended range a small drone may occupy only a few pixels, so detection is SNR-limited, not resolution-limited (Inside Unmanned Systems, 2025).
+- Thermal/LWIR sensors detect motor and battery heat signatures, useful at night and against low-visual-contrast drones (Teledyne FLIR OEM guidance).
+- Machine-learning fusion of visible (RGB) and infrared (LWIR) imagery measurably improves small-UAS detection accuracy (arXiv 2003.12638; arXiv 2406.16875).
+- The U.S. Army's FY2026 budget highlights $858 million for counter-UAS capabilities, indicating scale of the detection/defeat investment (Defense reporting, 2025).
+- Multi-stage fusion of passive RF plus EO imagery is an active research path for localization and identification of small drones (arXiv 2406.16875, 2024).
+
+**Systems / programs:** EO/IR camera + radar + RF + acoustic layered C-UAS suites; Teledyne FLIR thermal/LWIR C-UAS sensors; RGB+LWIR ML detection-fusion pipelines (research)
+
+**Defensive countermeasures**
+- Detection: EO/IR + radar + acoustic + RF sensor fusion to reduce false negatives against small targets.
+- Awareness: defenders compensate for the few-pixel problem with thermal contrast, motion detection against sky, and ML classifiers rather than relying on a single band.
+
+**Sources:** https://insideunmannedsystems.com/the-edge-of-visibility-eo-ir-system-design-realities-for-modern-c-uas/ · https://oem.flir.com/learn/discover/thermal-infrared-sensor-design-considerations-for-counter-uas-defense/ · https://euro-sd.com/2026/04/articles/technology/50377/c-uas-options-techniques-and-acquisition/ · https://arxiv.org/pdf/2003.12638 · https://arxiv.org/pdf/2406.16875
+
+### The Fiber-Optic Drone Problem: When RF Detection Fails, Optics Take Over  ·  _2025-08_ · confidence: high
+
+Fiber-optic-controlled FPV drones trail a thin spooled cable and emit zero RF, defeating both RF detection and RF jamming - the same EW immunity machine-vision autonomy provides. Because these drones are radio-silent and have small radar cross-sections, defenders are pushed onto passive optical/thermal and acoustic detection. This is a major 2025 driver of optical and AI-vision counter-UAS development.
+
+**Key facts**
+- Fiber-optic drones emit zero RF signature, rendering traditional RF detection and RF jamming obsolete against them (U.S. Army article 287737; MAG Aerospace, 2025).
+- Their small size and composite materials give a low radar cross-section, often too small for short-range tactical radar (Marduk; U.S. Army, 2025).
+- Optical and thermal cameras can still see them - a small drone against the sky, motor heat, and the fiber cable is reportedly visible in the IR spectrum (Marduk passive optical detection, 2025).
+- Spool-fed fiber drones are heavier and louder, making acoustic arrays a complementary detection path (Drone Warfare C-UAS 101, 2025).
+- Ukraine has fielded combat-proven acoustic sensor networks numbering 14,000+ nodes at under $500 per unit (acoustic C-UAS reporting, 2025).
+- Guidance from MAG Aerospace stresses layering RF with radar, acoustic, and optical sensors precisely because RF-only fails against fiber and autonomous drones (2025).
+
+**Systems / programs:** Marduk passive optical/thermal detection systems (anti fiber-optic UAV); Acoustic drone-detection arrays (Fraunhofer IDMT; Ukrainian field networks); Layered RF+radar+acoustic+EO/IR C-UAS suites
+
+**Defensive countermeasures**
+- Detection: passive optical/thermal sensing and acoustic arrays substitute for RF detection against radio-silent fiber and autonomous drones.
+- Awareness: sensor-fusion and multi-band layering is the consensus defensive response to RF-silent threats.
+
+**Sources:** https://www.army.mil/article/287737/fiber_optic_drones_posing_a_significant_c_uas_challenge · https://marduk.ee/news/the-growing-threat-of-fiber-optic-uavs-and-how-to-see-them-coming · https://www.magaero.com/mag-thought-leadership-strategic-counter-uas-defense-technologies-and-mitigation-strategies/ · https://drone-warfare.com/counter-uas/acoustic-detection/ · https://www.idmt.fraunhofer.de/en/Press_and_Media/press_releases/2025/acoustic-drone-detection.html
+
+### Scan Horizon: Autonomous AI Net-Turret That Takes Over the Counter-Drone Kill Chain  ·  _2026-05_ · confidence: high
+
+Scan Horizon is a Ukrainian autonomous counter-FPV turret that fuses an AI acoustic microphone array, an optical camera, and radar to detect, confirm, and engage incoming drones by firing a net at short range. Once an operator activates it, the system runs the detection-to-engagement loop without further human input - a defensive mirror of the autonomy trend, aimed squarely at drones that EW can no longer stop. Described at the defensive-capability level.
+
+**Key facts**
+- Scan Horizon detects threats passively via an AI microphone array at up to ~20 meters, confirms visually with an optical camera, and uses radar for proximity/velocity (The Defense Post; NextGen Defense, 2026).
+- Its AI tracks targets from up to ~25 meters and localizes within an ~18-meter radius, then fires a net across roughly 6 meters (2026).
+- After operator activation it autonomously runs the full kill chain from detection to engagement (2026).
+- A separate Brave1-developed AI anti-drone turret is operational in combat, needing only a single button press to confirm a strike, and can intercept fiber-optic drones immune to EW (Kyiv Post; Defense Express, May 2026).
+- Those AI turrets were first used by the K-2 Brigade and are now active in 10+ frontline units (Euromaidan Press; Defense Express, 2026).
+- These systems explicitly target fiber-optic and autonomous drones because such drones defeat RF jamming (2026).
+
+**Systems / programs:** Scan Horizon autonomous net turret (acoustic + optical + radar fusion); Brave1-cluster AI anti-drone turret (single-button-confirm); I-SEE anti-drone active protection system (in development)
+
+**Defensive countermeasures**
+- Defensive: optical-confirmed, AI-cued kinetic interception (net/projectile) of incoming autonomous and fiber-optic drones.
+- Human-on-the-loop confirm step retained even as detection-to-track is automated.
+
+**Sources:** https://thedefensepost.com/2026/05/08/ukraine-autonomous-net-turret/ · https://nextgendefense.com/ukraine-autonomous-net-turret/ · https://www.kyivpost.com/post/75772 · https://euromaidanpress.com/2026/05/09/ukraine-deploys-ai-powered-turret-that-can-shoot-down-fpvs-operators-only-job-is-to-press-button-to-confirm-strike/ · https://en.defence-ua.com/weapon_and_tech/ukraine_deploys_ai_anti_drone_turrets_that_destroy_fiber_optic_drones_with_one_button_press_video-18444.html
+
+### EO/IR Interceptors Against Shaheds: MaXon, Merops/Project Eagle and Vision-Cued Air Defense  ·  _2025-11_ · confidence: medium
+
+To counter mass Shahed-style attacks, Ukraine and allied startups field EO/IR-and-radar interceptor systems that detect, track, and ram long-range drones, increasingly with autonomous guidance. These pair thermal/IR sensing for detection at range with AI tracking for the intercept, and represent a defensive use of machine vision against attacking drones. Capability-level description only.
+
+**Key facts**
+- MaXon Systems (founded late 2024) fields ground turrets with infrared sensors plus a radar network detecting Shaheds at 12-16 km, and fixed-wing interceptors at ~300 km/h (IEEE Spectrum, 2025).
+- The Merops system (Project Eagle, linked to Eric Schmidt's effort) had downed over 1,000 Shaheds as of November 2025 and operates largely autonomously (IEEE Spectrum, 2025).
+- MaXon deploys aerostats above cities to extend higher-altitude interception coverage (IEEE Spectrum, 2025).
+- Terminal-guidance/machine-vision tech has migrated onto interceptor drones to hold lock on maneuvering targets under jamming (The Defender, May 2026).
+- Eric Schmidt's Swift Beat supplies autonomous drones and modules to Ukrainian forces (IEEE Spectrum, 2025).
+- Odd Systems (co-founded by Azhnyuk) builds thermal cameras specifically for drone navigation, underpinning night/IR autonomy (IEEE Spectrum, 2025).
+
+**Systems / programs:** MaXon Systems IR+radar interceptor turrets and fixed-wing interceptors; Merops / Project Eagle autonomous interceptor (anti-Shahed); Swift Beat autonomy modules; Odd Systems thermal navigation cameras
+
+**Defensive countermeasures**
+- Defensive: IR/EO detection at 12-16 km cues autonomous interceptors to ram attacking drones.
+- Awareness: vision-cued interception is a primary answer to GPS/INS-guided Shaheds that ignore RF jamming.
+
+**Sources:** https://spectrum.ieee.org/autonomous-drone-warfare · https://thedefender.media/en/2026/05/terminal-guidance-interceptor-drones/ · https://en.wikipedia.org/wiki/Interceptor_drone
+
+### Multispectral Camouflage and Concealment Against EO/IR and AI Vision  ·  _2025-10_ · confidence: high
+
+Because thermal-equipped reconnaissance drones have made conventional concealment inadequate, Ukrainian forces and Western militaries are adopting multispectral camouflage - nets, sheets, and wearable garments that suppress signatures across visual, near-IR, SWIR, MWIR, and LWIR bands. Defeating the sensor input is the most fundamental defense against both EO/IR detection and AI machine-vision targeting. This is purely defensive concealment.
+
+**Key facts**
+- Heat-detecting drones have rendered conventional concealment inadequate in Ukraine, driving deployment of multispectral nets over artillery and logistics hubs (defence-industry.eu, 2025).
+- The multispectral camouflage market is projected to grow from ~$200M to ~$550M by 2028, roughly a 40% CAGR, driven by Ukraine lessons (defence-industry.eu, 2025).
+- The U.S. Marine Corps sought a Multispectral Camouflage Overgarment suppressing signatures across VIS, NIR, SWIR, MWIR, and LWIR bands (Interesting Engineering; USMC sources sought, 2025).
+- Polish firm Miranda Military offers an 'anti-drone poncho' shielding against drones' visual and thermal imaging (MSS Defence, 2025).
+- Russia has added new camouflage to T-90M tanks specifically to counter Ukrainian drone radars and sensors (Army Recognition, 2025).
+- Ukraine is rethinking standard uniforms because drone-borne sensors defeat legacy patterns (United24 Media, 2025).
+
+**Systems / programs:** Multispectral camouflage nets/sheets (artillery and logistics concealment); USMC Multispectral Camouflage Overgarment (MCO) - 5-band suppression; Miranda Military anti-drone poncho; Russian T-90M multispectral camo
+
+**Defensive countermeasures**
+- Concealment: broadband (VIS/NIR/SWIR/MWIR/LWIR) signature suppression denies EO/IR sensors and AI vision a usable target image.
+- Awareness: thermal-decoy and heat-masking complement visual camo since LWIR detection of motor/body heat is a key drone sensing mode.
+
+**Sources:** https://defence-industry.eu/multispectral-camouflage-market-set-for-rapid-growth-based-on-lessons-from-ukraine/ · https://interestingengineering.com/military/us-marine-corps-thermal-cloak · https://mssdefence.com/blog/multispectral-camouflage-the-future-of-military-stealth-technology/ · https://www.armyrecognition.com/focus-analysis-conflicts/army/conflicts-in-the-world/russia-ukraine-war-2022/russia-boosts-t-90m-tanks-with-new-camouflage-to-counter-ukrainian-drone-radars · https://united24media.com/war-in-ukraine/how-drone-warfare-is-forcing-ukraine-to-rethink-military-uniforms-15696
+
+### Russian Machine-Vision Drones: ZALA Z-16, Lancet AI Targeting, and Sovereign Autonomy  ·  _2025-07_ · confidence: medium
+
+Russia is pursuing the same vision-autonomy trend, fielding ZALA Z-16 reconnaissance drones with machine-vision systems that autonomously spot and evade Ukrainian interceptors, and upgraded Lancet loitering munitions that can autonomously identify and prioritize targets such as air-defense systems. CSIS frames this as a state-coordinated 'sovereign drone ecosystem' for AI-driven autonomy. Descriptive threat-awareness entry.
+
+**Key facts**
+- ZALA Z-16 was upgraded with a machine-vision system that autonomously detects enemy FPV interceptors and triggers evasive maneuvers without operator input (Army Recognition; ZALA, 2025).
+- On July 16, 2025, ZALA Aero unveiled upgraded Lancet (Item 51/52) and Z-16 with enhanced EW resistance (Bulgarian Military; Mighty Military, 2025).
+- The upgraded Lancet integrates AI to autonomously identify and prioritize targets such as air-defense systems (Bulgarian Military, 2025).
+- CSIS (2025) describes Russia building a sovereign drone ecosystem combining decentralized innovation, commercial tech, and state coordination to accelerate autonomy under EW/GPS denial.
+- The Lithuanian Granta GA-10FPV-AI demonstrates the same class of capability on the allied side - AI autonomous flight under GPS denial/jamming (Wikipedia/open sources, 2025).
+
+**Systems / programs:** ZALA Z-16 (machine-vision interceptor-evasion); ZALA Lancet Item 51/52 (AI target prioritization, EW resistance); Granta GA-10FPV-AI (Lithuania) - allied comparator
+
+**Defensive countermeasures**
+- Awareness: vision-autonomous reconnaissance drones that evade interceptors raise the bar for kinetic C-UAS, reinforcing the move to AI net-turrets and multi-sensor cueing.
+- Concealment and decoys remain relevant since AI ATR can still be degraded by signature suppression and false targets.
+
+**Sources:** https://www.armyrecognition.com/focus-analysis-conflicts/army/conflicts-in-the-world/russia-ukraine-war-2022/russia-upgrades-zala-z-16-reconnaissance-drone-with-ai-to-autonomously-evade-ukrainian-drone-interceptors · https://bulgarianmilitary.com/2025/07/17/russia-unveils-zala-lancet-drone-with-enhanced-ew-resistance/ · https://zala-aero.com/en/news/zala-z-16-aviarazvedka-pri-pomoshhi-ii/ · https://www.csis.org/analysis/how-russia-building-sovereign-drone-ecosystem-ai-driven-autonomy · https://en.wikipedia.org/wiki/Granta_GA-10FPV-AI
+
+### Optical and Laser Hard-Kill: Dazzle, Tryzub Laser, and Vision-Denial Defenses  ·  _2025-09_ · confidence: medium
+
+As autonomous and fiber-optic drones blunt RF defenses, Ukraine is fielding directed-energy and optical-disruption answers, including the Tryzub laser system reported to knock down FPVs and UAVs at hundreds to thousands of meters. At the awareness level, dazzling or saturating a drone's EO/IR sensor denies the machine-vision pipeline its input - attacking the camera rather than the radio link. Defensive description only.
+
+**Key facts**
+- Ukraine's trailer-mounted Tryzub (Trident) laser reportedly defeats FPV drones to ~900 m and UAVs to ~1,500 m, with testing toward Shahed-class targets near ~5,000 m (counter-drone reporting, 2025).
+- A separate Ukrainian anti-drone laser is reported with range up to ~16,400 feet (~5,000 m), nearing deployment (Interesting Engineering, 2025).
+- The first vehicle-mounted Locust laser weapons suitable for C-UAS were delivered to the U.S. Army in August 2025, signaling Western directed-energy fielding (defense reporting, 2025).
+- Optical-sensor disruption (dazzle/saturation) denies machine-vision drones their guidance input, an awareness-level countermeasure to vision autonomy (C-UAS literature, 2025-2026).
+- Directed-energy and optical defenses are attractive precisely because they bypass RF immunity of fiber-optic and autonomous drones (euro-sd.com; IDGA, 2025-2026).
+
+**Systems / programs:** Tryzub (Trident) laser C-UAS (Ukraine); Locust vehicle-mounted laser (U.S. Army deliveries, Aug 2025); EO/IR dazzle and sensor-saturation concepts (awareness level)
+
+**Defensive countermeasures**
+- Defensive: directed-energy hard-kill and optical dazzle attack the drone's camera/seeker, neutralizing machine-vision guidance that RF jamming cannot touch.
+- Awareness: layering laser/dazzle with EO/IR cueing closes the gap left by RF-only defenses against autonomous drones.
+
+**Sources:** https://interestingengineering.com/military/ukrainian-anti-drone-laser-system · https://euro-sd.com/2026/04/articles/technology/50377/c-uas-options-techniques-and-acquisition/ · https://www.idga.org/aviation/articles/counter-uas-for-critical-infrastructure-defense-grade-response-when-seconds-decide-the-outcome · https://www.rferl.org/a/anti-drone-technology-russia-invasion-ukraine-elka-fpv-threat/33737266.html
+
+### Training Data as the Battlefront: Open-Source Datasets to Beat Jamming via Vision  ·  _2026-03_ · confidence: medium
+
+Because machine-vision guidance only works if the onboard model recognizes real battlefield targets, the supply of labeled imagery has become a strategic input. Ukraine's digital ministry has pushed open-source battlefield-data efforts to train jam-resistant AI guidance at scale. This entry captures the data/infrastructure dimension of the optical-AI trend, at an awareness level.
+
+**Key facts**
+- Ukraine's Mykhailo Fedorov has championed open-source battlefield-data/dataset efforts to train AI drone guidance against Russian jamming (DroneXL, Mar 2026).
+- The Atlantic Council frames a 'coming compute war' in Ukraine, underscoring that compute and data, not just airframes, gate autonomy (Atlantic Council, 2025-2026).
+- Ukraine reported rolling out dozens of distinct AI systems to help drones hit targets, reflecting a fragmented but fast-iterating vision-AI ecosystem (Deccan Herald / Reuters, 2025).
+- CSIS notes target-recognition models must handle small, fast, and ambiguous targets - data quality and breadth directly limit reliability (CSIS, 2025).
+- Edge-computing constraints (cheap onboard processors) bound how complex the deployed vision models can be, a recurring limit in last-mile-targeting analysis (xxtomcooperxx Substack analysis, 2025).
+
+**Systems / programs:** Open-source battlefield imagery datasets for ATR training (Ukraine MOD/Brave1 ecosystem); Edge-compute vision inference on FPV-class hardware (awareness level)
+
+**Defensive countermeasures**
+- Awareness: degrading or poisoning the visual environment (decoys, camo, signature changes) reduces ATR reliability since models are only as good as their training distribution.
+- Defenders track that compute/data limits keep many vision-guided drones brittle in poor weather and against novel targets.
+
+**Sources:** https://dronexl.co/2026/03/13/ukraine-ai-drone-training-dataset-fedorov/ · https://www.atlanticcouncil.org/content-series/the-big-story/the-coming-compute-war-in-ukraine/ · https://www.deccanherald.com/amp/story/world%2Fukraine-rolls-out-dozens-of-ai-systems-to-help-its-drones-hit-targets-2-3257443 · https://xxtomcooperxx.substack.com/p/last-mile-targeting-in-ukraines-drone
+
+
+<a name="western-cuas"></a>
+## Western / NATO C-UAS systems
+
+### Flakpanzer Gepard: the workhorse gun that defines Ukraine's anti-Shahed defense  ·  _2026-06-15_ · confidence: high
+
+The 1970s-vintage German twin-35mm self-propelled gun has become Ukraine's most valued counter-drone weapon, with crews famously naming their top three anti-Shahed weapons as 'Gepard, Gepard and Gepard.' Its radar-guided guns prove faster and more adaptable than optical or missile systems during nighttime Shahed/Geran raids. Sustainment, not the platform, is the binding constraint, driving large German ammunition reorders and a KNDS upgrade proposal.
+
+**Key facts**
+- Twin Oerlikon 35mm guns on a Leopard 1 chassis; in service in Ukraine since 2022, marking four years of combat use by 2026 (Euronews, 2026).
+- Ukraine booked a 180,000-round HEI-T order with Rheinmetall in Dec 2024, with deliveries scheduled to begin in 2026 (Rheinmetall/Forces News, 2025).
+- Germany shipped 220,000 rounds in a single mid-2025 consignment; an initial 300,000-round order dated to Feb 2023 (Defense Express, 2025).
+- Gepard 35mm ammunition costs roughly $600/round versus a $10,000-$50,000 Russian-built Shahed/Geran, a favorable cost-exchange ratio (CEPA / Defense Express, 2025-2026).
+- One Gepard reportedly downed 10+ Shahed-136 and two cruise missiles in a single engagement; typical consumption ~20-30 rounds per target (Defense Express, 2025).
+- Rheinmetall restarted 35mm Gepard ammunition production at its Unterluss plant in Lower Saxony in 2023 to break dependence on a prior Swiss export bottleneck (Rheinmetall, 2025).
+- KNDS proposed a Gepard modernization in 2025 given the system's proven effectiveness (Army Recognition, 2025).
+
+**Systems / programs:** Flakpanzer Gepard (KNDS/Krauss-Maffei Wegmann; Oerlikon Contraves guns) - radar-guided twin-35mm SPAAG, terminal hard-kill against Shaheds and cruise missiles; Rheinmetall Unterluss plant - 35mm HEI-T ammunition production (sustainment enabler)
+
+**Defensive countermeasures**
+- Core terminal hard-kill layer of Ukraine's point defense for cities and critical infrastructure. High effectiveness against subsonic loitering munitions at short range; very low cost-per-engagement (~$600/round) makes it economically sustainable against cheap mass-drone raids. Limited by ammunition supply chain and fleet size rather than performance.
+
+**Sources:** https://www.euronews.com/my-europe/2026/04/17/four-years-of-gepard-in-ukraine-how-the-german-vintage-weapon-is-proving-its-worth · https://www.rheinmetall.com/en/media/news-watch/news/2025/01/2025-01-06-35mm-gepardmunition-fuer-ukr · https://www.forcesnews.com/ukraine/ukraines-air-defence-replenished-180000-high-explosive-shells-gepard-weapon-systems · https://en.defence-ua.com/analysis/germany_sends_220000_rounds_for_ukraines_gepards_but_how_long_will_they_last-15215.html · https://cepa.org/article/guns-not-missiles-will-defeat-the-drone/ · https://www.armyrecognition.com/news/army-news/2025/germanys-knds-proposes-gepard-anti-aircraft-vehicle-upgrade-as-system-proves-effective-in-ukraine
+
+### Rheinmetall Skyranger 30: the next-generation mobile gun, fielded in Ukraine ahead of Germany  ·  _2026-06-15_ · confidence: high
+
+The Skyranger 30 is Rheinmetall's modern successor to the Gepard concept, a highly mobile turret built around a 30x173mm KCE revolver cannon firing programmable AHEAD airburst rounds, each unit covering roughly a 4x4 km bubble. Ukraine is receiving early units under a contract signed in London in September 2025, while Germany's own Bundeswehr deliveries have slipped, illustrating that the system is 'already fighting in Ukraine' before it equips its home army.
+
+**Key facts**
+- 30x173mm KCE revolver cannon with programmable AHEAD airburst ammunition; mounts optional missiles/effectors; ~4x4 km defended area per unit (Army Recognition / Kyiv Independent, 2025).
+- Ukraine contract (three-digit-million euro range) signed in London on 10 Sep 2025, with first units pledged by end of 2025 (Defense News / Kyiv Independent, 2025).
+- AHEAD anti-drone round projected at over $1,000/shot; the Skyranger gun engagement cited at just over $4,000 per shot - far below any interceptor missile (CEPA / Defense Express, 2025-2026).
+- Germany's domestic Bundeswehr program (first 19 systems) slipped ~16-18 months from the original 2027 target due to Boxer integration and production issues; full operational readiness now expected ~2029 (Stern via Defense News / Defense Express, 2026).
+- Rheinmetall is scaling Skyranger/Skynex output toward up to ~400 systems/year across Switzerland, Italy and Germany to meet European demand (Defense Express / The Defense Post, 2025).
+- Germany placed a roughly $9 billion order for 500+ Skyranger 30 units in August 2025 (UAS Vision, 2025).
+
+**Systems / programs:** Skyranger 30 (Rheinmetall) - mobile short-range air defense turret, 30mm AHEAD gun + optional Stinger/effectors, hard-kill C-UAS; Oerlikon KCE 30mm revolver cannon (Rheinmetall) - primary effector
+
+**Defensive countermeasures**
+- Mobile terminal hard-kill layer designed to replace/augment Gepard; pairs cannon airburst (cheap, ~$1-4k/engagement) with optional missiles for layered short-range coverage. High projected effectiveness against Group 1-3 drones and loitering munitions. Key risk is production timeline and integration delays, not concept.
+
+**Sources:** https://kyivindependent.com/rheinmetall-to-supply-ukraine-with-skyranger-systems-to-counter-drones/ · https://www.armyrecognition.com/news/defense-web-tv/discover-skyranger-30-rheinmetall-mobile-air-defence-in-germanys-500-unit-deal · https://www.defensenews.com/global/europe/2026/04/01/ukrainian-housewives-and-skyranger-delays-german-defense-poster-child-rheinmetall-is-in-hot-water/ · https://en.defence-ua.com/industries/germany_needs_three_years_to_fully_field_skyranger_system_that_is_already_fighting_in_ukraine-17292.html · https://www.uasvision.com/2025/08/18/germany-boosts-c-uas-capabilities-with-massive-9-billion-skyranger-30-order/ · https://cepa.org/article/guns-not-missiles-will-defeat-the-drone/
+
+### Rheinmetall Skynex: networked 35mm gun system guarding Ukrainian power plants  ·  _2026-06-15_ · confidence: high
+
+Skynex is a networked short-range air defense architecture combining the Skymaster battle-management node, an X-TAR3D radar, and up to four Oerlikon Revolver Gun Mk3 35mm turrets firing AHEAD airburst ammunition at up to 1,000 rpm. Germany completed delivery of all four pledged Skynex systems to Ukraine by November 2025, where they protect critical power infrastructure in western Ukraine against Shaheds and cruise missiles.
+
+**Key facts**
+- Architecture: Oerlikon Skymaster (CN-1) C2 node + X-TAR3D X-band radar + up to four 35mm Revolver Gun Mk3 turrets; ~3-4 km engagement envelope (Army Recognition / Unmanned Airspace, 2025).
+- Germany completed delivery of all four pledged Skynex systems to Ukraine, confirmed by Rheinmetall CEO Papperger on 18 Nov 2025, under a roughly 182 million euro deal (United24 / The Defense News, 2025).
+- Deliveries staged across 2024-2025; systems operational in western Ukraine protecting power plants (Army Recognition, 2025).
+- In August 2025, Air Command West credited Skynex with helping intercept 42 Shahed drones and 11 cruise missiles in a single attack wave (Defense Express, 2025).
+- Programmable 35mm AHEAD ammunition is markedly cheaper than guided-missile interceptors, the core of Skynex's cost rationale (Army Recognition, 2025).
+- Germany moved in 2025 to mass-produce the Ukraine-proven Skynex for its own forces (United24, 2025).
+
+**Systems / programs:** Skynex (Rheinmetall / Rheinmetall Italia) - networked SHORAD; Skymaster C2 + X-TAR3D radar + 35mm Revolver Gun Mk3 turrets, AHEAD airburst, hard-kill C-UAS
+
+**Defensive countermeasures**
+- Fixed/semi-fixed area hard-kill layer optimized for protecting high-value points (power plants, infrastructure). Strong against saturating Shahed and cruise-missile raids via high-rate airburst gunfire at low per-shot cost. Complements mobile Gepard/Skyranger guns and longer-range SAMs in a layered scheme.
+
+**Sources:** https://www.armyrecognition.com/news/army-news/2025/germany-completes-skynex-delivery-to-ukraine-to-counter-russian-drones-and-missiles · https://united24media.com/latest-news/rheinmetall-delivers-all-pledged-skynex-air-defense-systems-to-ukraine-amid-russian-aerial-threats-13575 · https://www.unmannedairspace.info/counter-uas-systems-and-policies/ukraine-has-apparently-taken-delivery-of-at-least-one-rheinmetall-skynex-air-defence-system/ · https://en.defence-ua.com/industries/how_much_rheinmetalls_skynex_and_skyranger_air_defense_systems_cost_and_what_ukraine_is_getting-16543.html
+
+### L3Harris VAMPIRE: APKWS rocket pods turning light trucks into drone killers  ·  _2026-06-15_ · confidence: high
+
+VAMPIRE (Vehicle-Agnostic Modular Palletized ISR Rocket Equipment) is a US-supplied palletized launcher that mounts on light tactical vehicles and fires laser-guided APKWS rockets (a guidance kit on the Hydra-70) to engage drones and other low-flying threats. The US sent VAMPIRE systems to Ukraine, where Ukrainian Navy footage confirmed its combat debut, and L3Harris is scaling production and expanding into land, naval, airborne and EW variants through 2025-2026.
+
+**Key facts**
+- VAMPIRE fires APKWS II laser-guided 70mm rockets (BAE Systems guidance kit on the Hydra-70) against Group 1-3 drones; cited ranges exceeding 5 km (TWZ / Wikipedia, 2025).
+- Ukrainian Navy video footage confirmed the combat debut of VAMPIRE; US documents had pledged the system to Ukraine from 2022 (Unmanned Airspace, 2025).
+- A US VAMPIRE engaged a Russian drone using laser-guided APKWS, reported Feb 2025 (Bulgarian Military, 2025).
+- In 2025 L3Harris unveiled an expanded VAMPIRE family (land, naval, airborne, EW) with new AI/ML sensors and a new C2 backend, and is scaling production (TWZ / The Defense Post, 2025-2026).
+- APKWS unit cost (roughly $15,000-$30,000 range historically) sits well below dedicated SAMs, easing the cost-exchange problem versus cheap drones (industry reporting, 2025).
+
+**Systems / programs:** VAMPIRE (L3Harris) - palletized, vehicle-agnostic rocket launcher with EO/IR sensor, soft-mounted on light trucks, hard-kill C-UAS; APKWS II (BAE Systems) - laser-guidance kit converting Hydra-70 rockets into precision drone interceptors
+
+**Defensive countermeasures**
+- Mobile, expeditionary hard-kill layer that gives unarmored/light units a precision counter-drone punch at modest cost-per-shot. Bridges the gap between guns (short range, cheap) and SAMs (long range, expensive). Effective against slow drones and some cruise missiles; depends on laser designation and clear EO/IR tracking.
+
+**Sources:** https://www.twz.com/air/entire-family-of-vampire-counter-drone-systems-unveiled · https://www.unmannedairspace.info/counter-uas-systems-and-policies/ukrainian-navy-video-footage-confirms-combat-debut-of-l3harris-vampire-weapon-system/ · https://bulgarianmilitary.com/2025/02/12/us-vampire-sam-engages-russian-drone-with-laser-guided-apkws/ · https://thedefensepost.com/2026/03/25/l3harris-vampire-scaled-production/ · https://en.wikipedia.org/wiki/VAMPIRE_(weapon)
+
+### MSI-Defence Terrahawk Paladin: UK-funded VSHORAD gun fielded by Ukraine in late 2025  ·  _2026-06-15_ · confidence: high
+
+The Terrahawk Paladin is a British very-short-range air defense system from MSI-Defence Systems, pairing a 360-degree radar and EO suite with a 30mm Mark 44 Bushmaster II cannon firing programmable airburst rounds tuned against Shahed-class drones. Funded through UK military aid, it entered Ukrainian service in late 2025, with the 156th Anti-Aircraft Missile Regiment publishing first operational footage on 18 November 2025.
+
+**Key facts**
+- 30mm Mark 44 Bushmaster II cannon (40mm option available) with programmable airburst rounds for counter-Shahed work; counters drones, helicopters and light aircraft (Army Recognition, 2025).
+- Sensor fit: 360-degree radar plus EO/IR suite for day/night and degraded-visibility operation (Army Recognition, 2025).
+- Included in a UK military assistance package valued over 100 million pounds announced October 2023 (Army Recognition / Unmanned Airspace, 2025).
+- First operational fielding revealed 18 Nov 2025 by Ukraine's 156th Anti-Aircraft Missile Regiment, with the turret integrated onto a MAN HX 8x8 truck (Army Recognition / Ukrainska Pravda, 2025).
+- Marketed as a modular, vehicle-mounted VSHORAD platform able to also engage ground targets (United24, 2025).
+
+**Systems / programs:** Terrahawk Paladin (MSI-Defence Systems, UK) - VSHORAD gun turret, radar + EO, 30mm Bushmaster II airburst, hard-kill C-UAS, on MAN HX 8x8
+
+**Defensive countermeasures**
+- Mobile short-range hard-kill gun layer, comparable in role to Gepard/Skyranger; UK-funded contribution to Ukraine's gun-based anti-Shahed defenses. Cost-effective per engagement (cannon airburst) and self-contained sensor-to-shooter. Best for point/area defense against low, slow drones; limited reach against high/fast threats.
+
+**Sources:** https://www.armyrecognition.com/focus-analysis-conflicts/army/conflicts-in-the-world/russia-ukraine-war-2022/ukraine-deploys-first-british-msi-ds-terrahawk-paladin-air-defense-system-against-russian-drones · https://www.pravda.com.ua/eng/news/2025/11/20/8008191/ · https://united24media.com/latest-news/terrahawk-paladin-short-range-air-defense-enters-service-in-ukraine-for-low-altitude-drone-defense-13612 · https://www.unmannedairspace.info/counter-uas-systems-and-policies/msi-ds-terrahawk-paladin-c-uas-system-part-of-latest-uk-military-support-package-to-ukraine/
+
+### Raytheon Coyote Block 2 + KuRFS: kinetic interceptor and radar scaled on Ukraine-driven demand  ·  _2026-06-15_ · confidence: medium
+
+The Coyote Block 2 is an expendable, jet-powered kinetic interceptor that defeats drones out to roughly a 15 km radius, cued by Raytheon's Ku-band KuRFS radar. While public reporting does not firmly confirm front-line Ukraine fielding, the war's demonstration of cheap mass-drone threats drove a landmark $5.04 billion US Army contract in late 2025 and shaped NATO/US counter-UAS demand.
+
+**Key facts**
+- Coyote Block 2: expendable jet-powered kinetic interceptor, subsonic, ~15 km operating radius, kinetic-warhead kill (Raytheon / Army Recognition, 2025).
+- Pairs with KuRFS Ku-band radar for detection, track and fire control (Raytheon, 2025).
+- Pentagon awarded Raytheon a $5.04 billion Army contract for Coyote and KuRFS on/around 29 Sep 2025, running through Sep 2033 (Army Recognition / Overt Defense, 2025).
+- A prior $197M Army order for Coyote interceptors was placed in Sep 2024 amid surging counter-drone demand (DefenseScoop, 2024).
+- Demand explicitly framed around Ukraine-war lessons on low-cost drone swarms versus expensive air defense (analysis, 2024-2025); direct Ukraine front-line use is not clearly confirmed in open sources.
+
+**Systems / programs:** Coyote Block 2 (Raytheon/RTX) - expendable kinetic drone interceptor; KuRFS (Raytheon/RTX) - Ku-band radio-frequency sensor for C-UAS detection and fire control
+
+**Defensive countermeasures**
+- Mid-range kinetic interception layer between guns and SAMs, sensor-fused with KuRFS. Higher per-shot cost than gun rounds but reusable launch infrastructure and longer reach; suited to engaging Group 1-3 drones and some cruise missiles beyond gun range. Primarily a US/NATO capability informed by Ukraine rather than a confirmed Ukrainian fielding.
+
+**Sources:** https://www.rtx.com/raytheon/what-we-do/integrated-air-and-missile-defense/coyote · https://www.armyrecognition.com/news/army-news/2025/pentagon-awards-raytheon-5-04b-army-contract-for-coyote-counter-uas-and-kurfs-radars · https://www.overtdefense.com/2025/10/07/pentagon-awards-5-04-billion-contract-to-raytheon-for-coyote-counter-drone-system-and-kurfs-radars/ · https://defensescoop.com/2024/09/27/army-awards-contract-coyote-interceptors-raytheon-counter-drone-197m/
+
+### DragonFire: UK's 50kW laser, accelerated to Royal Navy destroyers by 2027  ·  _2026-06-15_ · confidence: high
+
+DragonFire is a UK 50kW-class fiber-combined directed-energy weapon developed by MBDA UK with Leonardo UK, QinetiQ and Dstl, designed to burn drones and other aerial targets at a per-shot cost of only a few dollars. After its first high-power firing against an aerial target in 2024 and successful high-speed-drone shootdowns at the Hebrides range, the MoD signed a £316M contract in November 2025 to field it on Type 45 destroyers by 2027, five years early.
+
+**Key facts**
+- 50kW-class fiber-combined laser; MoD says it can hit a coin-sized target at 1 km; partners MBDA UK, Leonardo UK, QinetiQ, Dstl (Defense News / Tom's Hardware, 2024-2025).
+- Achieved the UK's first high-power firing against an aerial target in early 2024 and downed a high-speed (~400 mph) drone in Hebrides trials (Wikipedia / Tom's Hardware, 2024-2025).
+- Estimated cost-per-shot around $13 (a few pounds of electricity), versus six- and seven-figure interceptor missiles (Tom's Hardware, 2025).
+- MBDA UK won a 316 million pound (~$414M) contract in Nov 2025 for two DragonFire units, first fitted to a Type 45 destroyer in 2027 - about five years ahead of the original schedule (Defense News / Naval News, 2025).
+- UK planning references equipping up to four warships by 2027, contingent on early-deployment performance (Navy Lookout, 2025).
+
+**Systems / programs:** DragonFire (MBDA UK, Leonardo UK, QinetiQ, Dstl) - 50kW laser directed-energy weapon, naval point-defense hard-kill against drones/munitions
+
+**Defensive countermeasures**
+- Emerging directed-energy hard-kill layer for ship and (eventually) land point defense; near-zero marginal cost-per-shot directly attacks the drone cost-exchange problem. Not yet operational and not fielded in Ukraine; UK procurement is partly informed by Ukraine/Red Sea drone lessons. Limited by power, beam dwell time, weather and line-of-sight; complements rather than replaces guns/missiles.
+
+**Sources:** https://www.defensenews.com/global/europe/2025/11/20/uk-royal-navy-to-equip-mbdas-drone-frying-lasers-by-2027/ · https://www.tomshardware.com/tech-industry/uk-confirms-dragonfire-laser-weapon-for-royal-navy-destroyers-by-2027 · https://www.navalnews.com/naval-news/2025/11/uk-contracts-for-dragonfire-naval-laser-capability-to-help-build-cost-effective-ship-based-defence/ · https://en.wikipedia.org/wiki/DragonFire_(weapon) · https://www.navylookout.com/dragonfire-directed-energy-weapon-to-be-fitted-to-four-royal-navy-warships-by-2027/
+
+### DroneShield handhelds and DedroneTracker: the RF soft-kill and detection layer  ·  _2026-06-15_ · confidence: high
+
+Soft-kill RF jammers and sensor-fusion software form the cheapest, most distributed layer of Ukraine's counter-drone defense. Australia's DroneShield supplies handheld DroneGun jammers and RfPatrol detectors (delivered to Ukraine since 2023 and via a local partnership in 2025), while Dedrone's DedroneTracker.AI software fuses hundreds of networked frontline sensors to detect, classify and locate drones.
+
+**Key facts**
+- DroneShield's DroneGun Mk4 (RF jammer) and RfPatrol Mk2 (passive detector) ship as an Immediate Response Kit; RfPatrol featured in a ~AUD $10.4M 2023 Australian aid package to Ukraine (DroneShield / DroneLife, 2023-2025).
+- DroneShield expanded its Ukrainian presence via a local partnership in August 2025 and passed 4,000 systems sold globally in 2025 (DroneLife / Business News Australia, 2025).
+- DroneShield secured a $49.6M European military contract in Dec 2025 for handheld C-UAS, with deliveries expected Q1 2026 (Soldier Systems / ASD News, 2025).
+- Dedrone's DedroneTracker.AI fuses sensor data for drone threat analysis; reported deployments of ~250-300 networked sensors along Ukraine's front lines (Military Aerospace / C4ISRNET, 2023-2024).
+- Flex Force Dronebuster RF jammers break the drone-operator link or spoof GNSS to force return-to-base or inert flight (Drone Warfare, 2024).
+
+**Systems / programs:** DroneGun Mk4 / RfPatrol Mk2 (DroneShield, Australia) - handheld RF jammer + passive detector, soft-kill/detection; DedroneTracker.AI (Dedrone) - multi-sensor fusion C-UAS detection/classification software; Dronebuster (Flex Force Enterprises, US) - handheld RF/GNSS jammer, soft-kill
+
+**Defensive countermeasures**
+- Bottom, most dispersed defensive layer: cheap, man-portable detection and electronic soft-kill that every soldier/site can carry. Very low cost and no ammunition expenditure, but effectiveness is degrading as drones adopt fiber-optic control and autonomous/AI navigation immune to RF jamming. Provides the cueing and early warning that hard-kill layers depend on.
+
+**Sources:** https://dronelife.com/2025/08/21/droneshield-expands-ukrainian-presence-with-local-partnership/ · https://soldiersystems.net/2025/12/17/droneshield-secures-49-6m-european-military-contract/ · https://www.businessnewsaustralia.com/articles/droneshield-milestone-number-units-sold-us-contract.html · https://www.militaryaerospace.com/uncrewed/article/14284942/counter-uas-technologies-take-on-latest-military-threats · https://www.c4isrnet.com/opinion/2023/11/21/heres-the-counter-drone-platforms-now-deployed-in-ukraine/
+
+### MEROPS: AI ramming interceptor deployed to Poland and Romania under Eastern Sentry  ·  _2026-06-15_ · confidence: high
+
+MEROPS is an American AI-enabled, pickup-truck-launched counter-drone system that detects hostile drones and launches a cheap fixed-wing interceptor to ram them, using onboard AI to navigate when GNSS and comms are jammed. After Russian drones breached Polish airspace in September 2025, the US supplied dozens of MEROPS interceptors to Poland and Romania under Operation Eastern Sentry, with both fielding the system from November 2025.
+
+**Key facts**
+- AI-enabled detect-and-ram system; interceptor is a low-cost fixed-wing drone exceeding ~280 km/h, with each interceptor costing roughly $14,500 (Stars and Stripes / Grey Dynamics, 2025).
+- AI navigation lets the interceptor close on targets in GNSS- and comms-denied/jammed environments (Stars and Stripes, 2025).
+- Poland and Romania received first MEROPS systems in Nov 2025; US-led training began at a major Polish training area (Stars and Stripes / United24, 2025).
+- Deployment followed Russian UAV violations of Polish airspace on 9 Sep 2025 (where at most ~4 of up to 23 drones were downed) under Operation Eastern Sentry (IISS Military Balance 2026 / Stars and Stripes, 2025-2026).
+- MEROPS is gaining integration with various radars to widen its cueing options (Militarnyi, 2025-2026).
+
+**Systems / programs:** MEROPS (US) - AI detect-and-ram C-UAS; pickup-launched fixed-wing kinetic interceptor + ground control station
+
+**Defensive countermeasures**
+- Cheap kinetic interceptor layer tailored to the cost-exchange and jamming problems: ~$14.5k ramming drones with autonomous terminal guidance, mobile and quickly deployable. A direct NATO eastern-flank response informed by Ukraine; effective against slow loitering munitions. Not a Ukraine fielding but a Ukraine-driven NATO program protecting alliance airspace.
+
+**Sources:** https://www.stripes.com/branches/army/2025-11-18/poland-merops-counter-drone-19809718.html · https://greydynamics.com/us-merops-counter-drone-system-nato-eastern-flank-romania-poland/ · https://united24media.com/latest-news/romania-follows-poland-in-rolling-out-merops-drone-hunters-15234 · https://militarnyi.com/en/news/merops-counter-drone-system-gains-integration-with-various-radars/
+
+### NATO 'drone wall' and Eastern Flank Deterrence Line: institutionalizing Ukraine's C-UAS lessons  ·  _2026-06-15_ · confidence: medium
+
+Russian drone incursions and Ukraine's war have pushed NATO and the EU toward layered, low-cost counter-drone architectures rather than expending million-dollar missiles on cheap drones. Initiatives include the Baltic Drone Wall (Baltics, Poland, Finland), the EU's European Drone Defence Initiative under the Readiness Roadmap 2030, the US/NATO Eastern Flank Deterrence Line, and a November 2025 Ukraine-NATO joint program to accelerate counter-drone technology.
+
+**Key facts**
+- Baltic Drone Wall announced early 2025 (Baltics + Poland, later Finland): networked autonomous AI surveillance integrated with soft- and hard-kill effectors including interceptor UAVs (IISS Military Balance 2026, 2026).
+- EU's European Drone Defence Initiative is part of the Readiness Roadmap 2030; first concrete EU 'drone wall' steps taken in late 2025 (National Defense Magazine, 2025).
+- US Army Europe is developing an 'Eastern Flank Deterrence Line' to defend NATO members bordering Russia, with an 'autonomous zone' concept taking shape (Defense News, 2026).
+- Ukraine and NATO launched a joint program (reported under the Unite/Brave initiative) on 26 Nov 2025 to boost counter-drone and other defense tech (DefenseScoop, 2025).
+- Core lesson driving all of it: rely on many inexpensive systems, quick reaction and multiple defensive layers rather than scarce, expensive SAMs (Stars and Stripes / CEPA, 2025).
+
+**Systems / programs:** Baltic Drone Wall (Estonia, Latvia, Lithuania, Poland, Finland) - networked AI surveillance + layered soft/hard kill; European Drone Defence Initiative / EU 'drone wall' (EU, Readiness Roadmap 2030) - bloc-wide C-UAS architecture; Eastern Flank Deterrence Line (US Army Europe / NATO) - eastern-border autonomous defense concept; Ukraine-NATO joint counter-drone program (2025) - tech-transfer/co-development of C-UAS
+
+**Defensive countermeasures**
+- The doctrinal/architectural layer that ties individual systems together: detection-fusion plus layered cheap effectors (jammers, guns, interceptor drones, lasers) to defeat mass-drone raids economically. Driven directly by Ukraine combat data. Still maturing; programmatic and integration risk is high, but it reframes NATO air defense around cost-per-kill discipline.
+
+**Sources:** https://www.iiss.org/publications/the-military-balance/2026/the-military-balance-2026/fortifying-natos-eastern-flank/ · https://www.nationaldefensemagazine.org/articles/2025/12/17/eu-takes-first-steps-to-create-drone-wall-on-eastern-flank · https://www.defensenews.com/global/europe/2026/05/20/nato-eastern-deterrence-strategy-takes-shape-around-autonomous-zone/ · https://defensescoop.com/2025/11/26/ukraine-nato-joint-program-defense-tech-counter-drone-unite-brave/ · https://cepa.org/comprehensive-reports/an-urgent-matter-of-drones/
+
+### The cost-exchange problem: why guns and cheap interceptors beat missiles against Shaheds  ·  _2026-06-15_ · confidence: high
+
+A defining lesson from Ukraine, repeated across Western analysis, is that defeating cheap mass-produced drones with million-dollar missiles is economically unsustainable, so guns, airburst ammunition, RF jammers, ramming drones and lasers dominate the emerging playbook. Concrete cost figures show gun rounds at hundreds of dollars and lasers at a few dollars per shot, versus interceptor missiles costing from hundreds of thousands to several million dollars.
+
+**Key facts**
+- Russian-built Shahed/Geran drones cost about $10,000-$50,000 (export Shaheds ~$193,000); the defender must beat that price to win the exchange (CEPA / Defense Express, 2025-2026).
+- Gepard 35mm round ~$600; projected Skyranger AHEAD round >$1,000; Skyranger gun engagement just over $4,000 per shot (CEPA / Defense Express, 2025-2026).
+- Interceptor missiles for comparison: NASAMS ~$600k-$1M, IRIS-T ~$450k, Patriot ~$4M each (Defense Express, 2025).
+- DragonFire laser cost-per-shot ~$13; MEROPS ramming interceptor ~$14,500 - both engineered for favorable cost-exchange (Tom's Hardware / Stars and Stripes, 2025).
+- Ukraine's own cheap effectors reinforce the trend: the AI-turret Sky Sentinel (~$150k unit, 6+ Shaheds downed) and the trailer-mounted Tryzub laser (Celebra Tech, ~5 km class, in final testing) (AOL/Business Insider / Tom's Hardware, 2025-2026).
+- Analysts summarize the doctrine as 'guns not missiles will defeat the drone,' echoing Ukrainian crews' 'Gepard, Gepard and Gepard' (CEPA, 2025).
+
+**Systems / programs:** Gun/airburst systems (Gepard, Skyranger 30, Skynex, Terrahawk Paladin) - cheapest sustained hard-kill; Cheap kinetic interceptors (MEROPS ram drone, Coyote Block 2, VAMPIRE/APKWS) - mid-tier cost-per-kill; Directed energy (DragonFire; Ukraine's Tryzub) - near-zero marginal-cost hard-kill, still maturing; RF soft-kill (DroneGun, Dronebuster, DedroneTracker cueing) - lowest-cost detection/defeat layer
+
+**Defensive countermeasures**
+- This entry frames the whole layered scheme by cost-effectiveness: RF soft-kill and detection at the base (cents to thousands), gun/airburst as the affordable hard-kill mainstay (hundreds to low thousands per shot), cheap kinetic interceptors for mid-range gaps (~$15k), and directed energy as the long-term near-free-shot solution. Missiles are reserved for high-end threats. Caveat: fiber-optic and AI-autonomous drones are eroding the RF/jamming layer, pushing emphasis toward kinetic and DE solutions.
+
+**Sources:** https://cepa.org/article/guns-not-missiles-will-defeat-the-drone/ · https://en.defence-ua.com/industries/how_much_rheinmetalls_skynex_and_skyranger_air_defense_systems_cost_and_what_ukraine_is_getting-16543.html · https://www.tomshardware.com/tech-industry/uk-confirms-dragonfire-laser-weapon-for-royal-navy-destroyers-by-2027 · https://www.stripes.com/branches/army/2025-11-18/poland-merops-counter-drone-19809718.html · https://www.tomshardware.com/tech-industry/ukraines-new-ai-laser-burns-holes-in-shahed-drones-from-3-1-miles-away-trailer-mounted-tryzub-system-is-in-final-stages-of-testing-by-maker-celebra-tech
+
+
+<a name="economics-adaptation"></a>
+## Economics & the adaptation cycle
+
+### The Cost-Exchange Inversion: Cheap Drones vs Million-Dollar Interceptors  ·  _2026-06-15_ · confidence: high
+
+The core economic logic of the 2025-2026 air war is that defenders spend orders of magnitude more to shoot down attacking munitions than attackers spend to launch them. A Shahed-class loitering munition costing tens of thousands of dollars routinely draws an interceptor costing hundreds of thousands to millions, an unsustainable exchange ratio at scale. This asymmetry, not any single weapon, is the central strategic problem.
+
+**Key facts**
+- A Shahed-136 costs roughly $20,000-$50,000 (Iranian estimate); Russian domestic Geran-2 production estimated $35,000-$70,000 per unit depending on iteration (2025-2026).
+- Patriot PAC-3 interceptors cost roughly $1 million to $4 million each, creating an approximately 100:1 to 200:1 cost disadvantage when used against Shaheds (2025-2026).
+- Reported framing: a $20,000-$50,000 loitering munition routinely draws $3-4 million in Patriot interceptors (CNBC/Fox/WION, 2026).
+- Ukraine's countering solution prices interceptor drones at roughly $1,000-$2,000 versus $5 million+ for legacy air-defense engagements; one cited contrast is $5,000 UA interception vs $12 million US air-defense cost (WION, 2026).
+- SkyFall P1-SUN Shahed-hunter ~$1,000/unit; Wild Hornets 'Sting' interceptor ~$2,100/unit (2025-2026).
+
+**Systems / programs:** Patriot PAC-3; Shahed-136 / Geran-2; SkyFall P1-SUN; Wild Hornets Sting; Yolka interceptor drone
+
+**Defensive countermeasures**
+- Force protection cannot rely on exquisite interceptors against mass-produced threats; defenders must field a low-cost interceptor tier (drone-on-drone, gun-based) to bring the cost-per-kill below the cost-per-threat, reserving expensive missiles for high-value targets only.
+
+**Sources:** https://www.wionews.com/photos/us-air-defence-costs-12-million-while-ukraine-can-intercept-it-for-5-000-how-does-the-ua-made-interceptor-work-1772824289021 · https://www.cnbc.com/2026/03/05/iran-shahed-136-drone-cost-air-defense-gulf-war-us-israel-gulf-scorpion-strike-centcom.html · https://www.militarytimes.com/news/pentagon-congress/2026/03/11/these-are-ukraines-1000-interceptor-drones-the-pentagon-wants-to-buy/ · https://drone-warfare.com/research/shahed-136/
+
+### Industrial Mass: Ukraine's Scaling From Thousands to Millions of Drones  ·  _2026-06-15_ · confidence: high
+
+Ukraine converted a cottage industry into a sovereign war economy, scaling FPV output roughly thousand-fold in three years. The strategic insight is that drones are now an attritable, mass-produced consumable rather than a scarce platform, shifting the contest from quality to sustained production throughput.
+
+**Key facts**
+- Ukraine scaled drone production from a few thousand units in 2022 / ~800,000 in 2023 to an estimated 4 million in 2025, targeting 7 million for 2026 (analysts call 5-6M realistic) (OSW, ChinaTalk, 2025).
+- Ukraine set a 2025 procurement target of 4.5 million FPV drones; 2024 output exceeded 2 million FPVs plus ~100,000 long-range one-way-attack drones (Zelensky / RUSI, 2024-2025).
+- Monthly simple-FPV output rose from ~20,000/month in 2024 to ~200,000/month in 2025 (WarQuants, 2025).
+- Over 1,500 Ukrainian tech companies were working on unmanned systems by 2025 (Brave1 data).
+- Per RUSI, Ukrainian FPVs account for 60-70% of all destroyed Russian equipment (2025).
+
+**Systems / programs:** Ukraine 4.5M FPV 2025 target; 7M 2026 target; Brave1 marketplace; domestic FPV assembly lines
+
+**Defensive countermeasures**
+- Mass production turns drones into ammunition; force protection must assume the threat is effectively unlimited in quantity, so attrition-based defenses (kill-the-shooter, kill-the-factory, kill-the-supply-chain) matter more than defeating any individual drone.
+
+**Sources:** https://www.osw.waw.pl/en/publikacje/osw-commentary/2025-10-14/game-drones-production-and-use-ukrainian-battlefield-unmanned · https://www.chinatalk.media/p/how-ukraine-build-drones · https://www.warquants.com/p/factory-to-frontline-pipeline · https://www.yahoo.com/news/ukraine-buy-4-5-million-121037633.html
+
+### Brave1: State-Orchestrated Defense-Tech Marketplace and Innovation Cluster  ·  _2026-06-15_ · confidence: high
+
+Brave1 is Ukraine's state platform fusing an innovation cluster with a procurement marketplace, deliberately operating on industrial-policy logic rather than profit maximization. It compresses the path from prototype to frontline by funding, certifying, and matchmaking thousands of small producers, and is the institutional engine behind the production surge.
+
+**Key facts**
+- By 2025 Brave1 had issued over 470 grants to defense-tech developers (Brave1 / Platform Professional, 2025).
+- More than 1,500 Ukrainian companies were working on unmanned systems within the Brave1 ecosystem (2025).
+- Brave1 functions as both innovation cluster and transaction marketplace under sovereign industrial-policy logic, not private profit maximization (Platform Professional, 2025).
+- Top-performing frontline units gain priority access to new equipment via the Brave1 Market procurement platform, tying procurement to battlefield results (2026).
+
+**Systems / programs:** Brave1 cluster; Brave1 Market; NATO Innovation Challenge
+
+**Defensive countermeasures**
+- Demonstrates that the decisive force-protection enabler is institutional: a fast, well-funded acquisition pipeline that closes the loop between frontline feedback and production in weeks. Western militaries' multi-year procurement cycles are structurally outpaced.
+
+**Sources:** https://platformprofessional.substack.com/p/the-brave1-marketplace-insights-from · https://gssr.georgetown.edu/the-forum/regions/eurasia/a-first-point-view-examining-ukraines-drone-industry/
+
+### The Jamming -> Fiber-Optic Counter-Spiral  ·  _2026-06-15_ · confidence: high
+
+Russian electronic warfare initially blinded large numbers of radio-controlled FPVs, so both sides shifted to fiber-optic-tethered drones that carry control and video over a physical spool of glass fiber, making them immune to jamming. This is the clearest example of the measure-countermeasure spiral: an EW dominance was neutralized by abandoning the RF link entirely, at the cost of range and maneuver constraints.
+
+**Key facts**
+- Fiber-optic drones transmit control/video over physical cable, bypassing RF and rendering EW jamming ineffective (Atlantic Council, 2025).
+- Fiber-optic FPVs strike at ranges over 30 km with pinpoint accuracy and crystal-clear video feeds (RFE/RL via GlobalSecurity, 2025).
+- Over ~7 months, Russian fiber-optic drones helped make Ukraine's Kursk salient untenable, contributing to the March 2025 withdrawal.
+- Countering fiber-optic drones became the central theme of NATO's 2025 Innovation Challenge; no silver-bullet countermeasure exists.
+- Counters in use range from shotguns and physical net/barrier defenses to radar tripwires, acoustic sensors and experimental AI detection (2025).
+
+**Systems / programs:** fiber-optic FPV (RU & UA); 68th Jaeger Bde; 5th Assault Bde; NATO Innovation Challenge 2025
+
+**Defensive countermeasures**
+- Fiber-optic immunity means EW alone is no longer a reliable shield; force protection must add kinetic/physical layers (nets, cope cages, overhead cover, hard-kill) and treat any movement inside the optical-fiber kill radius as exposed.
+
+**Sources:** https://www.atlanticcouncil.org/blogs/ukrainealert/fiber-optics-drones-have-emerged-as-critical-kit-for-both-russia-and-ukraine/ · https://www.globalsecurity.org/wmd/library/news/ukraine/2025/03/ukraine-250312-rferl03.htm · https://www.hozint.com/2025/05/fibre-optic-drones-in-ukraine-disrupting-the-electronic-warfare-paradigm/
+
+### Autonomy and AI Terminal Guidance as the Next Jamming Counter  ·  _2026-06-15_ · confidence: high
+
+Beyond fiber, the second branch of the anti-jamming spiral is onboard autonomy: cheap AI vision modules give a drone last-mile guidance that ignores both GPS denial and RF jamming. The pilot designates a target and the drone locks on and finishes the flight autonomously, eroding the value of electronic shields and pointing toward attritable autonomous mass.
+
+**Key facts**
+- The Fourth Law TFL-1 provides autonomous terminal guidance for the final ~400-500 m, engineered to operate through heavy jamming; TFL-2 autonomous bombing module launched 2025.
+- Sept 2025: Vyriy Drone (a major FPV maker) and The Fourth Law began mass production of FPVs with onboard terminal guidance.
+- A ~$100 AI upgrade reportedly gives Ukrainian FPVs last-meter accuracy under heavy jamming (Defense Post, Nov 2025).
+- Captured Shaheds in 2025 contained Nvidia chipsets and thermal-vision modules capable of night target lock, showing the same autonomy trend on the Russian side.
+- Fully autonomous strikes remain comparatively rare; partial 'last-mile' autonomy after human target designation is the dominant 2025 pattern (EUobserver, 2025).
+
+**Systems / programs:** The Fourth Law TFL-1 / TFL-2; Vyriy Drone; AI machine-vision lock-on modules; Nvidia-based Shahed guidance
+
+**Defensive countermeasures**
+- As autonomy spreads, jamming-based force protection degrades; defenders must invest in detect-track-kinetic-kill layers and in attacking the launch and production nodes, since the terminal phase becomes increasingly un-defeatable electronically.
+
+**Sources:** https://ukrainesarmsmonitor.substack.com/p/the-fourth-law-autonomy-for-every · https://thedefensepost.com/2025/11/19/ai-upgrade-ukrainian-drones/ · https://euobserver.com/216348/ai-helps-ukrainian-drones-against-russian-signal-jamming-but-fully-autonomous-strikes-remain-rare/
+
+### The Compressed Adaptation Cycle: Weeks, Then Days  ·  _2026-06-15_ · confidence: high
+
+The defining feature of the drone war is the speed of the measure-countermeasure loop. Because airframes are commoditized and the real product is software, both sides re-tune communications, navigation and flight-control code on a four-to-six-week cadence, and counter-adaptation that once took a month now happens in days. This rate of adaptation, not any technology, is the actual capability.
+
+**Key facts**
+- Effective countermeasures are often developed in mere weeks; critical systems (comms protocols, navigation, flight-control algorithms) require updates every 4-6 weeks to stay ahead of EW (Hudson Institute, 2025).
+- Russian forces needed a month or more to counter Ukrainian innovations in early 2023 but compressed this to as little as 2-3 days by 2024-2025 (Defense.info, 2025).
+- Airframes change little; software inside drones changes monthly (Granta Autonomy example, Atlantic Council, 2025).
+- Every innovation 'almost immediately triggers a countermeasure' is the recurring analytic framing (MWI / Hudson, 2025).
+
+**Systems / programs:** over-the-air firmware updates; modular software-defined payloads; frequency-hopping comms; Granta Autonomy
+
+**Defensive countermeasures**
+- Force protection must be organized for continuous re-learning: doctrine, sensors and counter-UAS kit have to be updatable in days, and procurement must fund a standing iteration capacity rather than fixed end-items that are obsolete on delivery.
+
+**Sources:** https://www.hudson.org/missile-defense/impact-drones-battlefield-lessons-russian-ukraine-war-french-perspective-tsiporah-fried · https://defense.info/re-shaping-defense-security/2025/06/russian-learning-from-ukrainian-drone-warfare-a-strategic-adaptation-analysis/ · https://www.atlanticcouncil.org/content-series/the-big-story/the-coming-compute-war-in-ukraine/
+
+### Russian Shahed/Geran Production Surge and the Saturation Economics  ·  _2026-06-15_ · confidence: high
+
+Russia localized Shahed production at Alabuga (Yelabuga) and scaled output roughly fivefold in a year, pairing real strike drones with near-equal numbers of cheap decoys to overload and exhaust Ukrainian air defenses. The strategy explicitly weaponizes the cost-exchange ratio by forcing defenders to expend expensive interceptors on cheap drones and decoys.
+
+**Key facts**
+- By end-May / early-Sept 2025, Russia reached ~2,700 Shahed/Geran-2 drones per month, a ~5x increase over summer 2024 (Ukraine HUR/GUR).
+- Russia additionally produced ~2,500 'Gerbera'-type decoy/simulator drones per month to saturate defenses (HUR, 2025).
+- Most production occurs in the Alabuga Special Economic Zone, Yelabuga, Tatarstan; supply chains tied to Chinese components (Frontelligence, 2025).
+- In January (2026) Ukraine downed a record 1,704 Shaheds in a single month, indicating raid sizes of dozens-to-hundreds per night.
+- Newer Geran-3 jet variants and other types are being scaled alongside the baseline Geran-2 (Adapt Institute, 2025).
+
+**Systems / programs:** Shahed-136 / Geran-2; Geran-3; Gerbera decoys; Alabuga (Yelabuga) factory
+
+**Defensive countermeasures**
+- Saturation plus decoys means point-defense must distinguish real warheads from decoys cheaply (acoustic/optical classification) and must have a deep, low-cost interceptor magazine; protecting fixed infrastructure requires hardening and dispersal, not just shoot-down.
+
+**Sources:** https://euromaidanpress.com/2025/09/06/russia-can-produce-up-to-2700-shaheds-per-month-intelligence-official/ · https://frontelligence.substack.com/p/shaheds-dollars-and-beijing-how-china · https://www.adaptinstitute.org/from-tehran-to-alabuga-the-evolution-of-shahed-drones-into-russias-strategic-asset/26/09/2025/ · https://en.wikipedia.org/wiki/Yelabuga_drone_factory
+
+### Drone-on-Drone Interceptors Reclaim the Cost-Exchange Ratio  ·  _2026-06-15_ · confidence: high
+
+Ukraine's answer to Shahed saturation is the $1,000-$2,500 interceptor drone, which by early 2026 became the primary means of killing Shaheds over cities and reversed the attacker-favoring economics. Moving these systems from prototype to mass production within months, and incentivizing output via pay-per-kill, made cheap interception the dominant model and drew US/Gulf procurement interest.
+
+**Key facts**
+- Interceptor drones accounted for more than 70% of Shahed kills over Kyiv as of Feb 2026, per Cdr-in-Chief Syrskyi.
+- Unit costs of ~$1,000-$2,500 (SkyFall P1-SUN ~$1,000; Wild Hornets Sting ~$2,100) versus $35,000+ targets and $1M+ missiles (2025-2026).
+- Systems moved prototype-to-mass-production within months during 2025.
+- Ukraine's pay-per-kill incentive helped procure ~40,000 interceptor drones in a single month (AOL/official, 2026); Ukraine pays the manufacturer $20,000 per confirmed Shahed kill.
+- Pentagon and Gulf states are seeking to import Ukrainian $1,000-$2,500 interceptors; a wartime export ban currently blocks foreign sales (ABC/Military Times, 2026).
+
+**Systems / programs:** SkyFall P1-SUN; Wild Hornets Sting; Yolka; pay-per-kill Shahed bounty
+
+**Defensive countermeasures**
+- A cheap interceptor tier is the only economically sustainable answer to mass strike drones; force protection planning should pre-build this layer and the production base in peacetime, since standing up interception capacity under attack is feasible but slower.
+
+**Sources:** https://www.militarytimes.com/news/pentagon-congress/2026/03/11/these-are-ukraines-1000-interceptor-drones-the-pentagon-wants-to-buy/ · https://abcnews.com/International/wireStory/ukraines-low-cost-shahed-killers-draw-us-gulf-130852955 · https://www.aol.com/articles/ukraines-pay-per-kill-system-060328053.html · https://en.wikipedia.org/wiki/Sting_(drone)
+
+### Sky Fortress: Cheap Acoustic Sensing as the Bottom Layer of Air Defense  ·  _2026-06-15_ · confidence: medium
+
+Sky Fortress is a distributed grid of ~$400-$1,000 networked microphones that detect Shaheds and cruise missiles by their acoustic signature and cue mobile gun teams within seconds. It exemplifies winning the economics on the detection side: a sensing layer two-to-three orders of magnitude cheaper than radar that fills the low-slow-small gap and pushes interception cost-per-kill down.
+
+**Key facts**
+- Each Sky Fortress node costs ~$400-$1,000 using acoustic sensors (United24/DroneXL, 2025).
+- ~14,000 acoustic sensors are deployed across Ukraine, with NATO funding another ~15,000 (2025).
+- Acoustic data is fused with radar and pushed to mobile firing teams on tablets, reportedly supporting ~95% interception rates against detected threats (2025).
+- Sky Fortress originated as a Brave1-pool project from a single Ukrainian engineer.
+- Lithuania is deploying Sky Fortress starting 2026, an early example of NATO adoption.
+
+**Systems / programs:** Sky Fortress acoustic grid; mobile gun/MANPADS firing teams; radar-acoustic fusion; Brave1 pool
+
+**Defensive countermeasures**
+- Layered, cheap detection (acoustic + radar fusion) lets defenders reserve expensive effectors for genuine threats and extend coverage affordably; rear-area and infrastructure force protection should adopt distributed low-cost sensing rather than relying solely on sparse high-end radar.
+
+**Sources:** https://united24media.com/war-in-ukraine/sky-fortress-ukraines-acoustic-detection-system-that-tracks-drones-cheap-and-fast-9451 · https://dronexl.co/2025/07/29/lithuania-sky-fortress-ukrainian-drone/ · https://drone-warfare.com/counter-uas/acoustic-detection/
+
+### Cheap Long-Range Strike Drones Invert the Deep-Strike Economy  ·  _2026-06-15_ · confidence: high
+
+Ukraine's FP-1 and Liutyi deep-strike drones let it hit strategic targets like oil refineries 1,000+ km away for tens of thousands of dollars per shot, far cheaper than cruise missiles and, notably, cheaper than the Russian Shaheds they answer. Mass production of these one-way attack drones turns strategic strike into an attritable, high-tempo campaign that imposes outsized economic costs on the adversary.
+
+**Key facts**
+- FP-1 (Fire Point) costs ~$55,000/unit and is produced at ~100-200 units/day (~3,000/month), potentially exceeding 36,000 units in a year (Defense Express / Scroll.media, 2025).
+- FP-1 is reported as cheaper than the Russian Shahed it competes against (RBC-Ukraine, 2025).
+- An-196 Liutyi costs roughly 3x an FP-1 (~$165,000), with ranges reported at 1,000+ km (some claims to ~2,000 km) and ~75 kg+ payloads.
+- Ukrainian deep strikes on 10 Russian oil refineries disrupted at least 17% of refining capacity, ~1.1 million barrels/day (2025-2026).
+- Deep-strike salvos are sized in the dozens-to-100+ drones to break through Russian air defenses (Defense Express, 2025).
+
+**Systems / programs:** Fire Point FP-1; Liutyi (An-196); long-range OWA drone fleet
+
+**Defensive countermeasures**
+- Cheap mass deep-strike means rear-area economic and energy infrastructure is now permanently at risk at low attacker cost; force protection extends to hardening, dispersing and air-defending fixed industrial sites hundreds of km from the front.
+
+**Sources:** https://newsukraine.rbc.ua/news/ukraine-ramps-up-mass-production-of-low-cost-1755796939.html · https://scroll.media/en/2025/08/22/3000-fp1-drones-per-month/ · https://en.wikipedia.org/wiki/Fire_Point_FP-1 · https://en.defence-ua.com/news/breaking_through_russian_air_defenses_is_a_100_drone_deep_strike_salvo_enough-16971.html
+
+### The Drone Line and Gamified Incentives: An Economy of Confirmed Kills  ·  _2026-06-15_ · confidence: high
+
+Ukraine institutionalized drone warfare with the Drone Line (consolidating its best unmanned units) and the Army of Drones Bonus, a points-for-kills market where verified battlefield results convert into priority equipment access. This builds an internal incentive economy that aligns frontline output with procurement, accelerating both adaptation and the efficient allocation of scarce drones.
+
+**Key facts**
+- Feb 2025: the 'Drone Line' launched, consolidating five top unmanned-systems regiments/brigades (incl. Magyar's Birds) to reinforce maneuver brigades.
+- Mid-July 2025: the Army of Drones Bonus 'ePoints' system launched, awarding points per confirmed drone kill (e.g. ~50 for an Orlan-10, 100-200 for a tank, 300-400+ for EW/command vehicles, 25 for killing a drone operator).
+- Top-scoring units gain priority access to new equipment via the Brave1 Market, tying procurement to performance (2026).
+- A separate pay-per-kill line pays the manufacturer $20,000 per confirmed Shahed downed, helping procure ~40,000 interceptors in one month (2026).
+- Analysts flag ethical/legal 'gamified war' concerns alongside the efficiency gains (War on the Rocks, Lieber Institute, 2026).
+
+**Systems / programs:** Drone Line; Unmanned Systems Forces; Army of Drones Bonus (ePoints); Magyar's Birds (414th); Brave1 Market
+
+**Defensive countermeasures**
+- Tying resources to verified output creates a self-optimizing force-employment economy; the lesson for force protection is organizational, that incentive and feedback systems can drive efficient counter-drone allocation, though they raise targeting-ethics questions that doctrine must address.
+
+**Sources:** https://kyivindependent.com/ukraine-creates-new-grouping-of-unmanned-systems-forces/ · https://euromaidanpress.com/2026/01/27/ukraines-defense-ministry-rewards-bonuses-to-drone-units-based-on-battlefield-results/ · https://warontherocks.com/gamified-war-in-ukraine-points-drones-and-the-new-moral-economy-of-killing/
+
+### The Expanding Kill Zone and the Ground-Robot Logistics Counter  ·  _2026-06-15_ · confidence: high
+
+Drone saturation pushed the lethal zone 15-25 km behind the front, making human resupply, casualty evacuation and rotation prohibitively costly in lives. Ukraine's force-protection response is to remove humans from the kill zone entirely by shifting logistics to unmanned ground vehicles, a direct economic and human-cost adaptation to pervasive aerial surveillance and strike.
+
+**Key facts**
+- FPV/drone saturation pushed the effective kill zone out to 20-25 km (some sources ~15 km / 9 miles) from the front line (Lowy/ForeignPolicy, 2025-2026).
+- The 21st Unmanned Systems Regiment delivers ~90% of supplies to forward positions via UGVs; around Pokrovsk up to ~90% of resupply is by ground robots (DroneXL, 2025).
+- Some battalions meet ~80% of logistics needs (fresh drones, ammo, food) via UGVs (2025-2026).
+- Ukraine aimed to deploy at least 15,000 ground robots by end-2025; MoD planned to contract 25,000 UGVs in H1 2026, ~2x all of 2025's procurement.
+- Late 2025/2026: reported cases of positions captured using only ground robots and drones, with no infantry assault (Army Recognition / We Are The Mighty).
+
+**Systems / programs:** UGV logistics (Bizon-L et al.); 21st Unmanned Systems Regiment; 'robot shield' concept; mesh networks / Starlink links
+
+**Defensive countermeasures**
+- When the kill zone makes manned movement untenable, force protection shifts from defending the soldier in the open to removing the soldier altogether via robotic logistics and assault; this in turn creates new dependencies on resilient comms (mesh/Starlink) that become the next target.
+
+**Sources:** https://www.lowyinstitute.org/the-interpreter/drone-wall-robot-shield-ukraine-s-military-evolution · https://dronexl.co/2025/12/03/ukraine-ground-drones-frontline-logistics/ · https://foreignpolicy.com/2026/04/13/russia-ukraine-war-drones-ground-robots-ugvs/ · https://www.strategybattles.net/2026/04/25/ukraine-25000-ground-robots-2026/
+
+
+> Heuristic OSINT synthesis from open reporting (RUSI, CSIS, ISW, The War Zone, Forbes/Hambling, Defense News, Kyiv Independent, Atlantic Council, Militarnyi, and others). Figures vary by source and methodology; treat as directional, not doctrine.

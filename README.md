@@ -9,6 +9,11 @@ sourced **"what's working" lessons** knowledge base for awareness and force prot
 Built for the analyst and the modern soldier who needs a fast, private, recognized picture
 from open sources — runs entirely on your own hardware, pure standard library.
 
+Ships with a **111-entry counter-UAS / anti-drone knowledge base** ([COUNTER_UAS.md](COUNTER_UAS.md))
+— what's actually working against drones in 2024–2026 (fiber-optic FPVs, acoustic nets,
+RF/radar, EW, interceptor drones, counter-Shahed, layered C-UAS, AI autonomy, Western
+systems, economics), sourced from open reporting; query it with `conflictwatch cuas`.
+
 Ships with a **catalog of 290+ open conflict/OSINT sources** ([SOURCES.md](SOURCES.md)) —
 datasets, trackers, think-tanks, GEOINT/imagery, flight/maritime/SDR tracking, drone &
 electronic-warfare monitors, humanitarian/early-warning feeds, and OSINT tooling — plus a
@@ -53,6 +58,12 @@ conflictwatch fetch-gdelt --out events.json
 
 # 1c) Or collect OSINT situational feeds (ISW / ACLED / ReliefWeb / Bellingcat …)
 conflictwatch scrape --out osint.json
+
+# Counter-UAS / anti-drone knowledge base (2024-2026 — fiber-optic, acoustic, EW, …)
+conflictwatch cuas --topic fiber-optic-drones
+conflictwatch cuas --keyword acoustic
+conflictwatch cuas --systems            # every named system/program
+conflictwatch cuas --stats
 
 # Browse the 290+ source catalog (filter by category/type/access/region/keyword)
 conflictwatch sources --stats
