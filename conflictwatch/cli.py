@@ -14,7 +14,8 @@ import argparse
 import json
 import sys
 
-from conflictwatch import TOOL_NAME, TOOL_VERSION, analyze, lessons as lessons_kb, scrape, sources
+from conflictwatch import (TOOL_NAME, TOOL_VERSION, analyze, catalog,
+                           lessons as lessons_kb, scrape, sources)
 from conflictwatch.events import dedupe
 
 
@@ -64,6 +65,17 @@ def main(argv=None) -> int:
     rp.add_argument("input")
     rp.add_argument("--window", type=int, default=7)
 
+    so = sub.add_parser("sources", help="query the 290+ open conflict/OSINT source catalog")
+    so.add_argument("--category", default=None)
+    so.add_argument("--type", default=None)
+    so.add_argument("--access", default=None, choices=["open", "registration", "paid"])
+    so.add_argument("--region", default=None)
+    so.add_argument("--keyword", default=None)
+    so.add_argument("--has-rss", action="store_true")
+    so.add_argument("--feeds", action="store_true", help="print just the RSS feed URLs")
+    so.add_argument("--stats", action="store_true")
+    so.add_argument("--format", choices=["table", "json"], default="table")
+
     args = p.parse_args(argv)
 
     try:
@@ -87,6 +99,22 @@ def main(argv=None) -> int:
                 print(json.dumps(items, indent=2))
             else:
                 _print_lessons(items)
+        elif args.cmd == "sources":
+            if args.stats:
+                print(json.dumps(catalog.stats(), indent=2)); return 0
+            items = catalog.filter_sources(category=args.category, type=args.type,
+                                           access=args.access, region=args.region,
+                                           keyword=args.keyword,
+                                           has_rss=True if args.has_rss else None)
+            if args.feeds:
+                print("\n".join(catalog.feeds(items))); return 0
+            if args.format == "json":
+                print(json.dumps(items, indent=2))
+            else:
+                print(f"{len(items)} source(s):")
+                for s in items:
+                    rss = " [rss]" if s.get("rss") else ""
+                    print(f"  [{s.get('category',''):12}] {s.get('name','')}{rss}\n      {s.get('url','')}")
         elif args.cmd == "report":
             s = analyze.summary(_load_events(args.input), args.window)
             _print_summary(s)

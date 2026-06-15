@@ -9,6 +9,12 @@ sourced **"what's working" lessons** knowledge base for awareness and force prot
 Built for the analyst and the modern soldier who needs a fast, private, recognized picture
 from open sources — runs entirely on your own hardware, pure standard library.
 
+Ships with a **catalog of 290+ open conflict/OSINT sources** ([SOURCES.md](SOURCES.md)) —
+datasets, trackers, think-tanks, GEOINT/imagery, flight/maritime/SDR tracking, drone &
+electronic-warfare monitors, humanitarian/early-warning feeds, and OSINT tooling — plus a
+**76-term [GLOSSARY.md](GLOSSARY.md)** of the acronyms, terms and entities of the trade
+(OSINT, GEOINT, SIGINT, ISR, EW, C-UAS, FPV, PNT, TCCC, ADS-B, AIS, ACLED, GDELT, UCDP, …).
+
 ```mermaid
 flowchart LR
   subgraph in["open sources"]
@@ -47,6 +53,11 @@ conflictwatch fetch-gdelt --out events.json
 
 # 1c) Or collect OSINT situational feeds (ISW / ACLED / ReliefWeb / Bellingcat …)
 conflictwatch scrape --out osint.json
+
+# Browse the 290+ source catalog (filter by category/type/access/region/keyword)
+conflictwatch sources --stats
+conflictwatch sources --category ukraine --access open
+conflictwatch sources --has-rss --feeds          # just the RSS URLs (drives `scrape`)
 
 # 2) Situational summary — hotspots, actors, escalation trend
 conflictwatch analyze events.json --window 7
@@ -91,10 +102,21 @@ ISR/OSINT, mobility, info-ops** — each entry is an observed trend with OSINT *
 and **defensive countermeasures**. Drafted with a local model and human-reviewed; entirely
 awareness/protection oriented (`conflictwatch/data/lessons.json`).
 
-## Data sources
+## Source catalog (290+) & glossary
 
-See [SOURCES.md](SOURCES.md) — the real open datasets and feeds behind this tool
-(ACLED, GDELT, UCDP, ISW, ReliefWeb, Bellingcat) and their access terms.
+[SOURCES.md](SOURCES.md) is the full, queryable catalog (`conflictwatch sources`) across:
+**conflict-event datasets** (ACLED, GDELT, UCDP, GTD, SIPRI, PRIO, COW, V-Dem) · **Ukraine**
+(ISW, DeepStateMap, Oryx, CIT, Bellingcat) · **MENA** (SOHR, Airwars, Yemen Data Project) ·
+**Africa/Sahel** · **Indo-Pacific** (AMTI, 38 North, SCSPI) · **think-tanks** (RUSI, CSIS,
+IISS, RAND, War on the Rocks) · **humanitarian/early-warning** (ReliefWeb, HDX, IOM DTM,
+ACAPS, FEWS NET, IPC) · **GEOINT** (Copernicus/Sentinel, NASA FIRMS, Maxar, Planet,
+GeoConfirmed, SunCalc) · **tracking** (ADS-B Exchange, Flightradar24, MarineTraffic,
+CelesTrak, WebSDR) · **drone/EW** (The War Zone, GPSJAM, Drone Wars UK) · **news** wires
+with RSS · **OSINT tooling** (OSINT Framework, Bellingcat toolkit, Maltego, SpiderFoot) ·
+and curated analyst bookmarks.
+
+88 sources expose RSS — `conflictwatch scrape` pulls straight from the catalog. See
+[GLOSSARY.md](GLOSSARY.md) for the 76 acronyms/terms/entities used throughout.
 
 ## Integrations & interop
 

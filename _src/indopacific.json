@@ -1,0 +1,222 @@
+[
+  {
+    "name": "AMTI — Asia Maritime Transparency Initiative (CSIS)",
+    "url": "https://amti.csis.org/",
+    "rss": "https://amti.csis.org/feed/",
+    "category": "indopacific",
+    "region": "South China Sea / East China Sea",
+    "type": "tracker",
+    "access": "open",
+    "desc": "CSIS satellite-imagery analysis of SCS island-building, outposts, militia and maritime claims; Island Tracker.",
+    "tags": ["south china sea", "satellite imagery", "csis", "maritime", "island tracker", "china"]
+  },
+  {
+    "name": "SCSPI — South China Sea Strategic Situation Probing Initiative",
+    "url": "https://www.scspi.org/en",
+    "rss": "",
+    "category": "indopacific",
+    "region": "South China Sea",
+    "type": "tracker",
+    "access": "open",
+    "desc": "Peking University network tracking SCS military/AIS/ADS-B activity; pro-China lens, US-activity reports.",
+    "tags": ["south china sea", "ais", "ads-b", "china", "peking university", "vessel tracking"]
+  },
+  {
+    "name": "PLATracker",
+    "url": "https://www.platracker.com/",
+    "rss": "",
+    "category": "indopacific",
+    "region": "Taiwan Strait / First Island Chain",
+    "type": "tracker",
+    "access": "open",
+    "desc": "Ben Lewis & Gerald Brown open-source PLA air/naval activity, Taiwan ADIZ, FONOPs, arms sales datasets.",
+    "tags": ["taiwan", "pla", "adiz", "china military", "fonops", "open data"]
+  },
+  {
+    "name": "ChinaPower — Taiwan ADIZ Violations (CSIS)",
+    "url": "https://chinapower.csis.org/data/taiwan-adiz-violations/",
+    "rss": "",
+    "category": "indopacific",
+    "region": "Taiwan Strait",
+    "type": "tracker",
+    "access": "open",
+    "desc": "CSIS dataset of Chinese air incursions into Taiwan's ADIZ plus broader PLA activity data points.",
+    "tags": ["taiwan", "adiz", "csis", "china military", "dataset", "incursions"]
+  },
+  {
+    "name": "CommonWealth Magazine — PLA Activity Tracker",
+    "url": "https://english.cw.com.tw/",
+    "rss": "",
+    "category": "indopacific",
+    "region": "Taiwan",
+    "type": "tracker",
+    "access": "open",
+    "desc": "Interactive tracker stitching open-source flight/ship data, Taiwan MND releases and imagery, daily refresh.",
+    "tags": ["taiwan", "pla", "tracker", "mnd", "open source", "interactive map"]
+  },
+  {
+    "name": "USNI News (incl. Fleet & Marine Tracker)",
+    "url": "https://news.usni.org/",
+    "rss": "https://news.usni.org/feed",
+    "category": "indopacific",
+    "region": "Indo-Pacific / Global maritime",
+    "type": "news",
+    "access": "open",
+    "desc": "US Naval Institute news with weekly Fleet & Marine Tracker mapping carrier/amphib group positions.",
+    "tags": ["us navy", "fleet tracker", "maritime", "carrier strike group", "indo-pacific"]
+  },
+  {
+    "name": "Naval News",
+    "url": "https://www.navalnews.com/",
+    "rss": "https://www.navalnews.com/feed/",
+    "category": "indopacific",
+    "region": "Indo-Pacific / Global naval",
+    "type": "news",
+    "access": "open",
+    "desc": "Naval defense news covering Chinese navy, shipbuilding, regional fleets and maritime security.",
+    "tags": ["navy", "china navy", "shipbuilding", "maritime security", "defense"]
+  },
+  {
+    "name": "NOSI — Naval Open Source Intelligence",
+    "url": "https://nosi.org/",
+    "rss": "https://nosi.org/feed/",
+    "category": "indopacific",
+    "region": "Indo-Pacific / Global naval",
+    "type": "tracker",
+    "access": "open",
+    "desc": "Aggregated open-source naval intelligence with a dedicated Chinese Navy activity category.",
+    "tags": ["osint", "china navy", "naval", "aggregator", "maritime"]
+  },
+  {
+    "name": "38 North (Stimson Center)",
+    "url": "https://www.38north.org/",
+    "rss": "https://www.38north.org/feed/",
+    "category": "indopacific",
+    "region": "Korean Peninsula",
+    "type": "think-tank",
+    "access": "open",
+    "desc": "Stimson Center informed analysis of North Korea, incl. satellite imagery of nuclear/missile sites.",
+    "tags": ["north korea", "nuclear", "missile", "satellite imagery", "stimson", "korea"]
+  },
+  {
+    "name": "NK News",
+    "url": "https://www.nknews.org/",
+    "rss": "https://www.nknews.org/feed/",
+    "category": "indopacific",
+    "region": "Korean Peninsula",
+    "type": "news",
+    "access": "registration",
+    "desc": "Seoul-based specialist North Korea news and analysis; some content paywalled / subscription.",
+    "tags": ["north korea", "korea", "news", "analysis", "dprk"]
+  },
+  {
+    "name": "Daily NK",
+    "url": "https://www.dailynk.com/english/",
+    "rss": "https://www.dailynk.com/english/feed/",
+    "category": "indopacific",
+    "region": "Korean Peninsula",
+    "type": "news",
+    "access": "open",
+    "desc": "North Korea news sourced from in-country networks; defections, markets, internal conditions.",
+    "tags": ["north korea", "dprk", "in-country sources", "korea", "news"]
+  },
+  {
+    "name": "Yonhap News Agency (English)",
+    "url": "https://en.yna.co.kr/",
+    "rss": "https://en.yna.co.kr/RSS/news.xml",
+    "category": "indopacific",
+    "region": "Korean Peninsula",
+    "type": "news",
+    "access": "open",
+    "desc": "South Korea's national wire; extensive North Korea, ROK defense and peninsula security coverage.",
+    "tags": ["south korea", "north korea", "defense", "wire", "korea"]
+  },
+  {
+    "name": "IISS Myanmar Conflict Map",
+    "url": "https://myanmar.iiss.org/",
+    "rss": "",
+    "category": "indopacific",
+    "region": "Myanmar",
+    "type": "tracker",
+    "access": "open",
+    "desc": "IISS interactive dashboard mapping 60k+ violent events across Myanmar warscapes plus analysis.",
+    "tags": ["myanmar", "iiss", "conflict map", "dashboard", "civil war", "acled"]
+  },
+  {
+    "name": "Myanmar Witness (Centre for Information Resilience)",
+    "url": "https://www.info-res.org/myanmar-witness/",
+    "rss": "",
+    "category": "indopacific",
+    "region": "Myanmar",
+    "type": "imagery",
+    "access": "open",
+    "desc": "OSINT verification of Myanmar airstrikes, atrocities and arms supply; maps, reports, public datasets.",
+    "tags": ["myanmar", "osint", "verification", "human rights", "airstrikes", "geolocation"]
+  },
+  {
+    "name": "ACLED — Armed Conflict Location & Event Data",
+    "url": "https://acleddata.com/",
+    "rss": "",
+    "category": "indopacific",
+    "region": "Asia (Myanmar, South Asia, regional)",
+    "type": "tracker",
+    "access": "registration",
+    "desc": "Disaggregated political-violence event data and crisis mapping; key feed for Myanmar and South Asia.",
+    "tags": ["conflict data", "event data", "myanmar", "south asia", "crisis mapping", "dataset"]
+  },
+  {
+    "name": "SATP — South Asia Terrorism Portal",
+    "url": "https://www.satp.org/",
+    "rss": "",
+    "category": "indopacific",
+    "region": "India / Pakistan / South Asia",
+    "type": "tracker",
+    "access": "open",
+    "desc": "ICM database of terrorism, insurgency and conflict across South Asia; fatalities, timelines, maps.",
+    "tags": ["india", "pakistan", "terrorism", "insurgency", "south asia", "fatalities"]
+  },
+  {
+    "name": "Afghanistan Analysts Network (AAN)",
+    "url": "https://www.afghanistan-analysts.org/en/",
+    "rss": "https://www.afghanistan-analysts.org/en/feed/",
+    "category": "indopacific",
+    "region": "Afghanistan",
+    "type": "think-tank",
+    "access": "open",
+    "desc": "Independent field-based research on Afghanistan: war and peace, armed actors, civilian impact.",
+    "tags": ["afghanistan", "taliban", "war and peace", "research", "field analysis"]
+  },
+  {
+    "name": "The Diplomat",
+    "url": "https://thediplomat.com/",
+    "rss": "https://thediplomat.com/feed/",
+    "category": "indopacific",
+    "region": "Asia-Pacific (regional)",
+    "type": "news",
+    "access": "registration",
+    "desc": "Asia-Pacific current-affairs magazine: politics, security, defense analysis across the region.",
+    "tags": ["asia-pacific", "security", "analysis", "magazine", "indo-pacific", "defense"]
+  },
+  {
+    "name": "Lowy Institute — The Interpreter",
+    "url": "https://www.lowyinstitute.org/the-interpreter",
+    "rss": "https://www.lowyinstitute.org/the-interpreter/rss.xml",
+    "category": "indopacific",
+    "region": "Indo-Pacific (regional)",
+    "type": "think-tank",
+    "access": "open",
+    "desc": "Lowy Institute commentary on Indo-Pacific politics, security, economies and regional order.",
+    "tags": ["indo-pacific", "lowy", "commentary", "security", "geopolitics", "australia"]
+  },
+  {
+    "name": "Janes — OSINT Insights",
+    "url": "https://www.janes.com/osint-insights",
+    "rss": "",
+    "category": "indopacific",
+    "region": "Indo-Pacific / Global defense",
+    "type": "think-tank",
+    "access": "paid",
+    "desc": "Janes open-source defense intelligence and analysis; deep Indo-Pacific PLA and regional coverage.",
+    "tags": ["osint", "defense intelligence", "pla", "janes", "indo-pacific", "datasets"]
+  }
+]

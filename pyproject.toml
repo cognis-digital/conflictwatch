@@ -4,14 +4,18 @@ build-backend = "hatchling.build"
 
 [project]
 name = "conflictwatch"
-version = "0.1.0"
+version = "0.2.0"
 description = "Open-source conflict monitoring & situational awareness — ingest ACLED/GDELT/UCDP + OSINT feeds, analyze hotspots/trends, and a sourced 'what's working' lessons KB"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "LicenseRef-COCL-1.0" }
 authors = [{ name = "Cognis Digital LLC" }]
-keywords = ["osint", "conflict", "acled", "gdelt", "situational-awareness", "monitoring",
-            "force-protection", "counter-uas", "geoint", "scraping", "security"]
+keywords = ["osint", "conflict", "acled", "gdelt", "ucdp", "situational-awareness",
+            "monitoring", "force-protection", "counter-uas", "uas", "fpv", "ew",
+            "electronic-warfare", "geoint", "sigint", "imint", "isr", "scraping", "rss",
+            "satellite", "adsb", "ais", "sdr", "early-warning", "humanitarian", "displacement",
+            "ukraine", "mena", "sahel", "indo-pacific", "think-tank", "stix", "threat-intel",
+            "security", "intelligence", "tccc", "pnt", "gps-jamming"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Information Technology",

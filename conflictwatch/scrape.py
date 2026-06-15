@@ -86,6 +86,13 @@ def collect(feeds: list[str] | None = None, timeout: float = 30.0) -> list[Confl
     return events
 
 
+def collect_from_catalog(category: str | None = None, timeout: float = 30.0) -> list[ConflictEvent]:
+    """Collect from every RSS feed in the source catalog (optionally one category)."""
+    from conflictwatch import catalog
+    items = catalog.filter_sources(category=category) if category else None
+    return collect(catalog.feeds(items), timeout)
+
+
 def _host(url: str) -> str:
     try:
         return urllib.parse.urlparse(url).netloc or url

@@ -1,0 +1,461 @@
+{
+  "count": 76,
+  "terms": [
+    {
+      "term": "OSINT",
+      "expansion": "Open-Source Intelligence",
+      "category": "discipline",
+      "note": "Intelligence from publicly available sources."
+    },
+    {
+      "term": "GEOINT",
+      "expansion": "Geospatial Intelligence",
+      "category": "discipline",
+      "note": "Imagery + geospatial analysis of activity on the earth."
+    },
+    {
+      "term": "SIGINT",
+      "expansion": "Signals Intelligence",
+      "category": "discipline",
+      "note": "Intelligence from intercepted signals (COMINT + ELINT)."
+    },
+    {
+      "term": "COMINT",
+      "expansion": "Communications Intelligence",
+      "category": "discipline",
+      "note": "SIGINT from communications content/metadata."
+    },
+    {
+      "term": "ELINT",
+      "expansion": "Electronic Intelligence",
+      "category": "discipline",
+      "note": "SIGINT from non-communication emitters (e.g. radar)."
+    },
+    {
+      "term": "HUMINT",
+      "expansion": "Human Intelligence",
+      "category": "discipline",
+      "note": "Intelligence from human sources."
+    },
+    {
+      "term": "IMINT",
+      "expansion": "Imagery Intelligence",
+      "category": "discipline",
+      "note": "Intelligence from imagery (satellite, aerial, FMV)."
+    },
+    {
+      "term": "MASINT",
+      "expansion": "Measurement and Signature Intelligence",
+      "category": "discipline",
+      "note": "Technical signatures (acoustic, seismic, RF)."
+    },
+    {
+      "term": "SOCMINT",
+      "expansion": "Social Media Intelligence",
+      "category": "discipline",
+      "note": "OSINT from social-media platforms."
+    },
+    {
+      "term": "TECHINT",
+      "expansion": "Technical Intelligence",
+      "category": "discipline",
+      "note": "Intelligence on adversary materiel/capabilities."
+    },
+    {
+      "term": "FININT",
+      "expansion": "Financial Intelligence",
+      "category": "discipline",
+      "note": "Intelligence from financial flows/sanctions data."
+    },
+    {
+      "term": "ISR",
+      "expansion": "Intelligence, Surveillance, Reconnaissance",
+      "category": "C2",
+      "note": "Sensing + collection feeding decisions."
+    },
+    {
+      "term": "ISTAR",
+      "expansion": "Intelligence, Surveillance, Target Acquisition, Reconnaissance",
+      "category": "C2",
+      "note": "ISR plus target acquisition."
+    },
+    {
+      "term": "C2",
+      "expansion": "Command and Control",
+      "category": "C2",
+      "note": "Exercise of authority over assigned forces."
+    },
+    {
+      "term": "C4ISR",
+      "expansion": "Command, Control, Communications, Computers, ISR",
+      "category": "C2",
+      "note": "Integrated C2 + ISR enterprise."
+    },
+    {
+      "term": "EW",
+      "expansion": "Electronic Warfare",
+      "category": "ew",
+      "note": "Military use of the EM spectrum (EA/EP/ES)."
+    },
+    {
+      "term": "EA",
+      "expansion": "Electronic Attack",
+      "category": "ew",
+      "note": "Jamming/disruption of the EM spectrum."
+    },
+    {
+      "term": "EP",
+      "expansion": "Electronic Protection",
+      "category": "ew",
+      "note": "Protecting friendly use of the EM spectrum."
+    },
+    {
+      "term": "ES",
+      "expansion": "Electronic Support",
+      "category": "ew",
+      "note": "Searching/intercepting EM emissions for SA/threat warning."
+    },
+    {
+      "term": "EMCON",
+      "expansion": "Emission Control",
+      "category": "ew",
+      "note": "Disciplined control of emissions to limit detection."
+    },
+    {
+      "term": "EMS",
+      "expansion": "Electromagnetic Spectrum",
+      "category": "ew",
+      "note": "The range of EM frequencies units must contest."
+    },
+    {
+      "term": "RF",
+      "expansion": "Radio Frequency",
+      "category": "ew",
+      "note": "EM emissions used for comms, radar, control links."
+    },
+    {
+      "term": "GNSS",
+      "expansion": "Global Navigation Satellite System",
+      "category": "pnt",
+      "note": "Satellite positioning (GPS, GLONASS, Galileo, BeiDou)."
+    },
+    {
+      "term": "GPS",
+      "expansion": "Global Positioning System",
+      "category": "pnt",
+      "note": "US GNSS constellation; common jam/spoof target."
+    },
+    {
+      "term": "PNT",
+      "expansion": "Positioning, Navigation, Timing",
+      "category": "pnt",
+      "note": "Services degraded by GNSS denial; need alt-nav."
+    },
+    {
+      "term": "UAS",
+      "expansion": "Unmanned Aircraft System",
+      "category": "uas",
+      "note": "Drone + control + comms; the air + ground segments."
+    },
+    {
+      "term": "UAV",
+      "expansion": "Unmanned Aerial Vehicle",
+      "category": "uas",
+      "note": "The aircraft element of a UAS."
+    },
+    {
+      "term": "FPV",
+      "expansion": "First-Person View (drone)",
+      "category": "uas",
+      "note": "Pilot-controlled drone flown via onboard video."
+    },
+    {
+      "term": "C-UAS",
+      "expansion": "Counter-Unmanned Aircraft System",
+      "category": "uas",
+      "note": "Detect/track/defeat hostile drones (defensive)."
+    },
+    {
+      "term": "ELRS",
+      "expansion": "ExpressLRS",
+      "category": "uas",
+      "note": "Open long-range RC control-link protocol common on FPV."
+    },
+    {
+      "term": "FLIR",
+      "expansion": "Forward-Looking Infrared",
+      "category": "sensors",
+      "note": "Thermal imaging sensor for day/night detection."
+    },
+    {
+      "term": "SAR",
+      "expansion": "Synthetic Aperture Radar",
+      "category": "sensors",
+      "note": "Radar imaging through cloud/dark (e.g. Sentinel-1)."
+    },
+    {
+      "term": "EO",
+      "expansion": "Electro-Optical",
+      "category": "sensors",
+      "note": "Visible-band imaging sensors."
+    },
+    {
+      "term": "NDVI",
+      "expansion": "Normalized Difference Vegetation Index",
+      "category": "sensors",
+      "note": "Multispectral index; reveals disturbance/digging."
+    },
+    {
+      "term": "ADS-B",
+      "expansion": "Automatic Dependent Surveillance-Broadcast",
+      "category": "tracking",
+      "note": "Aircraft position broadcast; basis of flight trackers."
+    },
+    {
+      "term": "AIS",
+      "expansion": "Automatic Identification System",
+      "category": "tracking",
+      "note": "Ship position broadcast; basis of vessel trackers."
+    },
+    {
+      "term": "TLE",
+      "expansion": "Two-Line Element set",
+      "category": "tracking",
+      "note": "Orbital data used to predict satellite passes."
+    },
+    {
+      "term": "SDR",
+      "expansion": "Software-Defined Radio",
+      "category": "tracking",
+      "note": "Reconfigurable radio for monitoring RF signals."
+    },
+    {
+      "term": "TCCC",
+      "expansion": "Tactical Combat Casualty Care",
+      "category": "medical",
+      "note": "Battlefield trauma care guidelines."
+    },
+    {
+      "term": "MARCH",
+      "expansion": "Massive hemorrhage, Airway, Respiration, Circulation, Hypothermia",
+      "category": "medical",
+      "note": "TCCC treatment priority sequence."
+    },
+    {
+      "term": "CASEVAC",
+      "expansion": "Casualty Evacuation",
+      "category": "medical",
+      "note": "Evacuation of casualties (non-dedicated assets)."
+    },
+    {
+      "term": "MEDEVAC",
+      "expansion": "Medical Evacuation",
+      "category": "medical",
+      "note": "Evacuation on dedicated, marked medical assets."
+    },
+    {
+      "term": "IED",
+      "expansion": "Improvised Explosive Device",
+      "category": "threat",
+      "note": "Homemade explosive device; major mobility threat."
+    },
+    {
+      "term": "UXO",
+      "expansion": "Unexploded Ordnance",
+      "category": "threat",
+      "note": "Munitions that failed to detonate; hazard to movement."
+    },
+    {
+      "term": "EOD",
+      "expansion": "Explosive Ordnance Disposal",
+      "category": "threat",
+      "note": "Render-safe/disposal of explosive hazards."
+    },
+    {
+      "term": "OPSEC",
+      "expansion": "Operations Security",
+      "category": "security",
+      "note": "Protecting indicators that reveal intentions."
+    },
+    {
+      "term": "PERSEC",
+      "expansion": "Personal Security",
+      "category": "security",
+      "note": "Protecting personal info that enables targeting."
+    },
+    {
+      "term": "COMSEC",
+      "expansion": "Communications Security",
+      "category": "security",
+      "note": "Protecting communications from exploitation."
+    },
+    {
+      "term": "ROE",
+      "expansion": "Rules of Engagement",
+      "category": "doctrine",
+      "note": "Directives on when/how force may be used."
+    },
+    {
+      "term": "IHL",
+      "expansion": "International Humanitarian Law",
+      "category": "doctrine",
+      "note": "Law of armed conflict protecting non-combatants."
+    },
+    {
+      "term": "PIR",
+      "expansion": "Priority Intelligence Requirement",
+      "category": "doctrine",
+      "note": "Commander's prioritized intelligence questions."
+    },
+    {
+      "term": "EEFI",
+      "expansion": "Essential Elements of Friendly Information",
+      "category": "doctrine",
+      "note": "Friendly info to protect from the adversary."
+    },
+    {
+      "term": "IPB",
+      "expansion": "Intelligence Preparation of the Battlefield",
+      "category": "doctrine",
+      "note": "Systematic analysis of terrain/weather/threat."
+    },
+    {
+      "term": "COA",
+      "expansion": "Course of Action",
+      "category": "doctrine",
+      "note": "A candidate plan considered during planning."
+    },
+    {
+      "term": "ATT&CK",
+      "expansion": "Adversarial Tactics, Techniques & Common Knowledge",
+      "category": "cyber",
+      "note": "MITRE knowledge base of adversary behavior."
+    },
+    {
+      "term": "IOC",
+      "expansion": "Indicator of Compromise",
+      "category": "cyber",
+      "note": "Artifact indicating malicious activity."
+    },
+    {
+      "term": "TTP",
+      "expansion": "Tactics, Techniques, Procedures",
+      "category": "cyber",
+      "note": "How an actor operates; behavior over indicators."
+    },
+    {
+      "term": "IDP",
+      "expansion": "Internally Displaced Person",
+      "category": "humanitarian",
+      "note": "Displaced within their own country."
+    },
+    {
+      "term": "IPC",
+      "expansion": "Integrated Food Security Phase Classification",
+      "category": "humanitarian",
+      "note": "Standard for acute food-insecurity/famine phases."
+    },
+    {
+      "term": "ACLED",
+      "expansion": "Armed Conflict Location & Event Data",
+      "category": "entity",
+      "note": "Leading disaggregated conflict-event dataset."
+    },
+    {
+      "term": "GDELT",
+      "expansion": "Global Database of Events, Language & Tone",
+      "category": "entity",
+      "note": "Open machine-coded global event stream."
+    },
+    {
+      "term": "UCDP",
+      "expansion": "Uppsala Conflict Data Program",
+      "category": "entity",
+      "note": "Academic organized-violence dataset (GED)."
+    },
+    {
+      "term": "GTD",
+      "expansion": "Global Terrorism Database",
+      "category": "entity",
+      "note": "START's open database of terrorist attacks."
+    },
+    {
+      "term": "SIPRI",
+      "expansion": "Stockholm International Peace Research Institute",
+      "category": "entity",
+      "note": "Arms transfers & military-spending data."
+    },
+    {
+      "term": "PRIO",
+      "expansion": "Peace Research Institute Oslo",
+      "category": "entity",
+      "note": "Conflict research & battle-deaths data."
+    },
+    {
+      "term": "ISW",
+      "expansion": "Institute for the Study of War",
+      "category": "entity",
+      "note": "Daily campaign assessments & control maps."
+    },
+    {
+      "term": "RUSI",
+      "expansion": "Royal United Services Institute",
+      "category": "entity",
+      "note": "UK defense & security think-tank."
+    },
+    {
+      "term": "CSIS",
+      "expansion": "Center for Strategic & International Studies",
+      "category": "entity",
+      "note": "US think-tank; runs AMTI."
+    },
+    {
+      "term": "OCHA",
+      "expansion": "UN Office for the Coordination of Humanitarian Affairs",
+      "category": "entity",
+      "note": "Runs ReliefWeb and HDX."
+    },
+    {
+      "term": "AMTI",
+      "expansion": "Asia Maritime Transparency Initiative",
+      "category": "entity",
+      "note": "CSIS South China Sea monitoring."
+    },
+    {
+      "term": "NATO",
+      "expansion": "North Atlantic Treaty Organization",
+      "category": "entity",
+      "note": "Collective-defense alliance; doctrine source."
+    },
+    {
+      "term": "STS",
+      "expansion": "Ship-to-Ship transfer",
+      "category": "maritime",
+      "note": "At-sea cargo transfer; sanctions-evasion indicator."
+    },
+    {
+      "term": "loitering munition",
+      "expansion": "Loitering munition",
+      "category": "uas",
+      "note": "One-way attack drone that loiters then strikes."
+    },
+    {
+      "term": "counter-battery",
+      "expansion": "Counter-battery fire",
+      "category": "fires",
+      "note": "Detecting and suppressing enemy indirect fire."
+    },
+    {
+      "term": "chronolocation",
+      "expansion": "Chronolocation",
+      "category": "geoint",
+      "note": "Estimating time from shadows/sun in imagery."
+    },
+    {
+      "term": "geolocation",
+      "expansion": "Geolocation",
+      "category": "geoint",
+      "note": "Determining where imagery was captured."
+    }
+  ]
+}

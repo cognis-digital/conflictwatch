@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.2.0] — 2026-06-15
+
+The "source catalog" release — a big, curated, queryable source base and a glossary.
+
+### Added
+- **Source catalog of 296 open conflict/OSINT sources** (`conflictwatch/data/sources.json`
+  + `catalog.py`): conflict-event datasets, Ukraine/MENA/Africa/Indo-Pacific monitors,
+  defense think-tanks, humanitarian & early-warning feeds, GEOINT/imagery & geolocation
+  tools, flight/maritime/satellite/SDR tracking, drone & electronic-warfare monitors, news
+  wires (RSS), OSINT frameworks/tooling, and curated analyst bookmarks. 88 expose RSS.
+  Gathered via large parallel web research + filtered from the analyst's own bookmarks.
+- **`conflictwatch sources`** CLI — filter by category/type/access/region/keyword, list
+  RSS feeds (`--feeds`), or print `--stats`. `scrape` can now pull straight from the
+  catalog (`collect_from_catalog`).
+- **[SOURCES.md](SOURCES.md)** — the full catalog rendered + a tag/term index.
+- **Glossary** (`conflictwatch/data/glossary.json` + [GLOSSARY.md](GLOSSARY.md)): 76
+  acronyms/terms/entities across OSINT disciplines, EW, UAS/C-UAS, PNT, sensors, tracking,
+  TCCC, security, doctrine, and the key data entities ingested.
+- `examples/` — ingest+report, browse-catalog, emit-to-platforms use cases.
+- Tests expanded to 23 (catalog size/shape/anchors, glossary, catalog-driven scrape, CLI).
+
 ## [0.1.0] — 2026-06-15
 
 Initial release — open-source conflict monitoring & situational awareness.
