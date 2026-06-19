@@ -371,3 +371,50 @@
 `osint` (44) · `bookmark` (39) · `OSINT` (35) · `GEOINT` (27) · `satellite` (25) · `geolocation` (18) · `defense` (15) · `UAS` (12) · `world` (12) · `recon` (12) · `conflict` (11) · `analysis` (11) · `sahel` (10) · `event data` (10) · `tradecraft` (10) · `C-UAS` (9) · `verification` (9) · `maritime` (9) · `geopolitics` (9) · `breaking` (8) · `military` (8) · `US` (8) · `dataset` (7) · `EW` (7) · `policy` (7) · `map` (7) · `API` (7) · `Iran` (7) · `directory` (7) · `islamic-state` (6) · `ADS-B` (6) · `wire` (6) · `regional` (6) · `SOCMINT` (6) · `AIS` (6) · `ship` (6) · `jnim` (5) · `terrorism` (5) · `maps` (5) · `crowdsourced` (5) · `GNSS` (5) · `Gaza` (5) · `us` (5) · `training` (5) · `tool` (5) · `TLE` (5) · `orbit` (5) · `fatalities` (4) · `horn-of-africa` (4) · `jihadism` (4) · `humanitarian` (4) · `ACLED` (4) · `UCDP` (4) · `OCHA` (4) · `GPS jamming` (4) · `community` (4) · `imagery` (4) · `Sentinel-2` (4) · `real-time` (4) · `food-security` (4)
 
 > Heuristic, open-source situational awareness. Corroborate before acting; OSINT can be incomplete, delayed, or manipulated. OSINT/force-protection use only.
+
+<!-- cognis-2026-live-sources -->
+
+## Live 2026 sources (auto-expanded)
+
+_Always-current feeds, live web-search queries, and keyless APIs for real-time monitoring. Ingest at runtime with `livesearch.py`._
+
+### Conflict
+- **feed** · https://www.understandingwar.org/feeds/all.xml
+- **feed** · https://www.bellingcat.com/feed/
+- **feed** · https://www.acleddata.com/feed/
+- **feed** · https://www.aljazeera.com/xml/rss/all.xml
+- **feed** · https://feeds.bbci.co.uk/news/world/rss.xml
+- **live search** · `frontline situational awareness OSINT`
+- **live search** · `ceasefire escalation conflict monitor`
+- **live search** · `ISW Russia Ukraine assessment`
+- **live search** · `Middle East conflict live updates`
+- **api** · https://acleddata.com/data-export-tool/ (conflict events, free API)
+- **api** · https://ucdp.uu.se/apidocs/ (UCDP georeferenced events, free)
+- **api** · https://firms.modaps.eosdis.nasa.gov/api/ (NASA FIRMS fire/strike proxy, free)
+- **api** · https://opensky-network.org/apidoc/ (live aircraft, free)
+
+### Ai
+- **feed** · https://huggingface.co/blog/feed.xml
+- **feed** · https://openai.com/news/rss.xml
+- **feed** · https://www.anthropic.com/rss.xml
+- **feed** · https://export.arxiv.org/rss/cs.AI
+- **feed** · https://export.arxiv.org/rss/cs.LG
+- **live search** · `frontier AI model release 2026`
+- **live search** · `AI agent benchmark state of the art`
+- **live search** · `open-weight LLM release`
+- **live search** · `AI policy regulation 2026`
+- **api** · http://export.arxiv.org/api/query (arXiv, free)
+- **api** · https://api.github.com/search/repositories?q=stars (trending repos, free)
+- **api** · https://hn.algolia.com/api (Hacker News, free)
+
+### Defense
+- **feed** · https://www.defensenews.com/arc/outboundfeeds/rss/?outputType=xml
+- **feed** · https://breakingdefense.com/feed/
+- **feed** · https://www.thedrive.com/the-war-zone/rss
+- **feed** · https://www.janes.com/feeds/news
+- **live search** · `defense procurement contract award 2026`
+- **live search** · `missile drone UAV deployment`
+- **live search** · `military exercise force posture`
+- **api** · https://api.usaspending.gov (federal contract awards, free)
+- **api** · https://www.sam.gov (federal opportunities, free)
+
