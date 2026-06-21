@@ -56,6 +56,11 @@ def main(argv=None) -> int:
     an.add_argument("--window", type=int, default=7)
     an.add_argument("--format", choices=["table", "json"], default="table")
 
+    ex = sub.add_parser("export", help="export events as STIX 2.1 or GeoJSON (native, no deps)")
+    ex.add_argument("input")
+    ex.add_argument("--to", choices=["stix", "geojson"], default="geojson")
+    ex.add_argument("-o", "--output", default=None, help="write to file instead of stdout")
+
     le = sub.add_parser("lessons", help="query the 'what's working' lessons KB")
     le.add_argument("--category", default=None, choices=list(lessons_kb.CATEGORIES))
     le.add_argument("--keyword", default=None)
@@ -101,6 +106,17 @@ def main(argv=None) -> int:
                 print(json.dumps(s, indent=2))
             else:
                 _print_summary(s)
+        elif args.cmd == "export":
+            from conflictwatch import intel
+            events = _load_events(args.input)
+            text = intel.export(events, args.to)
+            if args.output:
+                with open(args.output, "w", encoding="utf-8") as fh:
+                    fh.write(text if text.endswith("\n") else text + "\n")
+                print(f"wrote {args.to} export ({len(events)} events) to {args.output}",
+                      file=sys.stderr)
+            else:
+                print(text)
         elif args.cmd == "lessons":
             items = lessons_kb.query(category=args.category, keyword=args.keyword)
             if args.format == "json":

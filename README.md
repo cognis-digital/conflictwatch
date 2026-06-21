@@ -79,7 +79,17 @@ conflictwatch report events.json
 # 4) "What's working" lessons KB (awareness / force protection)
 conflictwatch lessons --category counter-uas
 conflictwatch lessons --keyword jamming
+
+# 5) Export the picture — native, zero-dep, ingestible by maps & TIPs
+conflictwatch export events.json --to geojson -o conflict.geojson   # Leaflet/Mapbox/QGIS/kepler
+conflictwatch export events.json --to stix    -o conflict.json      # STIX 2.1 bundle for OpenCTI/TIPs
 ```
+
+**Export** turns events into a **GeoJSON** FeatureCollection (every geolocated
+event as a point — drop it on a map) or a valid **STIX 2.1** bundle (each event →
+`location` + `observed-data` + `note`, grouped in a `report`; deterministic ids).
+Standard library only — no dependencies. For pushing a live Finding stream to
+MISP/Splunk/Slack, see the cognis-connect bridge (`python -m conflictwatch.connect`).
 
 Example `report` output:
 
