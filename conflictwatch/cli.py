@@ -22,7 +22,8 @@ import sys
 RELEVANT_FEEDS = ("gdelt", "ofac-sdn")
 
 from conflictwatch import (TOOL_NAME, TOOL_VERSION, analyze, catalog,
-                           cuas as cuas_kb, lessons as lessons_kb, scrape, sources)
+                           cuas as cuas_kb, lessons as lessons_kb, scrape, sources,
+                           watch as watch_mod)
 from conflictwatch.events import dedupe
 
 
@@ -84,6 +85,23 @@ def main(argv=None) -> int:
     cu.add_argument("--systems", action="store_true", help="list every named system/program")
     cu.add_argument("--stats", action="store_true")
     cu.add_argument("--format", choices=["table", "json"], default="table")
+
+    wt = sub.add_parser("watch",
+                        help="escalation early-warning: rank what is CHANGING (spikes, "
+                             "trends, new actors, geo-spread, lethality shifts)")
+    wt.add_argument("input")
+    wt.add_argument("--scope", choices=["country", "region", "location", "global"],
+                    default="country")
+    wt.add_argument("--window", type=int, default=7, help="recent-window length (days)")
+    wt.add_argument("--baseline-windows", type=int, default=4,
+                    help="how many windows of history form the baseline")
+    wt.add_argument("--as-of", default=None,
+                    help="ISO date to evaluate at (replay early-warning for a past day)")
+    wt.add_argument("--min-severity", default="info",
+                    choices=list(watch_mod.SEVERITIES))
+    wt.add_argument("--detector", default=None, choices=list(watch_mod.DETECTORS),
+                    help="show only alerts from one detector")
+    wt.add_argument("--format", choices=["table", "json"], default="table")
 
     so = sub.add_parser("sources", help="query the 290+ open conflict/OSINT source catalog")
     so.add_argument("--category", default=None)
@@ -170,6 +188,8 @@ def main(argv=None) -> int:
                         print(f"  {e['summary'][:200]}")
                     if e.get("countermeasures"):
                         print("  defense: " + "; ".join(e["countermeasures"][:2])[:200])
+        elif args.cmd == "watch":
+            return _cmd_watch(args)
         elif args.cmd == "sources":
             if args.stats:
                 print(json.dumps(catalog.stats(), indent=2)); return 0
@@ -230,6 +250,39 @@ def _cmd_feeds(args) -> int:
         print(f"imported {df.snapshot_import(args.path)} feed(s) from {args.path}")
         return 0
     return 1
+
+
+_SEV_MARK = {"critical": "!!!", "high": "!! ", "medium": "!  ",
+             "low": ".  ", "info": "   "}
+
+
+def _cmd_watch(args) -> int:
+    events = _load_events(args.input)
+    s = watch_mod.summary(
+        events, scope=args.scope, window=args.window,
+        baseline_windows=args.baseline_windows, as_of=args.as_of,
+        min_severity=args.min_severity)
+    alerts = s["alerts"]
+    if args.detector:
+        alerts = [a for a in alerts if a["detector"] == args.detector]
+    if args.format == "json":
+        out = dict(s)
+        out["alerts"] = alerts
+        out["top_alert"] = alerts[0] if alerts else None
+        print(json.dumps(out, indent=2))
+        return 0
+    print(f"CONFLICTWATCH early-warning  (scope={args.scope}, window={args.window}d, "
+          f"baseline={args.baseline_windows}x)")
+    print(f"  {len(alerts)} alert(s)   highest={s['highest']}   "
+          f"by-severity={s['by_severity']}")
+    if not alerts:
+        print("  no escalation signals above threshold.")
+        return 0
+    for a in alerts:
+        mark = _SEV_MARK.get(a["severity"], "   ")
+        print(f"\n  {mark} [{a['severity']:<8}] {a['detector']:<16} {a['scope']}")
+        print(f"        {a['reason']}  (score {a['score']})")
+    return 0
 
 
 def _cmd_sanctions(args) -> int:

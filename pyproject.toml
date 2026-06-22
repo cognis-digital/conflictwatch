@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "conflictwatch"
-version = "0.5.0"
+version = "0.6.0"
 description = "Open-source conflict monitoring & situational awareness — ingest ACLED/GDELT/UCDP + OSINT feeds, analyze hotspots/trends, and a sourced 'what's working' lessons KB"
 readme = "README.md"
 requires-python = ">=3.10"

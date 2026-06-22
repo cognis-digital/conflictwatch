@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect width="880" height="380" fill="#0d1117"/>
+  <text x="24" y="36" fill="#e6edf3" font-size="20" font-weight="700">conflictwatch — escalation early-warning pipeline</text>
+  <text x="24" y="58" fill="#8b949e" font-size="12">deterministic, dependency-free; every alert is auditable by hand</text>
+
+  <!-- ingest -->
+  <rect x="24" y="86" width="150" height="74" rx="8" fill="#161b22" stroke="#30363d"/>
+  <text x="99" y="116" fill="#e6edf3" font-size="13" font-weight="600" text-anchor="middle">ingest</text>
+  <text x="99" y="136" fill="#8b949e" font-size="10" text-anchor="middle">ACLED / GDELT /</text>
+  <text x="99" y="150" fill="#8b949e" font-size="10" text-anchor="middle">UCDP / OSINT RSS</text>
+
+  <!-- normalize -->
+  <rect x="200" y="86" width="150" height="74" rx="8" fill="#161b22" stroke="#30363d"/>
+  <text x="275" y="116" fill="#e6edf3" font-size="13" font-weight="600" text-anchor="middle">ConflictEvent</text>
+  <text x="275" y="136" fill="#8b949e" font-size="10" text-anchor="middle">one normalized</text>
+  <text x="275" y="150" fill="#8b949e" font-size="10" text-anchor="middle">daily activity series</text>
+
+  <!-- baseline windowing -->
+  <rect x="376" y="86" width="170" height="74" rx="8" fill="#161b22" stroke="#1f6feb"/>
+  <text x="461" y="112" fill="#58a6ff" font-size="13" font-weight="600" text-anchor="middle">window vs baseline</text>
+  <text x="461" y="132" fill="#8b949e" font-size="10" text-anchor="middle">recent N days vs the</text>
+  <text x="461" y="146" fill="#8b949e" font-size="10" text-anchor="middle">prior K windows (median+MAD)</text>
+
+  <!-- arrows row 1 -->
+  <line x1="174" y1="123" x2="200" y2="123" stroke="#58a6ff" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="350" y1="123" x2="376" y2="123" stroke="#58a6ff" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- detectors -->
+  <text x="24" y="210" fill="#e6edf3" font-size="13" font-weight="600">detectors (run per scope: country / region / location / global)</text>
+  <g font-size="11">
+    <rect x="24"  y="224" width="130" height="46" rx="6" fill="#161b22" stroke="#3fb950"/>
+    <text x="89"  y="248" fill="#3fb950" text-anchor="middle" font-weight="600">spike</text>
+    <text x="89"  y="263" fill="#8b949e" text-anchor="middle">robust z-score</text>
+
+    <rect x="166" y="224" width="130" height="46" rx="6" fill="#161b22" stroke="#3fb950"/>
+    <text x="231" y="248" fill="#3fb950" text-anchor="middle" font-weight="600">sustained-trend</text>
+    <text x="231" y="263" fill="#8b949e" text-anchor="middle">win/win ratio</text>
+
+    <rect x="308" y="224" width="130" height="46" rx="6" fill="#161b22" stroke="#3fb950"/>
+    <text x="373" y="248" fill="#3fb950" text-anchor="middle" font-weight="600">new-actor</text>
+    <text x="373" y="263" fill="#8b949e" text-anchor="middle">absent in baseline</text>
+
+    <rect x="450" y="224" width="130" height="46" rx="6" fill="#161b22" stroke="#3fb950"/>
+    <text x="515" y="248" fill="#3fb950" text-anchor="middle" font-weight="600">geo-spread</text>
+    <text x="515" y="263" fill="#8b949e" text-anchor="middle">distinct locations up</text>
+
+    <rect x="592" y="224" width="130" height="46" rx="6" fill="#161b22" stroke="#3fb950"/>
+    <text x="657" y="248" fill="#3fb950" text-anchor="middle" font-weight="600">lethality-shift</text>
+    <text x="657" y="263" fill="#8b949e" text-anchor="middle">fatalities/event up</text>
+
+    <rect x="734" y="224" width="122" height="46" rx="6" fill="#161b22" stroke="#3fb950"/>
+    <text x="795" y="248" fill="#3fb950" text-anchor="middle" font-weight="600">new-hotspot</text>
+    <text x="795" y="263" fill="#8b949e" text-anchor="middle">quiet→active loc</text>
+  </g>
+
+  <!-- ranked alerts -->
+  <rect x="24" y="300" width="832" height="56" rx="8" fill="#161b22" stroke="#d29922"/>
+  <text x="40" y="324" fill="#d29922" font-size="13" font-weight="600">ranked, explainable alerts</text>
+  <text x="40" y="344" fill="#8b949e" font-size="11">severity (info→critical, volume-capped) · score · reason · evidence  →  table / JSON / replay with --as-of</text>
+
+  <line x1="461" y1="160" x2="461" y2="224" stroke="#1f6feb" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="440" y1="270" x2="440" y2="300" stroke="#d29922" stroke-width="2" marker-end="url(#a)"/>
+
+  <defs>
+    <marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#58a6ff"/>
+    </marker>
+  </defs>
+</svg>

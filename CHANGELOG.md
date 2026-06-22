@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.6.0] — 2026-06-22
+
+The "early-warning" release — surface what is *changing*, not just what is biggest.
+
+### Added
+- **Escalation early-warning** (`conflictwatch/watch.py` + `conflictwatch watch` +
+  [docs/EARLY_WARNING.md](docs/EARLY_WARNING.md)): six deterministic, auditable detectors
+  run per scope (country/region/location/global) over a recent window vs the trailing
+  baseline — **spike** (robust median+MAD z-score), **sustained-trend**, **new-actor**,
+  **geo-spread**, **lethality-shift**, and **new-hotspot**. Every alert carries a
+  volume-capped severity, a score, a plain-language reason, and a machine-readable evidence
+  block. `--as-of` replays early-warning for any past day (honest threshold tuning /
+  after-action review); `--detector`, `--scope`, `--min-severity`, `--format json` filters.
+- `demos/sample_escalation.json` known-scenario fixture + `examples/05_escalation_early_warning.py`.
+- Generated SVG pipeline diagram (`docs/early_warning_pipeline.svg`).
+- **+52 tests** (52 → 104), all offline and deterministic, covering each detector, the
+  volume cap, scope isolation, `--as-of` replay, determinism/order-independence, and the CLI.
+
 ## [0.3.0] — 2026-06-15
 
 The "counter-UAS" release — a large, sourced anti-drone knowledge base.

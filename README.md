@@ -27,6 +27,7 @@ flowchart LR
   end
   in --> N[[ConflictEvent<br/>normalize + dedup]]
   N --> AN[analyze<br/>hotspots · timeline · actors · trend]
+  N --> WA[watch<br/>escalation early-warning · 6 detectors]
   N --> EM[emit → STIX/MISP/Slack<br/>via cognis-connect]
   L[(lessons KB<br/>what's working)] --> RP[report]
   AN --> RP
@@ -73,6 +74,11 @@ conflictwatch sources --has-rss --feeds          # just the RSS URLs (drives `sc
 # 2) Situational summary — hotspots, actors, escalation trend
 conflictwatch analyze events.json --window 7
 
+# 2b) Escalation EARLY-WARNING — rank what is CHANGING, not what is biggest
+conflictwatch watch events.json --scope country --window 7
+conflictwatch watch events.json --as-of 2026-06-10 --min-severity high  # replay a past day
+conflictwatch watch events.json --detector new-hotspot --format json    # one detector, machine-readable
+
 # 3) Full report (summary + awareness lessons keyed to what's happening)
 conflictwatch report events.json
 
@@ -108,6 +114,44 @@ CONFLICTWATCH situational summary  (2026-06-10 .. 2026-06-14)
 Relevant lessons (awareness):
   - [counter-uas] Small Drone Threats: low-cost drones used for surveillance and attack — integrate detection + layered defense
 ```
+
+## Escalation early-warning (`conflictwatch watch`)
+
+`analyze` shows you the snapshot; **`watch` shows you the delta** — it ranks *what is
+changing* so the quiet village taking its first shelling isn't buried under the place that
+was already the loudest yesterday. Six deterministic, auditable detectors run per scope
+(`country` / `region` / `location` / `global`) over a recent window vs the trailing baseline:
+
+| Detector | Catches |
+|---|---|
+| **spike** | sudden flare-ups (robust median + MAD z-score) |
+| **sustained-trend** | slow build-ups a single spike test misses |
+| **new-actor** | a unit/militia/capability appearing that was absent from the baseline |
+| **geo-spread** | a front widening / conflict diffusing geographically |
+| **lethality-shift** | violence getting deadlier even when tempo is flat |
+| **new-hotspot** | a brand-new flashpoint crossing an activity floor |
+
+Every alert carries its **severity** (volume-capped so a 0→2 blip can't outrank a 5→40
+surge), **score**, a plain-language **reason**, and a machine-readable **evidence** block.
+`--as-of <date>` replays the early-warning as it would have looked on a past day (honest
+threshold tuning + after-action review). Standard library, deterministic, offline-capable.
+
+```console
+$ conflictwatch watch demos/sample_escalation.json --scope country --window 7
+CONFLICTWATCH early-warning  (scope=country, window=7d, baseline=4x)
+  6 alert(s)   highest=critical   by-severity={'critical': 4, 'low': 2}
+
+  !!! [critical] spike            Borderland
+        42 events in the last 7d vs a baseline median of 8/7d (robust z=12.8)  (score 12.75)
+  !!! [critical] new-hotspot      Borderland
+        'Newcross' surged to 42 events this window (was 0 across the 28d baseline)  (score 12.4)
+  !!! [critical] lethality-shift  Borderland
+        lethality rose to 3.4 fatalities/event (baseline 0.5)  (score 5.81)
+  ...
+```
+
+Full write-up — detector math, the robust-statistics rationale, a walkthrough, and candid
+threat/limitations notes — is in **[docs/EARLY_WARNING.md](docs/EARLY_WARNING.md)**.
 
 ## Edge data feeds + OFAC sanctions screening
 
