@@ -1,0 +1,14 @@
+[
+  {"date": "2026-06-18", "event_type": "battle", "actor1": "Wagner Group",
+   "actor2": "Local Defense Forces", "country": "Mali", "location": "Gao",
+   "fatalities": 12, "source": "OSINT", "notes": "Reported clash near Gao."},
+  {"date": "2026-06-19", "event_type": "explosion/remote", "actor1": "Hizballah",
+   "actor2": "IDF", "country": "Lebanon", "location": "Tyre",
+   "fatalities": 3, "source": "OSINT", "notes": "Rocket exchange across border."},
+  {"date": "2026-06-19", "event_type": "drone/uas", "actor1": "Houthis",
+   "actor2": "Commercial vessel", "country": "Yemen", "location": "Red Sea",
+   "fatalities": 0, "source": "OSINT", "notes": "UAV launched toward shipping lane."},
+  {"date": "2026-06-20", "event_type": "protests", "actor1": "Civil society group",
+   "actor2": "Police", "country": "Kenya", "location": "Nairobi",
+   "fatalities": 0, "source": "OSINT", "notes": "Peaceful demonstration (no sanctioned party)."}
+]

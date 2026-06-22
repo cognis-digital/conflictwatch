@@ -83,6 +83,9 @@ conflictwatch lessons --keyword jamming
 # 5) Export the picture — native, zero-dep, ingestible by maps & TIPs
 conflictwatch export events.json --to geojson -o conflict.geojson   # Leaflet/Mapbox/QGIS/kepler
 conflictwatch export events.json --to stix    -o conflict.json      # STIX 2.1 bundle for OpenCTI/TIPs
+
+# 6) Sanctions screening — flag OFAC-sanctioned actors in your events (see below)
+conflictwatch sanctions events.json --offline
 ```
 
 **Export** turns events into a **GeoJSON** FeatureCollection (every geolocated
@@ -106,13 +109,75 @@ Relevant lessons (awareness):
   - [counter-uas] Small Drone Threats: low-cost drones used for surveillance and attack — integrate detection + layered defense
 ```
 
+## Edge data feeds + OFAC sanctions screening
+
+conflictwatch ships an **edge / air-gap-deployable** data-feed layer
+(`conflictwatch/datafeeds.py` + catalog `conflictwatch/data_feeds_2026.json`,
+standard-library only) that fetches real, keyless public feeds over HTTPS, caches
+them to disk, and **re-serves them offline** so the tool keeps working on
+disconnected gear. This repo consumes two feeds from the catalog:
+
+| feed id    | source (real, public, keyless)                              | used for |
+|------------|-------------------------------------------------------------|----------|
+| `ofac-sdn` | US Treasury OFAC SDN list — https://www.treasury.gov/ofac/downloads/sdn.csv | sanctions cross-reference of event actors |
+| `gdelt`    | GDELT 2.0 global event stream — http://data.gdeltproject.org/gdeltv2/lastupdate.txt | latest 15-min open conflict event export |
+
+```bash
+conflictwatch feeds list                 # the feeds this repo consumes + cache freshness
+conflictwatch feeds update ofac-sdn      # fetch + cache (online)
+conflictwatch feeds get gdelt --offline  # re-serve from cache, never touches the network
+```
+
+### Real enrichment — OFAC SDN actor screening
+
+`conflictwatch sanctions <events.json>` cross-references every event's `actor1` /
+`actor2` against the **OFAC Specially Designated Nationals (SDN)** list (primary
+names **and** `a.k.a.` aliases parsed from the SDN remarks field). When a militia,
+paramilitary group, vessel, or individual in your event stream is OFAC-sanctioned,
+it is surfaced with the SDN program (e.g. `SDGT`, `RUSSIA-EO14024`) — which changes
+the reporting and legal posture of the situational picture.
+
+```
+$ conflictwatch sanctions demos/sample_events_sanctions.json --offline
+OFAC SDN screening: 3 of 4 events name a sanctioned actor
+
+[2026-06-18] Mali  event 24e3...   actor 'Wagner Group' -> SDN 'WAGNER GROUP'   (/RUSSIA-EO14024) [STRONG]
+[2026-06-19] Lebanon event ...     actor 'Hizballah'    -> SDN 'HIZBALLAH'      (/SDGT) [STRONG]
+[2026-06-19] Yemen  event ...      actor 'Houthis'      -> SDN 'ANSARALLAH'     (/SDGT) [STRONG]   # alias resolved
+```
+
+Run the demo: `python examples/04_sanctions_enrichment.py`.
+
+### Air-gap / sneakernet workflow
+
+On a connected box, cache the feed and tar it; carry it to the disconnected
+enclave; import and run everything `--offline`:
+
+```bash
+# connected side
+conflictwatch feeds update ofac-sdn
+conflictwatch feeds snapshot-export sdn.tar.gz
+
+# air-gapped side (after sneakernet)
+conflictwatch feeds snapshot-import sdn.tar.gz
+conflictwatch sanctions events.json --offline    # zero network
+```
+
+The cache location is `COGNIS_FEEDS_CACHE` (default `~/.cache/cognis-feeds`).
+The committed test suite points it at a trimmed offline snapshot under
+`tests/fixtures/feeds_cache/`, so CI runs the full enrichment with **no network**.
+
 ## From Python
 
 ```python
-from conflictwatch import sources, analyze, lessons
+from conflictwatch import sources, analyze, lessons, sanctions
 events = sources.parse("acled", open("acled_export.csv", encoding="utf-8").read())
 print(analyze.summary(events)["hotspots"])
 print(lessons.query(category="ew-spectrum"))
+
+# flag OFAC-sanctioned actors (offline once the SDN feed is cached)
+for hit in sanctions.screen_events(events, offline=True):
+    print(hit["date"], hit["matches"])
 ```
 
 ## The "what's working" lessons KB

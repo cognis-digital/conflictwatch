@@ -6,6 +6,10 @@
     conflictwatch analyze events.json --window 7
     conflictwatch lessons --category counter-uas
     conflictwatch report events.json                     # full situational summary
+    conflictwatch feeds list                             # edge data-feed catalog
+    conflictwatch feeds update ofac-sdn                  # fetch + cache a feed
+    conflictwatch feeds get gdelt --offline              # re-serve from cache (air-gap)
+    conflictwatch sanctions events.json --offline        # flag OFAC-sanctioned actors
 """
 
 from __future__ import annotations
@@ -13,6 +17,9 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+
+# Edge / air-gap data feeds this repo consumes (ids from the bundled catalog).
+RELEVANT_FEEDS = ("gdelt", "ofac-sdn")
 
 from conflictwatch import (TOOL_NAME, TOOL_VERSION, analyze, catalog,
                            cuas as cuas_kb, lessons as lessons_kb, scrape, sources)
@@ -89,9 +96,33 @@ def main(argv=None) -> int:
     so.add_argument("--stats", action="store_true")
     so.add_argument("--format", choices=["table", "json"], default="table")
 
+    fd = sub.add_parser("feeds", help="edge/air-gap data feeds (OFAC SDN, GDELT) — list/update/get")
+    fdsub = fd.add_subparsers(dest="feeds_cmd", required=True)
+    fdsub.add_parser("list", help="list the data feeds this repo consumes")
+    fdu = fdsub.add_parser("update", help="fetch + cache a feed (online)")
+    fdu.add_argument("feed", choices=list(RELEVANT_FEEDS))
+    fdg = fdsub.add_parser("get", help="print a feed (cached/fetched; --offline = cache only)")
+    fdg.add_argument("feed", choices=list(RELEVANT_FEEDS))
+    fdg.add_argument("--offline", action="store_true")
+    fde = fdsub.add_parser("snapshot-export", help="tar the feed cache for air-gap transfer")
+    fde.add_argument("path")
+    fdi = fdsub.add_parser("snapshot-import", help="load an air-gap feed snapshot into the cache")
+    fdi.add_argument("path")
+
+    sa = sub.add_parser("sanctions",
+                        help="cross-reference event actors against the OFAC SDN list")
+    sa.add_argument("input")
+    sa.add_argument("--offline", action="store_true",
+                    help="serve the OFAC SDN feed from cache only (edge / air-gap)")
+    sa.add_argument("--format", choices=["table", "json"], default="table")
+
     args = p.parse_args(argv)
 
     try:
+        if args.cmd == "feeds":
+            return _cmd_feeds(args)
+        if args.cmd == "sanctions":
+            return _cmd_sanctions(args)
         if args.cmd == "ingest":
             with open(args.from_file, encoding="utf-8") as fh:
                 events = dedupe(sources.parse(args.source, fh.read()))
@@ -170,6 +201,51 @@ def main(argv=None) -> int:
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
+    return 0
+
+
+def _cmd_feeds(args) -> int:
+    from conflictwatch import datafeeds as df
+    catalog = {"feeds": [f for f in df.list_feeds() if f["id"] in RELEVANT_FEEDS]}
+    if args.feeds_cmd == "list":
+        print(f"{len(catalog['feeds'])} edge data feed(s) consumed by conflictwatch:")
+        for f in catalog["feeds"]:
+            age = df.cached_age_hours(f["id"])
+            fresh = "uncached" if age is None else f"{age:.1f}h old"
+            print(f"  {f['id']:10} [{fresh:>9}]  {f['name']}\n      {f['url']}")
+        return 0
+    if args.feeds_cmd == "update":
+        pth = df.update(args.feed, catalog=catalog)
+        print(f"updated {args.feed} -> {pth} ({pth.stat().st_size} bytes)")
+        return 0
+    if args.feeds_cmd == "get":
+        data = df.get(args.feed, offline=args.offline, catalog=catalog)
+        print(json.dumps(data, indent=2)[:4000] if isinstance(data, (dict, list))
+              else str(data)[:4000])
+        return 0
+    if args.feeds_cmd == "snapshot-export":
+        print(f"exported {df.snapshot_export(args.path)} feed(s) -> {args.path}")
+        return 0
+    if args.feeds_cmd == "snapshot-import":
+        print(f"imported {df.snapshot_import(args.path)} feed(s) from {args.path}")
+        return 0
+    return 1
+
+
+def _cmd_sanctions(args) -> int:
+    from conflictwatch import sanctions
+    events = _load_events(args.input)
+    flagged = sanctions.screen_events(events, offline=args.offline)
+    if args.format == "json":
+        print(json.dumps(flagged, indent=2))
+        return 0
+    print(f"OFAC SDN screening: {len(flagged)} of {len(events)} events name a sanctioned actor")
+    for f in flagged:
+        print(f"\n[{f['date']}] {f.get('country','')}  event {f['event_id']}")
+        for m in f["matches"]:
+            tag = "STRONG" if m["strong"] else f"{m['shared_terms']} shared"
+            print(f"  actor '{m['actor']}'  ->  SDN '{m['sdn_name']}'"
+                  f"  ({m['sdn_type']}/{m['program']}) [{tag}]")
     return 0
 
 
