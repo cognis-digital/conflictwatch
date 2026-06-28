@@ -34,6 +34,81 @@ flowchart LR
   classDef c fill:#6b46c1,color:#fff; class N c;
 ```
 
+
+<!-- cognis:example:start -->
+## 🔎 Example output
+
+Real, reproducible output from the tool — runs offline:
+
+```console
+$ conflictwatch --version
+conflictwatch 0.6.0
+```
+
+```console
+$ conflictwatch --help
+usage: conflictwatch [-h] [--version]
+                     {ingest,fetch-gdelt,scrape,analyze,export,lessons,report,cuas,watch,sources,feeds,sanctions} ...
+
+conflictwatch CLI - ingest open conflict data, analyze it, consult lessons.
+
+positional arguments:
+  {ingest,fetch-gdelt,scrape,analyze,export,lessons,report,cuas,watch,sources,feeds,sanctions}
+    ingest              parse an open conflict dataset into events
+    fetch-gdelt         pull the latest open GDELT events export
+    scrape              collect OSINT situational feeds (RSS/Atom)
+    analyze             situational summary over an events file
+    export              export events as STIX 2.1 or GeoJSON (native, no deps)
+    lessons             query the 'what's working' lessons KB
+    report              full situational report (summary + lessons hint)
+    cuas                query the counter-UAS / anti-drone knowledge base
+                        (2024-2026)
+    watch               escalation early-warning: rank what is CHANGING
+                        (spikes, trends, new actors, geo-spread, lethality
+                        shifts)
+    sources             query the 290+ open conflict/OSINT source catalog
+    feeds               edge/air-gap data feeds (OFAC SDN, GDELT) —
+                        list/update/get
+    sanctions           cross-reference event actors against the OFAC SDN list
+
+options:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+```
+
+> Blocks above are real `conflictwatch` output — reproduce them from a clone.
+
+**Sample result format** _(illustrative values — run on your own data for real findings):_
+
+```
+{
+  "events": [
+    {
+      "id": "1234567890",
+      "type": "Attack",
+      "description": "Terrorist attack on a market in Paris",
+      "location": {
+        "lat": 48.8567,
+        "long": 2.2945
+      },
+      "timestamp": "2023-02-15T14:30:00Z"
+    },
+    {
+      "id": "2345678901",
+      "type": "Protest",
+      "description": "Massive protests against government in Moscow",
+      "location": {
+        "lat": 55.7558,
+        "long": 37.6173
+      },
+      "timestamp": "2023-02-15T10:00:00Z"
+    }
+  ]
+}
+```
+
+<!-- cognis:example:end -->
+
 ## Scope & ethics
 
 conflictwatch is for **open-source intelligence, situational awareness, and force
