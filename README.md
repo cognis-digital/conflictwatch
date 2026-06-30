@@ -117,6 +117,39 @@ lessons-learned. It is **not** a targeting, fire-control, or weapon system, it d
 plan operations against people, and it is not for surveilling individuals. It reads public
 datasets and public feeds only. Use it to understand a situation and protect people.
 
+## Demos
+
+Five runnable, **fully offline** scenarios in [`demos/`](demos/), each written for a
+different audience and loading its own committed sample data. Run them all (they
+double as smoke tests and each exits 0), or run one:
+
+```bash
+python demos/run_all.py                              # all five, end to end
+python demos/02_force_protection_early_warning.py    # or just one
+```
+
+| # | Scenario | Audience | Shows |
+|---|----------|----------|-------|
+| 1 | [OSINT analyst](demos/01_osint_analyst_situational_report.py) | OSINT analysts | `analyze` — hotspots, actors, event mix, escalation trend |
+| 2 | [Force protection](demos/02_force_protection_early_warning.py) | Force protection / early-warning | `watch` — 6 detectors rank the *delta*; replay shows lead time |
+| 3 | [Journalist / researcher](demos/03_journalist_export_and_map.py) | Journalists & researchers | `intel` — GeoJSON map layer + STIX 2.1 bundle, zero deps |
+| 4 | [NGO / humanitarian](demos/04_ngo_lessons_and_sanctions.py) | NGOs & humanitarian staff | `sanctions` OFAC SDN screening (offline) + protection lessons |
+| 5 | [Collection manager](demos/05_collection_catalog_and_cuas.py) | Collection managers / planners | source `catalog` discovery + counter-UAS threat brief |
+
+```mermaid
+flowchart LR
+    SD[(committed sample data<br/>ACLED · escalation · sanctions)] --> R[run_all.py]
+    R --> D1[1 · analyze<br/>OSINT analyst]
+    R --> D2[2 · watch<br/>force protection]
+    R --> D3[3 · intel export<br/>journalist / researcher]
+    R --> D4[4 · sanctions + lessons<br/>NGO / humanitarian]
+    R --> D5[5 · catalog + cuas<br/>collection manager]
+    classDef c fill:#6b46c1,color:#fff; class R c;
+```
+
+Full write-ups in [docs/DEMOS.md](docs/DEMOS.md); the end-to-end design is in
+[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
 ## Install
 
 ```bash
