@@ -4,3 +4,5 @@ _bm_candidates.json
 
 __pycache__/
 *.pyc
+
+media/walkthrough.mp4
