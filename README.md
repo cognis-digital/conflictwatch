@@ -28,9 +28,13 @@ flowchart LR
   in --> N[[ConflictEvent<br/>normalize + dedup]]
   N --> AN[analyze<br/>hotspots · timeline · actors · trend]
   N --> WA[watch<br/>escalation early-warning · 6 detectors]
+  N --> CO[correlate<br/>clusters · actor-net · coordinated]
+  N --> PO[posture<br/>I&W tiers · GREEN→RED]
+  N --> TR[trends<br/>peaks · lulls · forecast]
   N --> EM[emit → STIX/MISP/Slack<br/>via cognis-connect]
-  L[(lessons KB<br/>what's working)] --> RP[report]
+  L[(lessons KB<br/>what's working)] --> RP[report · brief<br/>md · csv · kml · intsum]
   AN --> RP
+  WA --> PO
   classDef c fill:#6b46c1,color:#fff; class N c;
 ```
 
@@ -51,18 +55,18 @@ Real, reproducible output from the tool — runs offline:
 
 ```console
 $ conflictwatch --version
-conflictwatch 0.6.0
+conflictwatch 0.7.0
 ```
 
 ```console
 $ conflictwatch --help
 usage: conflictwatch [-h] [--version]
-                     {ingest,fetch-gdelt,scrape,analyze,export,lessons,report,cuas,watch,sources,feeds,sanctions} ...
+                     {ingest,fetch-gdelt,scrape,analyze,export,lessons,report,cuas,watch,sources,feeds,sanctions,correlate,posture,trends,brief} ...
 
 conflictwatch CLI - ingest open conflict data, analyze it, consult lessons.
 
 positional arguments:
-  {ingest,fetch-gdelt,scrape,analyze,export,lessons,report,cuas,watch,sources,feeds,sanctions}
+  {ingest,fetch-gdelt,scrape,analyze,export,lessons,report,cuas,watch,sources,feeds,sanctions,correlate,posture,trends,brief}
     ingest              parse an open conflict dataset into events
     fetch-gdelt         pull the latest open GDELT events export
     scrape              collect OSINT situational feeds (RSS/Atom)
@@ -79,6 +83,14 @@ positional arguments:
     feeds               edge/air-gap data feeds (OFAC SDN, GDELT) —
                         list/update/get
     sanctions           cross-reference event actors against the OFAC SDN list
+    correlate           find structure: spatio-temporal clusters, actor
+                        network, type co-occurrence, coordinated days
+    posture             defensive I&W posture per scope (GREEN/GUARDED/AMBER/
+                        RED) from tempo, lethality, escalation, drone/UAS
+                        share, geo-spread
+    trends              temporal analytics: moving average, peaks, lulls,
+                        weekday profile, naive trend forecast
+    brief               human-readable report: markdown / csv / kml / intsum
 
 options:
   -h, --help            show this help message and exit
@@ -128,7 +140,7 @@ datasets and public feeds only. Use it to understand a situation and protect peo
 
 ## Demos
 
-Five runnable, **fully offline** scenarios in [`demos/`](demos/), each written for a
+Six runnable, **fully offline** scenarios in [`demos/`](demos/), each written for a
 different audience and loading its own committed sample data. Run them all (they
 double as smoke tests and each exits 0), or run one:
 
@@ -144,6 +156,7 @@ python demos/02_force_protection_early_warning.py    # or just one
 | 3 | [Journalist / researcher](demos/03_journalist_export_and_map.py) | Journalists & researchers | `intel` — GeoJSON map layer + STIX 2.1 bundle, zero deps |
 | 4 | [NGO / humanitarian](demos/04_ngo_lessons_and_sanctions.py) | NGOs & humanitarian staff | `sanctions` OFAC SDN screening (offline) + protection lessons |
 | 5 | [Collection manager](demos/05_collection_catalog_and_cuas.py) | Collection managers / planners | source `catalog` discovery + counter-UAS threat brief |
+| 6 | [Watch officer](demos/06_watch_officer_correlation_posture.py) | Duty / watch officers | `correlate` clusters + `posture` I&W tiers + `trends` + INTSUM `brief` |
 
 ```mermaid
 flowchart LR
@@ -209,6 +222,22 @@ conflictwatch export events.json --to stix    -o conflict.json      # STIX 2.1 b
 
 # 6) Sanctions screening — flag OFAC-sanctioned actors in your events (see below)
 conflictwatch sanctions events.json --offline
+
+# 7) Correlate — what goes together (clusters, actor network, coordinated days)
+conflictwatch correlate events.json --mode clusters --radius-km 50
+conflictwatch correlate events.json --mode actor-network --format json
+conflictwatch correlate events.json --mode all
+
+# 8) Defensive I&W posture — GREEN/GUARDED/AMBER/RED per area, with reasons
+conflictwatch posture events.json --scope country --window 7
+
+# 9) Temporal analytics — peaks, lulls, weekday profile, naive forecast
+conflictwatch trends events.json --metric events --horizon 7
+
+# 10) Human-readable brief — markdown / csv / kml / intsum
+conflictwatch brief events.json --to markdown
+conflictwatch brief events.json --to intsum
+conflictwatch brief events.json --to kml -o conflict.kml    # Google Earth / QGIS overlay
 ```
 
 **Export** turns events into a **GeoJSON** FeatureCollection (every geolocated
@@ -269,6 +298,61 @@ CONFLICTWATCH early-warning  (scope=country, window=7d, baseline=4x)
 
 Full write-up — detector math, the robust-statistics rationale, a walkthrough, and candid
 threat/limitations notes — is in **[docs/EARLY_WARNING.md](docs/EARLY_WARNING.md)**.
+
+## Correlation, posture, trends & briefs
+
+`analyze` gives the snapshot and `watch` gives the delta; three more analysis modes read
+deeper structure out of the same normalized events, and a fourth turns any of it into a
+brief a person actually reads. All native, deterministic, offline.
+
+**`correlate`** — what *goes together*. A **spatio-temporal cluster** groups events that
+are close in *both* place and time (single-link agglomeration over haversine distance + a
+day gap — the coordinated push, the bad night in one sector). An **actor network** returns
+the weighted belligerent graph (who shows up with/against whom) for any network tool.
+**Co-occurrence** surfaces event-type pairs that recur in the same place+window; and
+**coordinated-days** flags days when activity flares across many places at once.
+
+```console
+$ conflictwatch correlate demos/sample_correlation.json --mode clusters
+2 spatio-temporal cluster(s):
+
+  cluster: 5 events, 16 fatalities (2026-06-08..2026-06-11, 3d span)
+    centroid ~(48.634, 37.13), radius 6.3km  countries=['Borderland']
+    actors: Forces of A, Forces of B, Volunteer Brigade
+```
+
+**`posture`** — a defensive **Indications & Warning** advisory per scope, GREEN / GUARDED /
+AMBER / RED, built from five transparent, bounded sub-scores (tempo, lethality, escalation,
+drone/UAS share, geo-spread), each with a stated reason and a set of *descriptive defensive
+advisories* (increase dispersion, review overhead cover, brief the drone threat, …). It
+tells people **how alert to be and why** — it does not target, task, or recommend force.
+
+```console
+$ conflictwatch posture demos/sample_escalation.json --scope country
+CONFLICTWATCH I&W posture  (scope=country, window=7d)
+  2 scope(s)   highest=RED   by-tier={'RED': 1, 'GREEN': 1}
+
+  !!! [RED    ] Borderland  (score 0.82, 42 events / 143 fatalities)
+        - Activity tempo is rising — refresh the local picture more often ...
+        - Drone/UAS and explosive-remote activity is prominent — brief the small-drone threat ...
+```
+
+**`trends`** — temporal *shape*: a smoothed moving average, robust **peak** detection (the
+bad days worth annotating), **lull** detection (a fragile calm), a **weekday profile**, and
+a deliberately simple, clearly-labelled linear **forecast** (trend line for human context,
+not a black box to act on blindly).
+
+**`brief`** — the same picture as a **markdown** situational report, a **csv** timeline for
+a spreadsheet, a severity-colour-coded **kml** map overlay for Google Earth / QGIS, or a
+terse **INTSUM** plaintext handover (BLUF / situation / assessment).
+
+```python
+from conflictwatch import correlate, indicators, trends, reports
+print(correlate.clusters(events, radius_km=50)[0]["actors"])
+print(indicators.summary(events, scope="country")["highest"])   # 'red' | 'amber' | ...
+print(trends.forecast(events)["direction"])                      # 'rising' | 'flat' | 'falling'
+print(reports.to_intsum(events, area="EAST SECTOR"))
+```
 
 ## Edge data feeds + OFAC sanctions screening
 
@@ -331,10 +415,12 @@ The committed test suite points it at a trimmed offline snapshot under
 ## From Python
 
 ```python
-from conflictwatch import sources, analyze, lessons, sanctions
+from conflictwatch import sources, analyze, lessons, sanctions, correlate, indicators, trends, reports
 events = sources.parse("acled", open("acled_export.csv", encoding="utf-8").read())
 print(analyze.summary(events)["hotspots"])
 print(lessons.query(category="ew-spectrum"))
+print(correlate.clusters(events)[:1])            # spatio-temporal clusters
+print(indicators.summary(events)["highest"])     # defensive I&W posture
 
 # flag OFAC-sanctioned actors (offline once the SDN feed is cached)
 for hit in sanctions.screen_events(events, offline=True):

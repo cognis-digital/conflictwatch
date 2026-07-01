@@ -21,6 +21,7 @@ SCENARIOS = [
     "03_journalist_export_and_map",
     "04_ngo_lessons_and_sanctions",
     "05_collection_catalog_and_cuas",
+    "06_watch_officer_correlation_posture",
 ]
 
 

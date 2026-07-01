@@ -23,7 +23,9 @@ RELEVANT_FEEDS = ("gdelt", "ofac-sdn")
 
 from conflictwatch import (TOOL_NAME, TOOL_VERSION, analyze, catalog,
                            cuas as cuas_kb, lessons as lessons_kb, scrape, sources,
-                           watch as watch_mod)
+                           watch as watch_mod, correlate as correlate_mod,
+                           indicators as indicators_mod, trends as trends_mod,
+                           reports as reports_mod)
 from conflictwatch.events import dedupe
 
 
@@ -134,6 +136,50 @@ def main(argv=None) -> int:
                     help="serve the OFAC SDN feed from cache only (edge / air-gap)")
     sa.add_argument("--format", choices=["table", "json"], default="table")
 
+    co = sub.add_parser("correlate",
+                        help="find structure: spatio-temporal clusters, actor "
+                             "network, type co-occurrence, coordinated days")
+    co.add_argument("input")
+    co.add_argument("--mode", default="clusters",
+                    choices=["clusters", "actor-network", "cooccurrence",
+                             "coordinated", "all"])
+    co.add_argument("--radius-km", type=float, default=50.0,
+                    help="cluster radius (clusters mode)")
+    co.add_argument("--max-day-gap", type=int, default=3,
+                    help="max day gap to join a cluster (clusters mode)")
+    co.add_argument("--min-size", type=int, default=3, help="min cluster size")
+    co.add_argument("--format", choices=["table", "json"], default="table")
+
+    po = sub.add_parser("posture",
+                        help="defensive I&W posture per scope (GREEN/GUARDED/"
+                             "AMBER/RED) from tempo, lethality, escalation, "
+                             "drone/UAS share, geo-spread")
+    po.add_argument("input")
+    po.add_argument("--scope", choices=["country", "region", "location", "global"],
+                    default="country")
+    po.add_argument("--window", type=int, default=7)
+    po.add_argument("--baseline-windows", type=int, default=4)
+    po.add_argument("--as-of", default=None,
+                    help="ISO date to evaluate at (replay a past day)")
+    po.add_argument("--format", choices=["table", "json"], default="table")
+
+    tr = sub.add_parser("trends",
+                        help="temporal analytics: moving average, peaks, lulls, "
+                             "weekday profile, naive trend forecast")
+    tr.add_argument("input")
+    tr.add_argument("--metric", choices=["events", "fatalities"], default="events")
+    tr.add_argument("--window", type=int, default=7, help="moving-average window")
+    tr.add_argument("--horizon", type=int, default=7, help="forecast horizon (days)")
+    tr.add_argument("--format", choices=["table", "json"], default="table")
+
+    br = sub.add_parser("brief",
+                        help="human-readable report: markdown / csv / kml / intsum")
+    br.add_argument("input")
+    br.add_argument("--to", choices=list(reports_mod.FORMATS), default="markdown")
+    br.add_argument("--window", type=int, default=7)
+    br.add_argument("-o", "--output", default=None,
+                    help="write to file instead of stdout")
+
     args = p.parse_args(argv)
 
     try:
@@ -141,6 +187,14 @@ def main(argv=None) -> int:
             return _cmd_feeds(args)
         if args.cmd == "sanctions":
             return _cmd_sanctions(args)
+        if args.cmd == "correlate":
+            return _cmd_correlate(args)
+        if args.cmd == "posture":
+            return _cmd_posture(args)
+        if args.cmd == "trends":
+            return _cmd_trends(args)
+        if args.cmd == "brief":
+            return _cmd_brief(args)
         if args.cmd == "ingest":
             with open(args.from_file, encoding="utf-8") as fh:
                 events = dedupe(sources.parse(args.source, fh.read()))
@@ -299,6 +353,136 @@ def _cmd_sanctions(args) -> int:
             tag = "STRONG" if m["strong"] else f"{m['shared_terms']} shared"
             print(f"  actor '{m['actor']}'  ->  SDN '{m['sdn_name']}'"
                   f"  ({m['sdn_type']}/{m['program']}) [{tag}]")
+    return 0
+
+
+_TIER_MARK = {"red": "!!!", "amber": "!! ", "guarded": "!  ", "green": "   "}
+
+
+def _cmd_correlate(args) -> int:
+    events = _load_events(args.input)
+    if args.mode == "all":
+        result = correlate_mod.summary(events)
+        if args.format == "json":
+            print(json.dumps(result, indent=2)); return 0
+        _print_clusters(result["clusters"])
+        _print_actor_network(result["actor_network"])
+        _print_cooccurrence(result["cooccurrence"])
+        _print_coordinated(result["coordinated_days"])
+        return 0
+    if args.mode == "clusters":
+        data = correlate_mod.clusters(events, radius_km=args.radius_km,
+                                      max_day_gap=args.max_day_gap,
+                                      min_size=args.min_size)
+        printer = _print_clusters
+    elif args.mode == "actor-network":
+        data = correlate_mod.actor_network(events)
+        printer = _print_actor_network
+    elif args.mode == "cooccurrence":
+        data = correlate_mod.cooccurrence(events)
+        printer = _print_cooccurrence
+    else:  # coordinated
+        data = correlate_mod.coordinated_days(events)
+        printer = _print_coordinated
+    if args.format == "json":
+        print(json.dumps(data, indent=2))
+    else:
+        printer(data)
+    return 0
+
+
+def _print_clusters(clusters):
+    print(f"{len(clusters)} spatio-temporal cluster(s):")
+    for c in clusters:
+        lo, hi = c["days"]
+        print(f"\n  cluster: {c['size']} events, {c['fatalities']} fatalities "
+              f"({lo}..{hi}, {c['span_days']}d span)")
+        print(f"    centroid ~({c['centroid']['lat']}, {c['centroid']['lon']}), "
+              f"radius {c['radius_km']}km  countries={c['countries']}")
+        if c["actors"]:
+            print(f"    actors: {', '.join(c['actors'])}")
+
+
+def _print_actor_network(net):
+    print(f"actor network: {len(net['nodes'])} node(s), {len(net['edges'])} edge(s)")
+    for e in net["edges"][:15]:
+        print(f"  {e['source']} <-> {e['target']}  "
+              f"weight={e['weight']} fatalities={e['fatalities']}")
+
+
+def _print_cooccurrence(pairs):
+    print(f"{len(pairs)} recurring event-type co-occurrence(s):")
+    for p in pairs:
+        print(f"  {p['types'][0]} + {p['types'][1]}  x{p['count']}  "
+              f"({', '.join(p['places'][:4])})")
+
+
+def _print_coordinated(days):
+    print(f"{len(days)} coordinated (multi-location) day(s):")
+    for d in days:
+        print(f"  {d['date']}  {d['locations']} places, {d['events']} events, "
+              f"{d['fatalities']} fatalities")
+
+
+def _cmd_posture(args) -> int:
+    events = _load_events(args.input)
+    s = indicators_mod.summary(events, scope=args.scope, window=args.window,
+                               baseline_windows=args.baseline_windows,
+                               as_of=args.as_of)
+    if args.format == "json":
+        print(json.dumps(s, indent=2)); return 0
+    print(f"CONFLICTWATCH I&W posture  (scope={args.scope}, window={args.window}d)")
+    print(f"  {s['scopes']} scope(s)   highest={s['highest'].upper()}   "
+          f"by-tier={ {k.upper(): v for k, v in s['by_tier'].items()} }")
+    for pst in s["postures"]:
+        mark = _TIER_MARK.get(pst["tier"], "   ")
+        print(f"\n  {mark} [{pst['tier'].upper():<7}] {pst['scope']}  "
+              f"(score {pst['score']}, {pst['recent_events']} events / "
+              f"{pst['recent_fatalities']} fatalities)")
+        for adv in pst["advisories"]:
+            print(f"        - {adv}")
+    return 0
+
+
+def _cmd_trends(args) -> int:
+    events = _load_events(args.input)
+    s = trends_mod.summary(events, metric=args.metric, window=args.window,
+                           horizon=args.horizon)
+    if args.format == "json":
+        print(json.dumps(s, indent=2)); return 0
+    print(f"CONFLICTWATCH trends  (metric={s['metric']})")
+    fc = s["forecast"]
+    print(f"  trend: {fc['direction']} (slope {fc['slope_per_day']}/day over "
+          f"{fc['fit_days']}d)")
+    print(f"  peaks ({len(s['peaks'])}):")
+    for pk in s["peaks"][:8]:
+        print(f"    {pk['date']}  value={pk['value']}  z={pk['z']}")
+    print(f"  lulls ({len(s['lulls'])}):")
+    for lu in s["lulls"][:5]:
+        print(f"    {lu['start']}..{lu['end']}  ({lu['days']}d quiet)")
+    print("  weekday profile (mean):")
+    for wd in s["weekday_profile"]:
+        print(f"    {wd['weekday']}  mean={wd['mean']}  total={wd['total']}")
+    if fc["projection"]:
+        p0, pN = fc["projection"][0], fc["projection"][-1]
+        print(f"  forecast next {len(fc['projection'])}d: "
+              f"{p0['date']}={p0['value']} .. {pN['date']}={pN['value']}")
+    return 0
+
+
+def _cmd_brief(args) -> int:
+    events = _load_events(args.input)
+    kwargs = {}
+    if args.to in ("markdown", "intsum"):
+        kwargs["window"] = args.window
+    text = reports_mod.render(events, args.to, **kwargs)
+    if args.output:
+        with open(args.output, "w", encoding="utf-8") as fh:
+            fh.write(text if text.endswith("\n") else text + "\n")
+        print(f"wrote {args.to} brief ({len(events)} events) to {args.output}",
+              file=sys.stderr)
+    else:
+        print(text)
     return 0
 
 

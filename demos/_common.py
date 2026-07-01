@@ -23,6 +23,7 @@ DEMOS = os.path.join(REPO_ROOT, "demos")
 SAMPLE_ACLED = os.path.join(DEMOS, "sample_acled.csv")
 SAMPLE_ESCALATION = os.path.join(DEMOS, "sample_escalation.json")
 SAMPLE_SANCTIONS = os.path.join(DEMOS, "sample_events_sanctions.json")
+SAMPLE_CORRELATION = os.path.join(DEMOS, "sample_correlation.json")
 
 # committed offline OFAC SDN / GDELT snapshot — lets the sanctions demo run air-gapped
 OFFLINE_FEED_CACHE = os.path.join(REPO_ROOT, "tests", "fixtures", "feeds_cache")
@@ -48,6 +49,12 @@ def load_escalation():
 def load_sanctions_events():
     from conflictwatch.sources import parse_generic_json
     with open(SAMPLE_SANCTIONS, encoding="utf-8") as fh:
+        return parse_generic_json(fh.read())
+
+
+def load_correlation():
+    from conflictwatch.sources import parse_generic_json
+    with open(SAMPLE_CORRELATION, encoding="utf-8") as fh:
         return parse_generic_json(fh.read())
 
 

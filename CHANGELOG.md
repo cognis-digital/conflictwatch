@@ -1,5 +1,36 @@
 # Changelog
 
+## [0.7.0] — 2026-07-01
+
+The "analytics" release — read *structure*, *posture*, and *shape* out of the picture,
+and hand off a readable brief. Four new additive capabilities, all pure standard library,
+deterministic, and offline. Public API unchanged (additive only).
+
+### Added
+- **Correlation** (`conflictwatch/correlate.py` + `conflictwatch correlate`): find what
+  goes together — **spatio-temporal clusters** (single-link over haversine distance + a
+  day gap, no deps), an **actor co-occurrence network** (weighted belligerent graph),
+  recurring **event-type co-occurrence** in the same place+window, and **coordinated days**
+  (activity flaring across many places at once). Modes: `clusters` / `actor-network` /
+  `cooccurrence` / `coordinated` / `all`.
+- **Defensive I&W posture** (`conflictwatch/indicators.py` + `conflictwatch posture`): a
+  per-scope advisory tier **GREEN / GUARDED / AMBER / RED** built from five transparent,
+  bounded sub-scores — tempo, lethality, escalation (from `watch`), drone/UAS share, and
+  geo-spread — each with a stated reason, plus **descriptive defensive advisories**
+  (dispersion, overhead cover, brief the drone threat, …). Awareness/force-protection only.
+- **Temporal analytics** (`conflictwatch/trends.py` + `conflictwatch trends`): moving
+  average, robust **peak** detection, **lull** (quiet-run) detection, **weekday profile**,
+  and a deliberately simple, confidence-labelled linear **forecast**.
+- **Human-readable report formats** (`conflictwatch/reports.py` + `conflictwatch brief`):
+  **markdown** situational brief, **csv** timeline, **kml** map overlay (severity colour-
+  coded, well-formed XML), and a terse **INTSUM** plaintext handover (BLUF / situation /
+  assessment).
+- Sixth demo — `demos/06_watch_officer_correlation_posture.py` (correlate → posture →
+  trends → brief) — plus `demos/sample_correlation.json` geolocated fixture and
+  `examples/06_correlate_posture_trends_brief.py`.
+- **+74 tests** (110 → 184), all offline and deterministic, covering every detector/
+  format, the scope guards, determinism/order-independence, and the new CLI subcommands.
+
 ## [0.6.0] — 2026-06-22
 
 The "early-warning" release — surface what is *changing*, not just what is biggest.

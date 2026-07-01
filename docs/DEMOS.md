@@ -1,6 +1,6 @@
 # Demos
 
-Five runnable scenarios in [`../demos/`](../demos/), each written for a different
+Six runnable scenarios in [`../demos/`](../demos/), each written for a different
 audience. Every scenario loads its own committed sample data and runs **fully
 offline** — no network, no API keys — so you can run them in any order or on their
 own, and they double as smoke tests (each exits 0).
@@ -52,6 +52,17 @@ Profile the 290+ source catalog, filter it the way you'd plan collection
 (open-access RSS feeds matching a topic), then pull a counter-UAS threat brief
 (named systems and a topic's entries) from the bundled KB. A collection plan and a
 threat brief out of the box, no subscriptions.
+
+## 6. Watch officer — *correlate → posture → brief*
+**Audience:** duty / watch officers.
+Three things a duty officer does with the day's reporting, end to end: **correlate**
+scattered events into coherent activity (spatio-temporal clusters — events near in
+both place and time — plus the actor co-occurrence network), read the **defensive
+I&W posture** per area (GREEN / GUARDED / AMBER / RED, each tier justified by the
+tempo / lethality / escalation / drone-UAS / geo-spread sub-scores that drove it),
+glance at the temporal **trends** (peaks, direction, a naive forecast), and hand off
+a terse **INTSUM** brief. All descriptive, offline, deterministic — reported events
+only, no targeting.
 
 ---
 

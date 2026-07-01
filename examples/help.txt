@@ -1,12 +1,12 @@
 $ conflictwatch --help
 
 usage: conflictwatch [-h] [--version]
-                     {ingest,fetch-gdelt,scrape,analyze,export,lessons,report,cuas,watch,sources,feeds,sanctions} ...
+                     {ingest,fetch-gdelt,scrape,analyze,export,lessons,report,cuas,watch,sources,feeds,sanctions,correlate,posture,trends,brief} ...
 
 conflictwatch CLI - ingest open conflict data, analyze it, consult lessons.
 
 positional arguments:
-  {ingest,fetch-gdelt,scrape,analyze,export,lessons,report,cuas,watch,sources,feeds,sanctions}
+  {ingest,fetch-gdelt,scrape,analyze,export,lessons,report,cuas,watch,sources,feeds,sanctions,correlate,posture,trends,brief}
     ingest              parse an open conflict dataset into events
     fetch-gdelt         pull the latest open GDELT events export
     scrape              collect OSINT situational feeds (RSS/Atom)
@@ -23,6 +23,14 @@ positional arguments:
     feeds               edge/air-gap data feeds (OFAC SDN, GDELT) —
                         list/update/get
     sanctions           cross-reference event actors against the OFAC SDN list
+    correlate           find structure: spatio-temporal clusters, actor
+                        network, type co-occurrence, coordinated days
+    posture             defensive I&W posture per scope
+                        (GREEN/GUARDED/AMBER/RED) from tempo, lethality,
+                        escalation, drone/UAS share, geo-spread
+    trends              temporal analytics: moving average, peaks, lulls,
+                        weekday profile, naive trend forecast
+    brief               human-readable report: markdown / csv / kml / intsum
 
 options:
   -h, --help            show this help message and exit
