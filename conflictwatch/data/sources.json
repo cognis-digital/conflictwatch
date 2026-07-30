@@ -1,6 +1,6 @@
 {
  "_note": "Open conflict/OSINT source catalog for conflictwatch. Public datasets, feeds, trackers and tools for situational awareness. Respect each provider's terms.",
- "count": 312,
+ "count": 351,
  "sources": [
   {
    "name": "ACLED (Armed Conflict Location & Event Data)",
@@ -5135,6 +5135,594 @@
     "15-arcsec",
     "seafloor",
     "netcdf"
+   ]
+  },
+  {
+   "name": "PRIO-GRID",
+   "url": "https://grid.prio.org/",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Global 0.5deg cell grid joining conflict, terrain, socioeconomic and environmental variables for spatial modeling (ODC-By).",
+   "tags": [
+    "grid",
+    "spatial",
+    "modeling",
+    "terrain"
+   ]
+  },
+  {
+   "name": "Correlates of War - MID v5.0",
+   "url": "https://correlatesofwar.org/data-sets/mids/",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Militarized Interstate Disputes: interstate incidents of threat/display/use of force, 1816-2014.",
+   "tags": [
+    "interstate",
+    "disputes",
+    "historical"
+   ]
+  },
+  {
+   "name": "EM-DAT (CRED Disaster Database)",
+   "url": "https://www.emdat.be/",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "registration",
+   "desc": "Global registry of natural + technological disasters with casualties, displacement, economic loss since 1900.",
+   "tags": [
+    "disasters",
+    "casualties",
+    "displacement"
+   ]
+  },
+  {
+   "name": "Cline Center SPEED",
+   "url": "https://databank.illinois.edu/datasets/IDB-9029958",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "registration",
+   "desc": "Machine+analyst event data (civil unrest, coups) from a 110M+ story post-WWII global news corpus.",
+   "tags": [
+    "civil-unrest",
+    "coups",
+    "news-corpus"
+   ]
+  },
+  {
+   "name": "Mass Mobilization Project",
+   "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/HTTWYL",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "10,000+ anti-government protest events across 162 countries with state-response coding (CC-BY).",
+   "tags": [
+    "protests",
+    "state-response",
+    "mobilization"
+   ]
+  },
+  {
+   "name": "NAVCO",
+   "url": "https://dataverse.harvard.edu/dataverse/navco",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Nonviolent and Violent Campaigns and Outcomes: resistance campaigns by tactic, participation, outcome.",
+   "tags": [
+    "campaigns",
+    "nonviolent",
+    "outcomes",
+    "actor-network"
+   ]
+  },
+  {
+   "name": "Cline Center Coup d'Etat Project",
+   "url": "https://databank.illinois.edu/datasets/IDB-6739397",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Global catalog of coups, attempts and conspiracies from 1945 with actor/outcome typing (CC-BY).",
+   "tags": [
+    "coups",
+    "actor",
+    "typing"
+   ]
+  },
+  {
+   "name": "SIPRI Arms Transfers Database",
+   "url": "https://www.sipri.org/databases/armstransfers",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "registration",
+   "desc": "International transfers of major conventional weapons (supplier/recipient/system) 1950-present.",
+   "tags": [
+    "arms-transfers",
+    "weapons",
+    "actor-network"
+   ]
+  },
+  {
+   "name": "ViEWS (Violence Early Warning System)",
+   "url": "https://viewsforecasting.org/",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "tracker",
+   "access": "open",
+   "desc": "Subnational monthly probabilistic forecasts of organized political violence at country + PRIO-GRID level (CC-BY).",
+   "tags": [
+    "forecasting",
+    "early-warning",
+    "monthly"
+   ]
+  },
+  {
+   "name": "Political Terror Scale (PTS)",
+   "url": "https://www.politicalterrorscale.org/",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Country-year indices of state physical-integrity violations from Amnesty/State Dept/HRW, 1976-present.",
+   "tags": [
+    "human-rights",
+    "state-violence",
+    "index"
+   ]
+  },
+  {
+   "name": "RAND RDWTI",
+   "url": "https://www.rand.org/nsrd/projects/terrorism-incidents.html",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "RAND Database of Worldwide Terrorism Incidents (date/location/tactic/group/casualties), 1968-2009.",
+   "tags": [
+    "terrorism",
+    "incidents",
+    "rand"
+   ]
+  },
+  {
+   "name": "CPOST Suicide Attack Database",
+   "url": "https://cpost.uchicago.edu/research/suicide_attacks/",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "University of Chicago catalog of completed + attempted suicide attacks worldwide since 1974.",
+   "tags": [
+    "suicide-attacks",
+    "catalog"
+   ]
+  },
+  {
+   "name": "START BAAD",
+   "url": "https://www.start.umd.edu/baad/database",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Big Allied and Dangerous: relational dataset of militant organizations, alliances, rivalries, attributes.",
+   "tags": [
+    "militant-orgs",
+    "network",
+    "alliances",
+    "actor-network"
+   ]
+  },
+  {
+   "name": "GADM",
+   "url": "https://gadm.org/",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Global administrative-area boundary polygons at multiple sub-national levels.",
+   "tags": [
+    "boundaries",
+    "admin",
+    "geospatial"
+   ]
+  },
+  {
+   "name": "geoBoundaries",
+   "url": "https://www.geoboundaries.org/",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Open political administrative boundaries ADM0-ADM4 with per-country licensing (CC-BY/ODbL).",
+   "tags": [
+    "boundaries",
+    "admin",
+    "open"
+   ]
+  },
+  {
+   "name": "Geofabrik OSM Extracts",
+   "url": "https://download.geofabrik.de/",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Country/region OpenStreetMap extracts (roads, buildings, infrastructure) refreshed daily (ODbL).",
+   "tags": [
+    "osm",
+    "infrastructure",
+    "daily"
+   ]
+  },
+  {
+   "name": "WorldPop",
+   "url": "https://www.worldpop.org/",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "High-resolution (~100 m) gridded population-count and demographic surfaces for all countries (CC-BY).",
+   "tags": [
+    "population",
+    "gridded",
+    "demographics"
+   ]
+  },
+  {
+   "name": "IMF PortWatch",
+   "url": "https://portwatch.imf.org/",
+   "rss": "",
+   "category": "maritime",
+   "region": "Global",
+   "type": "tracker",
+   "access": "open",
+   "desc": "AIS-derived port-call volumes, trade flows and chokepoint disruption for 1,400+ ports, 20+ chokepoints (CC-BY).",
+   "tags": [
+    "ais",
+    "ports",
+    "chokepoints",
+    "trade"
+   ]
+  },
+  {
+   "name": "Combined IUU Vessel List (TMT)",
+   "url": "https://www.iuu-vessels.org/",
+   "rss": "",
+   "category": "maritime",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Consolidated illegal/unreported/unregulated fishing vessel blacklist merging RFMO listings.",
+   "tags": [
+    "iuu",
+    "fishing",
+    "blacklist"
+   ]
+  },
+  {
+   "name": "World Port Index (NGA Pub 150)",
+   "url": "https://msi.nga.mil/Publications/WPI",
+   "rss": "",
+   "category": "maritime",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "~3,700 ports/terminals with location, harbor characteristics and service attributes (US public domain).",
+   "tags": [
+    "ports",
+    "reference",
+    "nga"
+   ]
+  },
+  {
+   "name": "HYCOM GOFS 3.1",
+   "url": "https://www.hycom.org/dataserver/gofs-3pt1",
+   "rss": "",
+   "category": "environment",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Global 1/12deg data-assimilative ocean model: temperature, salinity, SSH, 3-D currents.",
+   "tags": [
+    "ocean-model",
+    "currents",
+    "daily"
+   ]
+  },
+  {
+   "name": "NOAA RTOFS",
+   "url": "https://polar.ncep.noaa.gov/global/",
+   "rss": "",
+   "category": "environment",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Operational global ocean forecast (currents, temp, salinity, SSH) to 8 days from NCEP.",
+   "tags": [
+    "ocean-forecast",
+    "currents"
+   ]
+  },
+  {
+   "name": "GHRSST (PO.DAAC)",
+   "url": "https://podaac.jpl.nasa.gov/GHRSST",
+   "rss": "",
+   "category": "environment",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Multi-sensor L2-L4 gap-free global sea-surface-temperature analyses (NASA).",
+   "tags": [
+    "sst",
+    "satellite",
+    "ocean"
+   ]
+  },
+  {
+   "name": "NOAA OISST v2.1",
+   "url": "https://www.ncei.noaa.gov/products/optimum-interpolation-sst",
+   "rss": "",
+   "category": "environment",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Daily 0.25deg blended satellite+in-situ global sea-surface temperature back to 1981.",
+   "tags": [
+    "sst",
+    "daily",
+    "blended"
+   ]
+  },
+  {
+   "name": "AVISO+ Altimetry",
+   "url": "https://www.aviso.altimetry.fr/en/data.html",
+   "rss": "",
+   "category": "environment",
+   "region": "Global",
+   "type": "dataset",
+   "access": "registration",
+   "desc": "Multi-mission sea-surface-height, sig wave height, geostrophic-current altimetry.",
+   "tags": [
+    "altimetry",
+    "ssh",
+    "waves"
+   ]
+  },
+  {
+   "name": "CDIP Wave Buoys",
+   "url": "https://cdip.ucsd.edu/",
+   "rss": "",
+   "category": "environment",
+   "region": "US/Global",
+   "type": "tracker",
+   "access": "open",
+   "desc": "Directional wave-buoy network with real-time + archived sea-state spectra (Scripps/USACE).",
+   "tags": [
+    "waves",
+    "buoy",
+    "sea-state"
+   ]
+  },
+  {
+   "name": "NOAA CO-OPS Tides & Currents",
+   "url": "https://tidesandcurrents.noaa.gov/",
+   "rss": "",
+   "category": "environment",
+   "region": "US",
+   "type": "tracker",
+   "access": "open",
+   "desc": "Real-time + historical water levels, tidal predictions, currents, met-ocean via API.",
+   "tags": [
+    "tides",
+    "currents",
+    "api"
+   ]
+  },
+  {
+   "name": "NOAA GFS",
+   "url": "https://www.nco.ncep.noaa.gov/pmb/products/gfs/",
+   "rss": "",
+   "category": "environment",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Operational global NWP (wind, pressure, precip, temp) at 0.25deg to 16 days.",
+   "tags": [
+    "weather",
+    "nwp",
+    "wind"
+   ]
+  },
+  {
+   "name": "NASA MERRA-2",
+   "url": "https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/",
+   "rss": "",
+   "category": "environment",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Global atmospheric reanalysis (winds, aerosols, surface fluxes) 1980-present.",
+   "tags": [
+    "reanalysis",
+    "atmosphere",
+    "nasa"
+   ]
+  },
+  {
+   "name": "ALOS World 3D-30m (AW3D30)",
+   "url": "https://www.eorc.jaxa.jp/ALOS/en/dataset/aw3d30/aw3d30_e.htm",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Global 30 m digital surface model from PRISM stereo optical imagery (JAXA).",
+   "tags": [
+    "dem",
+    "30m",
+    "terrain"
+   ]
+  },
+  {
+   "name": "NASADEM",
+   "url": "https://lpdaac.usgs.gov/products/nasadem_hgtv001/",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Reprocessed void-filled 1-arc-sec global elevation from SRTM + ancillary DEMs (NASA/USGS).",
+   "tags": [
+    "dem",
+    "void-filled",
+    "terrain"
+   ]
+  },
+  {
+   "name": "MERIT DEM",
+   "url": "http://hydro.iis.u-tokyo.ac.jp/~yamadai/MERIT_DEM/",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Error-reduced 90 m global DEM removing speckle/stripe/tree-height bias for hydrology.",
+   "tags": [
+    "dem",
+    "90m",
+    "hydrology"
+   ]
+  },
+  {
+   "name": "Copernicus EU-DEM v1.1",
+   "url": "https://land.copernicus.eu/imagery-in-situ/eu-dem",
+   "rss": "",
+   "category": "datasets",
+   "region": "Europe",
+   "type": "dataset",
+   "access": "open",
+   "desc": "25 m pan-European hybrid digital elevation model.",
+   "tags": [
+    "dem",
+    "europe",
+    "25m"
+   ]
+  },
+  {
+   "name": "ETOPO 2022",
+   "url": "https://www.ncei.noaa.gov/products/etopo-global-relief-model",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "15-arc-sec combined topography+bathymetry global relief model (NOAA public domain).",
+   "tags": [
+    "relief",
+    "bathymetry",
+    "topography"
+   ]
+  },
+  {
+   "name": "ESA WorldCover 10m",
+   "url": "https://esa-worldcover.org/",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Global 10 m land-cover classification (11 classes) from Sentinel-1/2 (CC-BY).",
+   "tags": [
+    "land-cover",
+    "10m",
+    "sentinel"
+   ]
+  },
+  {
+   "name": "TanDEM-X 90m DEM",
+   "url": "https://geoservice.dlr.de/web/dataguide/tdm90/",
+   "rss": "",
+   "category": "datasets",
+   "region": "Global",
+   "type": "dataset",
+   "access": "registration",
+   "desc": "Global 90 m X-band radar DEM from the TanDEM-X bistatic mission (DLR).",
+   "tags": [
+    "dem",
+    "radar",
+    "90m"
+   ]
+  },
+  {
+   "name": "USGS 3DEP",
+   "url": "https://www.usgs.gov/3d-elevation-program",
+   "rss": "",
+   "category": "datasets",
+   "region": "US",
+   "type": "dataset",
+   "access": "open",
+   "desc": "High-resolution lidar-derived DEMs and point clouds covering the US and territories.",
+   "tags": [
+    "lidar",
+    "dem",
+    "us",
+    "high-res"
+   ]
+  },
+  {
+   "name": "JRC Global Surface Water",
+   "url": "https://global-surface-water.appspot.com/",
+   "rss": "",
+   "category": "environment",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "30 m maps of surface-water occurrence, seasonality and change 1984-present from Landsat (CC-BY).",
+   "tags": [
+    "surface-water",
+    "landsat",
+    "change"
+   ]
+  },
+  {
+   "name": "NASA Black Marble (VIIRS)",
+   "url": "https://blackmarble.gsfc.nasa.gov/",
+   "rss": "",
+   "category": "osint",
+   "region": "Global",
+   "type": "dataset",
+   "access": "open",
+   "desc": "Daily/monthly nighttime-lights radiance as a proxy for activity, infrastructure and disruption.",
+   "tags": [
+    "nightlights",
+    "activity-proxy",
+    "viirs"
    ]
   }
  ]
