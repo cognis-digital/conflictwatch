@@ -21,6 +21,12 @@ from conflictwatch import (analyze, catalog, cuas, lessons, scrape, sources,  # 
 from conflictwatch.intel import to_stix, to_geojson, export  # noqa: E402
 from conflictwatch import autonomy  # noqa: E402  (sustainment/CASEVAC ground-autonomy suite)
 
+from .growth import (
+    Endpoint, Record, HarvestStore, SourceStats,
+    GrowthEngine, GrowthReport, expand, synthetic_fetcher,
+)
+from .frontier import ISO_3166_ALPHA2, build_frontier, parametric_sources
+
 __all__ = ["ConflictEvent", "normalize", "dedupe", "analyze", "catalog", "cuas", "lessons",
            "scrape", "sources", "intel", "datafeeds", "sanctions", "watch",
            "correlate", "indicators", "trends", "reports", "autonomy",
