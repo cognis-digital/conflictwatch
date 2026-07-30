@@ -14,10 +14,17 @@ TOOL_VERSION = "0.7.0"
 from conflictwatch.events import ConflictEvent, dedupe, normalize  # noqa: E402
 from conflictwatch import (analyze, catalog, cuas, lessons, scrape, sources,  # noqa: E402
                            intel, datafeeds, sanctions, watch, correlate,
-                           indicators, trends, reports)
+                           indicators, trends, reports, extract, merge,
+                           lessonsindex, adapters, entities, dedupstore,
+                           advisor, kmlfeed, escalation, actorgraph, actorflux,
+                           tempo)
 from conflictwatch.intel import to_stix, to_geojson, export  # noqa: E402
+from conflictwatch import autonomy  # noqa: E402  (sustainment/CASEVAC ground-autonomy suite)
 
 __all__ = ["ConflictEvent", "normalize", "dedupe", "analyze", "catalog", "cuas", "lessons",
            "scrape", "sources", "intel", "datafeeds", "sanctions", "watch",
-           "correlate", "indicators", "trends", "reports",
+           "correlate", "indicators", "trends", "reports", "autonomy",
+           "extract", "merge", "lessonsindex", "adapters",
+           "entities", "dedupstore", "advisor", "kmlfeed", "escalation", "actorgraph",
+           "actorflux", "tempo",
            "to_stix", "to_geojson", "export", "TOOL_NAME", "TOOL_VERSION"]

@@ -25,7 +25,8 @@ from conflictwatch import (TOOL_NAME, TOOL_VERSION, analyze, catalog,
                            cuas as cuas_kb, lessons as lessons_kb, scrape, sources,
                            watch as watch_mod, correlate as correlate_mod,
                            indicators as indicators_mod, trends as trends_mod,
-                           reports as reports_mod)
+                           reports as reports_mod, escalation as escalation_mod,
+                           tempo as tempo_mod)
 from conflictwatch.events import dedupe
 
 
@@ -172,6 +173,36 @@ def main(argv=None) -> int:
     tr.add_argument("--horizon", type=int, default=7, help="forecast horizon (days)")
     tr.add_argument("--format", choices=["table", "json"], default="table")
 
+    es = sub.add_parser("escalation",
+                        help="rolling 0-100 escalation index (tempo + intensity + "
+                             "geo-spread) with rising/falling trajectory")
+    es.add_argument("input")
+    es.add_argument("--window", type=int, default=7, help="recent-window length (days)")
+    es.add_argument("--baseline-windows", type=int, default=4,
+                    help="how many windows of history form the baseline")
+    es.add_argument("--country", default=None, help="score a single country only")
+    es.add_argument("--region", default=None, help="score a single region only")
+    es.add_argument("--as-of", default=None,
+                    help="ISO date to evaluate up to (replay a past day)")
+    es.add_argument("--format", choices=["table", "json"], default="table")
+
+    tp = sub.add_parser("tempo",
+                        help="per-region event-tempo forecast: project near-term event "
+                             "volume from recent pace with rising/steady/falling class")
+    tp.add_argument("input")
+    tp.add_argument("--by", choices=list(tempo_mod.GROUP_BY), default="region",
+                    help="grouping lens (region/country/location)")
+    tp.add_argument("--window", type=int, default=tempo_mod.DEFAULT_WINDOW,
+                    help="trailing days defining the recent pace")
+    tp.add_argument("--fit-days", type=int, default=tempo_mod.DEFAULT_FIT_DAYS,
+                    help="days of history the trend line is fit to")
+    tp.add_argument("--horizon", type=int, default=tempo_mod.DEFAULT_HORIZON,
+                    help="days projected forward")
+    tp.add_argument("--country", default=None, help="forecast one country's regions only")
+    tp.add_argument("--as-of", default=None,
+                    help="ISO date to project from (replay a past day)")
+    tp.add_argument("--format", choices=["table", "json"], default="table")
+
     br = sub.add_parser("brief",
                         help="human-readable report: markdown / csv / kml / intsum")
     br.add_argument("input")
@@ -179,6 +210,43 @@ def main(argv=None) -> int:
     br.add_argument("--window", type=int, default=7)
     br.add_argument("-o", "--output", default=None,
                     help="write to file instead of stdout")
+
+    xt = sub.add_parser("extract",
+                        help="lift structured ConflictEvents out of free OSINT text "
+                             "(entities, casualties, dates, platforms)")
+    xtg = xt.add_mutually_exclusive_group(required=True)
+    xtg.add_argument("--text", help="a single snippet to extract from")
+    xtg.add_argument("--from-file", help="a text file, one report per line")
+    xt.add_argument("--source", default="osint-text")
+    xt.add_argument("--fields", action="store_true",
+                    help="show the raw extracted fields (not a ConflictEvent)")
+    xt.add_argument("--out", default=None, help="write events to a JSON file")
+    xt.add_argument("--format", choices=["table", "json"], default="table")
+
+    mg = sub.add_parser("merge",
+                        help="fold near-duplicate events (across sources) into canonical "
+                             "records with merged provenance")
+    mg.add_argument("input")
+    mg.add_argument("--max-day-gap", type=int, default=1)
+    mg.add_argument("--radius-km", type=float, default=15.0)
+    mg.add_argument("--sim-threshold", type=float, default=0.5)
+    mg.add_argument("--report", action="store_true", help="print the merge report only")
+    mg.add_argument("--out", default=None, help="write merged events to a JSON file")
+
+    ks = sub.add_parser("kbsearch",
+                        help="ranked (BM25) search over the 'what's working' lessons KB")
+    ks.add_argument("query", nargs="+", help="search terms")
+    ks.add_argument("--category", default=None, choices=list(lessons_kb.CATEGORIES))
+    ks.add_argument("-k", "--top", type=int, default=5)
+    ks.add_argument("--format", choices=["table", "json"], default="table")
+
+    ad = sub.add_parser("adapt",
+                        help="parse extra OSINT formats (jsonl/geojson/delimited/auto) "
+                             "into normalized events")
+    ad.add_argument("input")
+    ad.add_argument("--format", dest="fmt", default="auto",
+                    choices=["auto", "jsonl", "geojson", "delimited"])
+    ad.add_argument("--out", default=None, help="write events to a JSON file")
 
     args = p.parse_args(argv)
 
@@ -193,8 +261,20 @@ def main(argv=None) -> int:
             return _cmd_posture(args)
         if args.cmd == "trends":
             return _cmd_trends(args)
+        if args.cmd == "escalation":
+            return _cmd_escalation(args)
+        if args.cmd == "tempo":
+            return _cmd_tempo(args)
         if args.cmd == "brief":
             return _cmd_brief(args)
+        if args.cmd == "extract":
+            return _cmd_extract(args)
+        if args.cmd == "merge":
+            return _cmd_merge(args)
+        if args.cmd == "kbsearch":
+            return _cmd_kbsearch(args)
+        if args.cmd == "adapt":
+            return _cmd_adapt(args)
         if args.cmd == "ingest":
             with open(args.from_file, encoding="utf-8") as fh:
                 events = dedupe(sources.parse(args.source, fh.read()))
@@ -470,6 +550,50 @@ def _cmd_trends(args) -> int:
     return 0
 
 
+def _cmd_escalation(args) -> int:
+    events = _load_events(args.input)
+    s = escalation_mod.summary(
+        events, window=args.window, baseline_windows=args.baseline_windows,
+        country=args.country, region=args.region, as_of=args.as_of)
+    if args.format == "json":
+        print(json.dumps(s, indent=2)); return 0
+    cur = s["current"]
+    print("CONFLICTWATCH escalation index")
+    print(f"  index: {cur['index']}/100  ({cur['level']}, {cur['direction']})"
+          f"  as of {cur['date']}")
+    print(f"  trajectory: delta={cur['delta']}  slope={cur['slope_per_day']}/day"
+          f"  over {s['points']} scored day(s)")
+    print("  drivers:")
+    for d in cur["drivers"]:
+        print(f"    {d['component']:<9} score={d['score']:<5} "
+              f"weight={d['weight']}  contribution={d['contribution']}")
+    if s["peak"]:
+        print(f"  peak: {s['peak']['index']}/100 on {s['peak']['date']}")
+    print(f"  rising days: {s['rising_days']}   falling days: {s['falling_days']}")
+    return 0
+
+
+def _cmd_tempo(args) -> int:
+    events = _load_events(args.input)
+    s = tempo_mod.summary(events, by=args.by, window=args.window,
+                          fit_days=args.fit_days, horizon=args.horizon,
+                          country=args.country, as_of=args.as_of)
+    if args.format == "json":
+        print(json.dumps(s, indent=2)); return 0
+    print(f"CONFLICTWATCH event-tempo forecast  (by {args.by}, "
+          f"next {s['horizon']}d)")
+    print(f"  regions: {s['regions']}   rising: {s['rising']}   "
+          f"steady: {s['steady']}   falling: {s['falling']}")
+    print(f"  projected events next {s['horizon']}d (all regions): "
+          f"{s['projected_total']}")
+    print("  board (by projected volume):")
+    for r in s["board"][:12]:
+        print(f"    {r['region']:<20} {r['trend']:<8} "
+              f"recent={r['recent_rate']}/d  slope={r['slope_per_day']}/d  "
+              f"proj={r['projected_total']}")
+    return 0
+
+
 def _cmd_brief(args) -> int:
     events = _load_events(args.input)
     kwargs = {}
@@ -483,6 +607,80 @@ def _cmd_brief(args) -> int:
               file=sys.stderr)
     else:
         print(text)
+    return 0
+
+
+def _cmd_extract(args) -> int:
+    from conflictwatch import extract as extract_mod
+    if args.text is not None:
+        texts = [args.text]
+    else:
+        with open(args.from_file, encoding="utf-8") as fh:
+            texts = [ln.strip() for ln in fh if ln.strip()]
+    if args.fields:
+        fields = [extract_mod.extract(t, source=args.source) for t in texts]
+        print(json.dumps(fields, indent=2))
+        return 0
+    events = extract_mod.extract_all(texts, source=args.source)
+    if args.out or args.format == "json":
+        _write(events, args.out)
+        return 0
+    print(f"extracted {len(events)} event(s):")
+    for e in events:
+        d = e.to_dict()
+        plats = [t for t in e.tags if not t.startswith(("extracted:", "wounded:", "merged:", "src:"))]
+        print(f"\n  [{d['severity']:<8}] {e.date or '(no date)'}  {e.event_type}")
+        print(f"    actor: {e.actor1 or '-'}   where: {e.location or e.country or '-'}   "
+              f"killed: {e.fatalities}")
+        if plats:
+            print(f"    platforms: {', '.join(plats)}")
+        print(f"    {e.notes[:120]}")
+    return 0
+
+
+def _cmd_merge(args) -> int:
+    from conflictwatch import merge as merge_mod
+    events = _load_events(args.input)
+    merged, report = merge_mod.merge(events, max_day_gap=args.max_day_gap,
+                                     radius_km=args.radius_km,
+                                     sim_threshold=args.sim_threshold)
+    if args.report:
+        print(json.dumps(report, indent=2))
+        return 0
+    if args.out:
+        _write(merged, args.out)
+    print(f"merge: {report['input']} -> {report['output']} events "
+          f"({report['removed']} duplicate(s) folded across "
+          f"{report['groups_merged']} group(s); largest {report['largest_group']})",
+          file=sys.stderr)
+    if not args.out:
+        _write(merged, None)
+    return 0
+
+
+def _cmd_kbsearch(args) -> int:
+    from conflictwatch import lessonsindex
+    query = " ".join(args.query)
+    hits = lessonsindex.search(query, k=args.top, category=args.category)
+    if args.format == "json":
+        print(json.dumps([{k: v for k, v in h.items() if k != "lesson"} for h in hits],
+                         indent=2))
+        return 0
+    print(f"{len(hits)} lesson(s) for {query!r}:")
+    for h in hits:
+        print(f"\n  #{h['rank']}  score={h['score']}  [{h['category']}] {h['title']}")
+        print(f"      match: {', '.join(h['matched'])}")
+        print(f"      {h['snippet']}")
+    return 0
+
+
+def _cmd_adapt(args) -> int:
+    from conflictwatch import adapters
+    from conflictwatch.events import dedupe
+    with open(args.input, encoding="utf-8") as fh:
+        text = fh.read()
+    events = dedupe(adapters.parse(args.fmt, text))
+    _write(events, args.out)
     return 0
 
 
