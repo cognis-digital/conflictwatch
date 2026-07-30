@@ -71,7 +71,10 @@ def test_quality_decreases_with_uncertainty():
     good = nf.Navigator(pos_var=1.0)
     bad = nf.Navigator(pos_var=10000.0)
     assert good.quality() > bad.quality()
-    assert 0.0 <= bad.quality() <= 1.0 <= good.quality() + 1e-9
+    # Quality is bounded in [0, 1]; the smooth curve approaches 1.0 for small
+    # sigma (1 m -> ~0.99) but only reaches it at sigma == 0.
+    assert 0.0 <= bad.quality() <= good.quality() <= 1.0
+    assert good.quality() > 0.95   # near-perfect fix -> high quality
 
 
 def test_mode_reflects_last_fix():
